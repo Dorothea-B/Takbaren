@@ -5,15 +5,9 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 //import { queryCache } from 'react-query'
 
 
-
-
-
 import { persistQueryClient } from 'react-query/persistQueryClient-experimental'
 import { createWebStoragePersistor } from 'react-query/createWebStoragePersistor-experimental'
  
-
-
-
 
 //import { persistWithLocalStorage } from 'react-query/persist-localstorage-experimental';
 
