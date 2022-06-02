@@ -4,6 +4,11 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 
 import madLib from './madLib';
+import introTextHome from './introTextHome';
+import menuHome from './menuHome';
+import openHoursHome from './openHoursHome';
+import contactHome from './contactHome';
+
 
 import homePage from './homepage';
 // Then import schema types from any plugins that might expose them
@@ -17,6 +22,10 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     homePage,
-    madLib
+    introTextHome,
+    menuHome,
+    openHoursHome,
+    contactHome,
+    madLib,
   ]),
 })
