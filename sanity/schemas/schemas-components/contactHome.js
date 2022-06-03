@@ -10,6 +10,18 @@ const contactHome = {
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
+
+    {
+      title: 'Telephone Number',
+      name: 'number',
+      type: 'string',
+    },
+
+    {
+      title: 'Email',
+      name: 'mail',
+      type: 'string',
+    },
   ]
 };
 

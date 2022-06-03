@@ -9,48 +9,22 @@ const introTextHome = {
         type: 'string',
         validation: (Rule) => Rule.required(),
       },
+     
       {
-        name: 'slug',
-        type: 'slug',
-        options: { source: 'title' },
+        title: 'Description',
+        name: 'description',
+        type: 'string',
         validation: (Rule) => Rule.required(),
       },
       {
-        title: 'Image',
-        name: 'image',
-        type: 'image',
-        validation: (Rule) => Rule.required(),
-      },
-      {
-        name: 'story',
-        type: 'array',
-        of: [
-          {
-            type: 'block',
-            of: [
-              // this defines is in an inline object that can be embedded within
-              // each line of text in the story.
-              // https://www.sanity.io/docs/block-type#of-d0f97ffa1dd9
-              {
-                title: 'Placeholder',
-                name: 'placeholder',
-                type: 'object',
-                fields: [
-                  {
-                    title: 'Type',
-                    description:
-                      'The type of placeholder. E.g. Adjective, Noun, Celebrity, Animal',
-                    name: 'type',
-                    type: 'string',
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-        validation: (Rule) => Rule.required(),
-      },
-    ],
-  };
-  
+        title: 'Link',
+        name: 'link',
+        type: 'string',
+        // inputComponent: Link,
+       } 
+          
+    ]
+};
+      
+
   export default introTextHome;

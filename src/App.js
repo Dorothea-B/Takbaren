@@ -5,6 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 // import MadLib from './Pages/MadLib';
 
 import Home from "./Pages/Home";
+import NavBarHome from "./components/NavBarHome"
 import Menu from "./Pages/Menu";
 import Contact from "./Pages/Contact";
 import OpenHours from "./Pages/OpenHours";
@@ -19,6 +20,7 @@ function App() {
       <header>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Link to="/">Takbaren Header</Link>
+        <NavBarHome />
       </header>
       <Routes>
         <Route path="/" element={<Home />} />

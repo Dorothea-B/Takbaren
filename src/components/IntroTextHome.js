@@ -1,29 +1,20 @@
 import React from 'react'
 
 import { useQuery } from 'react-query';
-import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import BlockContent from '@sanity/block-content-to-react';
-import { sanity, imageUrlBuilder } from '../sanity';
+import { sanity } from '../sanity';
 
 
 //Queries 2 olika varianter
 
 const query = `
-  *[ _type == 'introTextHome' ] { title, image, slug, story }
+  *[ _type == 'introTextHome' ] { title, description, link }
 `;
-
-// const query = `
-//   *[ _type == 'introTextHome' ] { title, image, slug, story }
-// `;
-
-
 
 
 const IntroTextHome = () => {
 
 
-  const { data = [] } = useQuery('introText', () => sanity.fetch(query));
+  const { data = [] } = useQuery('introTextHome', () => sanity.fetch(query));
 
   const [introText] = data;
 
@@ -39,15 +30,11 @@ const IntroTextHome = () => {
   }
 
 
-
-
-
-
   return (
 
     <>
-    
     <h2>Introtex: {introText.title}</h2>
+    <h2>Introtex: {introText.description}</h2>
 {/* 
 
     <img

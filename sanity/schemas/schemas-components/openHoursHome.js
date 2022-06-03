@@ -1,5 +1,4 @@
-const openHoursHome = {
-   
+const openHoursHome = {   
 
 
   name: 'openHoursHome',
@@ -13,19 +12,13 @@ const openHoursHome = {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'slug',
-      type: 'slug',
-      options: { source: 'title' },
+      title: 'Description',
+      name: 'description',
+      type: 'string',
       validation: (Rule) => Rule.required(),
-    },
-    {
-      title: 'Image',
-      name: 'image',
-      type: 'image',
-      validation: (Rule) => Rule.required(),
-    },
+    }
      
-  ],
+  ]
 
   };
   

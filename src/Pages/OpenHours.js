@@ -7,6 +7,7 @@ const OpenHours = () => {
       Friday and Saturday from 16:00 25/6 -20/8: Every day from 16:00 Follow us
       @takbarenvisby
     </div>
+    
   );
 };
 

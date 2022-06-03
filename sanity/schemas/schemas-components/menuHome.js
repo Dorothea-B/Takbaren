@@ -1,43 +1,27 @@
 const menuHome = {
-    name: 'menuCard',
+    name: 'menuhome',
     title: 'Menu Home',
     type: 'document',
     fields: [
-      {
-        title: 'Image',
-        name: 'image',
-        type: 'image',
-        validation: (Rule) => Rule.required(),
-      },
+
       {
         title: 'Menu Title',
-        name: 'menuTitle',
+        name: 'menutitle',
         type: 'string',
         validation: (Rule) => Rule.required(),
       },
       {
-        title: 'Menu Description',
-        name: 'menuDescription',
+        title: 'Description One',
+        name: 'descriptionone',
         type: 'string',
         validation: (Rule) => Rule.required(),
       },
       {
-        title: 'Link',
-        name: 'menuhref',
-        type: 'url',
-        validation: Rule => Rule.uri({
-          scheme: ['http', 'https', 'mailto', 'tel']
-        })
+        title: 'Description Two',
+        name: 'descriptiontwo',
+        type: 'string',
+        validation: Rule => Rule.required()
       }
-
-
-    //   {
-    //     name: 'slug',
-    //     type: 'slug',
-    //     options: { source: 'title' },
-    //     validation: (Rule) => Rule.required(),
-    //   },
-     
       
     ],
   };
