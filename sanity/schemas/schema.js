@@ -2,15 +2,17 @@
 import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
-
 import madLib from './madLib';
-import introTextHome from './introTextHome';
-import menuHome from './menuHome';
-import openHoursHome from './openHoursHome';
-import contactHome from './contactHome';
+import introTextHome from './schemas-components/introTextHome';
+import menuHome from './schemas-components/menuHome';
+import openHoursHome from './schemas-components/openHoursHome';
+import contactHome from './schemas-components/contactHome';
+
+import contact from './schemas-pages/contact';
+import menu from './schemas-pages/menu';
+import openHours from './schemas-pages/openHours';
 
 
-import homePage from './homepage';
 // Then import schema types from any plugins that might expose them
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -21,11 +23,13 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
-    homePage,
     introTextHome,
     menuHome,
     openHoursHome,
     contactHome,
     madLib,
+    contact,
+    menu,
+    openHours,
   ]),
 })

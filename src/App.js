@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <header>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Link to="/">Takbaren</Link>
+        <Link to="/">Takbaren Header</Link>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,7 +28,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <Home />
+
     </div>
   );
 }

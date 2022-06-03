@@ -27,8 +27,6 @@ const IntroTextHome = () => {
 
   const [introText] = data;
 
-
-
   //fetch av data 2 olika varianter
 
   // const { data: introText } = useQuery('introTextHome', () => sanity.fetch(query));
@@ -49,8 +47,8 @@ const IntroTextHome = () => {
 
     <>
     
-    <h2>{introText.title}</h2>
-
+    <h2>Introtex: {introText.title}</h2>
+{/* 
 
     <img
         alt={introText.title}
@@ -64,7 +62,7 @@ const IntroTextHome = () => {
             
           />
 
-    <div>Home</div>
+     */}
 
     </>
   )
