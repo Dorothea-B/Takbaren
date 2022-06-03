@@ -1,45 +1,38 @@
-import React from 'react';
-import { Routes, Route, Link } from "react-router-dom"
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 
+// import MadLibList from './Pages/MadLibList';
+// import MadLib from './Pages/MadLib';
 
-import MadLibList from './Pages/MadLibList';
-import MadLib from './Pages/MadLib';
-import NotFound from './Pages/NotFound';
-import styles from './App.module.css';
-import { Home } from './Pages/Home';
-import IntroTextHome from './components/IntroTextHome';
-import OpenHoursHome from './components/OpenHoursHome'
+import Home from "./Pages/Home";
+import Menu from "./Pages/Menu";
+import Contact from "./Pages/Contact";
+import OpenHours from "./Pages/OpenHours";
+import NotFound from "./Pages/NotFound";
+import styles from "./App.module.css";
 
-
-import './App.css';
-
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className={styles.header}>
+      <header>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Link className={styles.headerLink} to="/">
-          Sanity Mad Libs
-        </Link>
-        </header>
-      <IntroTextHome />
-      <OpenHoursHome />
-       <main className={styles.main}>
-       <div className={styles.container}>
-        <Routes>
+        <Link to="/">Takbaren</Link>
+      </header>
+      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/mad-libs/:slug" element={<MadLib />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/openinghours" element={<OpenHours />} />
         <Route path="*" element={<NotFound />} />
+      </Routes>
 
-        </Routes>
-        </div>
-
-    
-
-        </main>
+      <Home />
     </div>
   );
 }
 
 export default App;
+
+/* <Route path="/mad-libs/:slug" element={<MadLib />} /> */
