@@ -1,29 +1,26 @@
 const menuHome = {
-    name: 'menuhome',
-    title: 'Menu Home',
-    type: 'document',
-    fields: [
+  title: "Menu Home",
+  name: "menuHome",
+  type: "document",
+  fields: [
+    {
+      title: "Menu Title",
+      name: "menuTitle",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Description One",
+      name: "descriptionOne",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Description Two",
+      name: "descriptionTwo",
+      type: "string",
+    },
+  ],
+};
 
-      {
-        title: 'Menu Title',
-        name: 'menutitle',
-        type: 'string',
-        validation: (Rule) => Rule.required(),
-      },
-      {
-        title: 'Description One',
-        name: 'descriptionone',
-        type: 'string',
-        validation: (Rule) => Rule.required(),
-      },
-      {
-        title: 'Description Two',
-        name: 'descriptiontwo',
-        type: 'string',
-        validation: Rule => Rule.required()
-      }
-      
-    ],
-  };
-  
-  export default menuHome;
+export default menuHome;

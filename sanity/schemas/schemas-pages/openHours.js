@@ -1,33 +1,29 @@
 const openHours = {
-   
-
-  name: 'openhours',
-  title: 'Opening Hours',
-  type: 'document',
+  title: "Opening Hours",
+  name: "openHours",
+  type: "document",
   fields: [
     {
-      title: 'Title',
-      name: 'title',
-      type: 'string',
+      title: "Title",
+      name: "title",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
 
     {
-      title: 'Description',
-      name: 'description',
-      type: 'string',
+      title: "Description",
+      name: "description",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
 
     {
-      title: 'Weather Title',
-      name: 'weatherTitle',
-      type: 'string',
+      title: "Weather Title",
+      name: "weatherTitle",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
-  ]
+  ],
+};
 
-
-  };
-  
-  export default openHours;
+export default openHours;

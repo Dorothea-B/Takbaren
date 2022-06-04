@@ -11,15 +11,15 @@ import WeatherHome from "../components/WeatherHome";
 
 const Home = () => {
   return (
-    <div>
-      {/* <HeaderHome /> */}
+    <section>
+      <HeaderHome />
       <IntroTextHome />
       <OpenHoursHome />
       <MenuHome />
       <WeatherHome />
       <SocialMediaHome />
       <ContactHome />
-    </div>
+    </section>
   );
 };
 

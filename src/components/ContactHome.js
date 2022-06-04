@@ -1,16 +1,14 @@
 import React from "react";
 
-import { useQuery } from 'react-query';
-import { sanity, imageUrlBuilder } from '../sanity';
-
+import { useQuery } from "react-query";
+import { sanity } from "../sanity";
 
 const query = `
   *[ _type == 'contactHome' ] { title, number, mail }
 `;
 
 const ContactHome = () => {
-
-  const { data = [] } = useQuery('contactHome', () => sanity.fetch(query));
+  const { data = [] } = useQuery("contactHome", () => sanity.fetch(query));
 
   const [contactHome] = data;
 
@@ -19,16 +17,11 @@ const ContactHome = () => {
   }
 
   return (
-    
     <div>
-
-    <p>{contactHome.title}</p>
-    <p>{contactHome.number}</p>
-    <p>{contactHome.mail}</p>
-  
+      <p>{contactHome.title}</p>
+      <p>{contactHome.number}</p>
+      <p>{contactHome.mail}</p>
     </div>
-
-  )
-  
+  );
 };
 export default ContactHome;

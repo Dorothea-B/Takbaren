@@ -5,12 +5,12 @@ import { Routes, Route, Link } from "react-router-dom";
 // import MadLib from './Pages/MadLib';
 
 import Home from "./Pages/Home";
-import NavBarHome from "./components/NavBarHome"
+import NavBarHome from "./components/NavBarHome";
 import Menu from "./Pages/Menu";
 import Contact from "./Pages/Contact";
 import OpenHours from "./Pages/OpenHours";
 import NotFound from "./Pages/NotFound";
-import styles from "./App.module.css";
+// import styles from "./App.module.css";
 
 import "./App.css";
 
@@ -29,8 +29,6 @@ function App() {
         <Route path="/openinghours" element={<OpenHours />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-
-
     </div>
   );
 }

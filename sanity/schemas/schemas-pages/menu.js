@@ -1,18 +1,15 @@
 const menu = {
-   
-
-  name: 'menu',
-  title: 'Menu',
-  type: 'document',
+  title: "Menu",
+  name: "menu",
+  type: "document",
   fields: [
     {
-      title: 'Title',
-      name: 'title',
-      type: 'string',
+      title: "Title",
+      name: "title",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
-  ]
+  ],
+};
 
-  };
-  
-  export default menu;
+export default menu;

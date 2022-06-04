@@ -1,7 +1,7 @@
 import React from "react";
 
 const WeatherHome = () => {
-  return <div>The Weather component</div>;
+  return <section>The Weather component</section>;
 };
 
 export default WeatherHome;
