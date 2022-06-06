@@ -1,25 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 //import { queryCache } from 'react-query'
 
-
-import { persistQueryClient } from 'react-query/persistQueryClient-experimental'
-import { createWebStoragePersistor } from 'react-query/createWebStoragePersistor-experimental'
- 
+import { persistQueryClient } from "react-query/persistQueryClient-experimental";
+import { createWebStoragePersistor } from "react-query/createWebStoragePersistor-experimental";
 
 //import { persistWithLocalStorage } from 'react-query/persist-localstorage-experimental';
 
-import 'modern-css-reset';
-import './index.css';
-import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration'
-import reportWebVitals from './reportWebVitals'
+import "modern-css-reset";
+import "./index.css";
+import App from "./App";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
 
-import setupNotifications from './setupNotifications'
-
-
+import setupNotifications from "./setupNotifications";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,33 +25,28 @@ const queryClient = new QueryClient({
   },
 });
 
-
-
-
-const localStoragePersistor = createWebStoragePersistor({storage: window.localStorage})
+const localStoragePersistor = createWebStoragePersistor({
+  storage: window.localStorage,
+});
 
 persistQueryClient({
   queryClient,
   persistor: localStoragePersistor,
-})
+});
 
 createWebStoragePersistor(queryClient);
 
 //OLD TEMPLATE RENDER SYNTAX
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-    <App />
-    </BrowserRouter>
+        <App />
+      </BrowserRouter>
     </QueryClientProvider>
-
   </React.StrictMode>
 );
-
-
-
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -67,10 +58,6 @@ root.render(
 //   </React.StrictMode>,
 //   document.getElementById('root'),
 // );
-
-
-
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

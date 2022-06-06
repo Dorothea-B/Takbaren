@@ -22,7 +22,8 @@ code {
     monospace;
 }
 
-.nav {
+/* ----------------------- NAVBAR ----------------------- */
+nav {
   background-color: var(--clr-grey);
   color: var(--clr-pink);
   display: flex;
@@ -31,7 +32,7 @@ code {
   padding: 0.5rem;
 }
 
-.nav ul {
+nav ul {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -39,7 +40,7 @@ code {
   gap: 1rem;
 }
 
-.nav a {
+nav a {
   color: inherit;
   text-transform: uppercase;
   text-decoration: none;
@@ -63,4 +64,4 @@ li a:hover:after {
   color: var(--clr-pink) !important;
 }
 
-/*  font styling fix - styled components?  */
+/*  font, styling fix  */
