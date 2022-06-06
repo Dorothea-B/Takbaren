@@ -24,10 +24,10 @@ const Weather = () => {
 };
 
 const customStyles = {
-	fontFamily: 'Helvetica, sans-serif',
-	gradientStart: '#0181C2',
-	gradientMid: '#04A7F9',
-	gradientEnd: '#4BC4F7',
+	fontFamily: 'Avenir',
+	gradientStart: '#E5E5E5',
+	gradientMid: '#F6BDAC',
+	gradientEnd: '#DAA79D',
 	locationFontColor: '#FFF',
 	todayTempFontColor: '#FFF',
 	todayDateFontColor: '#B5DEF4',
