@@ -8,7 +8,7 @@ const Weather = () => {
 		lat: '57.64188017795392',
 		lon: '18.292565198468033',
 		lang: 'en',
-		unit: 'metric', // values are (metric, standard, imperial)
+		unit: 'metric', 
 	});
 	return (
 		<ReactWeather
@@ -28,19 +28,19 @@ const customStyles = {
 	gradientStart: '#E5E5E5',
 	gradientMid: '#F6BDAC',
 	gradientEnd: '#DAA79D',
-	locationFontColor: '#FFF',
-	todayTempFontColor: '#FFF',
-	todayDateFontColor: '#B5DEF4',
-	todayRangeFontColor: '#B5DEF4',
-	todayDescFontColor: '#B5DEF4',
-	todayInfoFontColor: '#B5DEF4',
-	todayIconColor: '#FFF',
+	locationFontColor: '#000000',
+	todayTempFontColor: '#000000',
+	todayDateFontColor: '#000000',
+	todayRangeFontColor: '#000000',
+	todayDescFontColor: '#000000',
+	todayInfoFontColor: '#000000',
+	todayIconColor: '#000000',
 	forecastBackgroundColor: '#FFF',
 	forecastSeparatorColor: '#DDD',
-	forecastDateColor: '#777',
-	forecastDescColor: '#777',
-	forecastRangeColor: '#777',
-	forecastIconColor: '#4BC4F7',
+	forecastDateColor: '#000000',
+	forecastDescColor: '#000000',
+	forecastRangeColor: '#000000',
+	forecastIconColor: '#000000',
 };
 
 <ReactWeather theme={customStyles} />;
