@@ -6,6 +6,8 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import Home from "./Pages/Home";
 import NavBarHome from "./components/NavBarHome";
+// import MobileBurgerNavBar from "./components/MobileBurgerNavBar";
+import MobileNavBar from "./components/MobileNavBar";
 import Menu from "./Pages/Menu";
 import Contact from "./Pages/Contact";
 import OpenHours from "./Pages/OpenHours";
@@ -14,13 +16,15 @@ import NotFound from "./Pages/NotFound";
 
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Link to="/">Takbaren Header</Link>
         <NavBarHome />
+        {/* <MobileBurgerNavBar /> */}
+        <MobileNavBar />
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,7 +35,7 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
 

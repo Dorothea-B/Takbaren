@@ -8,6 +8,7 @@ import MenuHome from "../components/MenuHome";
 import OpenHoursHome from "../components/OpenHoursHome";
 import SocialMediaHome from "../components/SocialMediaHome";
 import WeatherHome from "../components/WeatherHome";
+import ScrollUpBtn from "../components/ScrollUpBtn";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <WeatherHome />
       <SocialMediaHome />
       <ContactHome />
+      <ScrollUpBtn />
     </section>
   );
 };
