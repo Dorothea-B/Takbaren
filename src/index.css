@@ -64,4 +64,10 @@ li a:hover:after {
   color: var(--clr-pink) !important;
 }
 
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+}
+
 /*  font, styling fix  */
