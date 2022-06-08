@@ -4,7 +4,11 @@ import styled from "styled-components/macro";
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
-import { HeadingDark, SubHeadingLight } from "../globalStyleComponents";
+import {
+  HeadingDark,
+  SubHeadingLight,
+  SubHeadingRed,
+} from "../globalStyleComponents";
 
 const query = `
   *[ _type == 'openHoursHome' ] { title, description }
@@ -22,7 +26,7 @@ const OpenHoursHome = () => {
   return (
     <section>
       <HeadingDark>{openHoursHome.title}</HeadingDark>
-      <SubHeadingLight>{openHoursHome.description}</SubHeadingLight>
+      <SubHeadingRed>{openHoursHome.description}</SubHeadingRed>
     </section>
   );
 };

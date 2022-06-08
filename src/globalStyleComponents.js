@@ -16,6 +16,11 @@ export const SubHeading = styled.h3`
 
 export const RegularText = styled.p`
   font-family: "Poppins", sans-serif;
+  font-size: 12px;
+`;
+
+export const VerySmallText = styled(RegularText)`
+  font-size: 8px;
 `;
 
 export const HeadingDark = styled(Heading)`
@@ -24,6 +29,14 @@ export const HeadingDark = styled(Heading)`
 
 export const SubHeadingLight = styled(SubHeading)`
   color: var(--clr-white);
+`;
+
+export const SubHeadingDark = styled(SubHeading)`
+  color: var(--clr-grey);
+`;
+
+export const SubHeadingRed = styled(SubHeading)`
+  color: var(--clr-dark);
 `;
 
 export const LightText = styled(RegularText)`

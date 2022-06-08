@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components/macro";
 import "../index.css";
 
+import Arrow from "../assets/Arrow-up.png";
+
 const ScrollUpBtn = () => {
   const handleScrollUp = () => {
     window.scrollTo({
@@ -13,7 +15,9 @@ const ScrollUpBtn = () => {
 
   return (
     <div>
-      <ScrollUp onClick={handleScrollUp}>UP</ScrollUp>
+      <ScrollUp onClick={handleScrollUp}>
+        <img src={Arrow} />
+      </ScrollUp>
     </div>
   );
 };
@@ -25,7 +29,7 @@ const ScrollUp = styled.button`
   color: var(--clr-white);
   cursor: pointer;
   border: none;
-  padding: 1rem;
+  padding: 0.8rem;
   border-radius: 25px;
   width: 50px;
   height: 50px;
