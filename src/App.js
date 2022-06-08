@@ -1,11 +1,12 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // import WeatherApp from "./components/WeatherApp";
 
 // import MadLibList from './Pages/MadLibList';
 // import MadLib from './Pages/MadLib';
 
 import Home from "./Pages/Home";
+import HeaderHome from "./components/HeaderHome";
 import NavBarHome from "./components/NavBarHome";
 import MobileNavBar from "./components/MobileNavBar";
 import Menu from "./Pages/Menu";
@@ -21,9 +22,8 @@ const App = () => {
     <div className="App">
       <header>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Link to="/">Takbaren Header</Link>
+        <HeaderHome />
         <NavBarHome />
-        {/* <MobileBurgerNavBar /> */}
         <MobileNavBar />
       </header>
       <Routes>

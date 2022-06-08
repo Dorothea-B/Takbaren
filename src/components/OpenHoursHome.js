@@ -1,7 +1,10 @@
 import React from "react";
+import styled from "styled-components/macro";
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
+
+import { HeadingDark, SubHeadingLight } from "../globalStyleComponents";
 
 const query = `
   *[ _type == 'openHoursHome' ] { title, description }
@@ -18,8 +21,8 @@ const OpenHoursHome = () => {
 
   return (
     <section>
-      <h2>{openHoursHome.title}</h2>
-      <p>{openHoursHome.description}</p>
+      <HeadingDark>{openHoursHome.title}</HeadingDark>
+      <SubHeadingLight>{openHoursHome.description}</SubHeadingLight>
     </section>
   );
 };

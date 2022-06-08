@@ -7,7 +7,6 @@ const contact = {
       title: "Title",
       name: "title",
       type: "string",
-      validation: (Rule) => Rule.required(),
     },
 
     {

@@ -138,7 +138,7 @@ const NavBar = styled.nav`
     flex-direction: column;
     justify-content: center;
     background-color: var(--clr-grey);
-    color: var(--clr-pink);
+    color: var(--clr-light);
     transform: ${({ toggle }) =>
       toggle ? "translateX(0)" : "translateX(-100%)"};
     height: 100vh;

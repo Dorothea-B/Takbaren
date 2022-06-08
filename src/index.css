@@ -1,8 +1,8 @@
 :root {
   --clr-white: #fff;
-  --clr-black: #000
+  --clr-black: #000;
   --clr-grey: #343b3f;
-  --clr-dark: #6F1132
+  --clr-dark: #6f1132;
   --clr-light: #f6bdac;
 }
 
@@ -12,15 +12,23 @@
 
 body {
   margin: 0;
-  /* font-family:"Playfair Display", serif; */
+  font-family: "Playfair Display", serif;
+  background-color: var(--clr-light);
+  background-image: url("./assets/Background.png");
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
 }
 
 /* ----------------------- NAVBAR ----------------------- */
 nav {
   background-color: var(--clr-grey);
   color: var(--clr-light);
+  font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;

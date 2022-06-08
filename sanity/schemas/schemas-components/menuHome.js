@@ -7,18 +7,21 @@ const menuHome = {
       title: "Menu Title",
       name: "menuTitle",
       type: "string",
-      validation: (Rule) => Rule.required(),
     },
     {
       title: "Description One",
       name: "descriptionOne",
       type: "string",
-      validation: (Rule) => Rule.required(),
     },
     {
       title: "Description Two",
       name: "descriptionTwo",
       type: "string",
+    },
+    {
+      title: "Image",
+      name: "image",
+      type: "image",
     },
   ],
 };

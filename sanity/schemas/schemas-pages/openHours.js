@@ -7,21 +7,23 @@ const openHours = {
       title: "Title",
       name: "title",
       type: "string",
-      validation: (Rule) => Rule.required(),
     },
 
     {
       title: "Description",
       name: "description",
       type: "string",
-      validation: (Rule) => Rule.required(),
     },
 
     {
       title: "Weather Title",
       name: "weatherTitle",
       type: "string",
-      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Weather Description",
+      name: "weatherDescription",
+      type: "string",
     },
   ],
 };
