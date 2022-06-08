@@ -7,7 +7,7 @@ import IntroTextHome from "../components/IntroTextHome";
 import MenuHome from "../components/MenuHome";
 import OpenHoursHome from "../components/OpenHoursHome";
 import SocialMediaHome from "../components/SocialMediaHome";
-import WeatherHome from "../components/WeatherHome";
+// import WeatherHome from "../components/WeatherHome";
 import ScrollUpBtn from "../components/ScrollUpBtn";
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
       <IntroTextHome />
       <OpenHoursHome />
       <MenuHome />
-      <WeatherHome />
+      {/* <WeatherHome /> */}
       <SocialMediaHome />
       <ContactHome />
       <ScrollUpBtn />

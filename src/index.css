@@ -1,7 +1,9 @@
 :root {
   --clr-white: #fff;
+  --clr-black: #000
   --clr-grey: #343b3f;
-  --clr-pink: #f6bdac;
+  --clr-dark: #6F1132
+  --clr-light: #f6bdac;
 }
 
 * {
@@ -10,22 +12,15 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  /* font-family:"Playfair Display", serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 /* ----------------------- NAVBAR ----------------------- */
 nav {
   background-color: var(--clr-grey);
-  color: var(--clr-pink);
+  color: var(--clr-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +45,7 @@ li a:after {
   content: "";
   display: block;
   height: 1.5px;
-  background: var(--clr-pink);
+  background: var(--clr-light);
   transform: scaleX(0);
   transition: transform 0.3s;
 }
@@ -61,7 +56,7 @@ li a:hover:after {
 }
 
 .active {
-  color: var(--clr-pink) !important;
+  color: var(--clr-light) !important;
 }
 
 @media (max-width: 768px) {

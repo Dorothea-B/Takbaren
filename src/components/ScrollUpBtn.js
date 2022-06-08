@@ -22,7 +22,7 @@ export default ScrollUpBtn;
 
 const ScrollUp = styled.button`
   background-color: var(--clr-grey);
-  color: #fff;
+  color: var(--clr-white);
   cursor: pointer;
   border: none;
   padding: 1rem;

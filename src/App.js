@@ -7,7 +7,6 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import Home from "./Pages/Home";
 import NavBarHome from "./components/NavBarHome";
-// import MobileBurgerNavBar from "./components/MobileBurgerNavBar";
 import MobileNavBar from "./components/MobileNavBar";
 import Menu from "./Pages/Menu";
 import Contact from "./Pages/Contact";
