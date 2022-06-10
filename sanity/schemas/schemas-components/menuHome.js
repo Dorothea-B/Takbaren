@@ -4,11 +4,6 @@ const menuHome = {
   type: "document",
   fields: [
     {
-      title: "Menu Title",
-      name: "menuTitle",
-      type: "string",
-    },
-    {
       title: "Description One",
       name: "descriptionOne",
       type: "string",

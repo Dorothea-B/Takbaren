@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
 import { useQuery } from "react-query";
@@ -8,6 +9,7 @@ import {
   HeadingDark,
   SubHeadingDark,
   SubHeadingRed,
+  SquareBtn,
 } from "../globalStyleComponents";
 
 const query = `
@@ -16,7 +18,7 @@ const query = `
 
 const ContactWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   & > * {
     flex: 1;
   }
@@ -41,6 +43,9 @@ const ContactHome = () => {
       <ContactWrapper>
         <SubHeadingDark>{contactHome.number}</SubHeadingDark>
         <SubHeadingDark>{contactHome.mail}</SubHeadingDark>
+        <Link to="/contact">
+          <SquareBtn>More</SquareBtn>
+        </Link>
       </ContactWrapper>
     </div>
   );
