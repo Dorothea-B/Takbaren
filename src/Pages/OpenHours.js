@@ -29,6 +29,7 @@ const OpenHours = () => {
       <HeadingDark>{openHours.title}</HeadingDark>
       <LightText>{openHours.description}</LightText>
       <SubHeadingLight>{openHours.weatherTitle}</SubHeadingLight>
+      {/* <MapHome /> */}
     </section>
   );
 };
