@@ -1,64 +1,58 @@
-<<<<<<< HEAD
-import react from 'react';
-import styled from 'styled-components/macro';
-import './index.css';
-=======
 import styled from "styled-components/macro";
 import "./index.css";
->>>>>>> styling/menuHome
 
 export const Heading = styled.h1`
-	font-family: 'Playfair Display', serif;
-	text-transform: uppercase;
-	font-size: 2em;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  font-size: 2em;
 `;
 
 export const SubHeading = styled.h3`
-	font-family: 'Playfair Display', serif;
-	font-size: 1.3em;
-	font-style: italic;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3em;
+  font-style: italic;
 `;
 
 export const RegularText = styled.p`
-	font-family: 'Poppins', sans-serif;
-	font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
 `;
 
 export const VerySmallText = styled(RegularText)`
-	font-size: 8px;
+  font-size: 8px;
 `;
 
 export const HeadingDark = styled(Heading)`
-	color: var(--clr-grey);
+  color: var(--clr-grey);
 `;
 
 export const SubHeadingLight = styled(SubHeading)`
-	color: var(--clr-white);
+  color: var(--clr-white);
 `;
 
 export const SubHeadingDark = styled(SubHeading)`
-	color: var(--clr-grey);
+  color: var(--clr-grey);
 `;
 
 export const SubHeadingRed = styled(SubHeading)`
-	color: var(--clr-dark);
+  color: var(--clr-dark);
 `;
 
 export const LightText = styled(RegularText)`
-	color: var(--clr-white);
+  color: var(--clr-white);
 `;
 
 export const DarkText = styled(RegularText)`
-	color: var(--clr-grey);
+  color: var(--clr-grey);
 `;
 
 export const Button = styled.button`
-	background: transparent;
-	border-radius: 3px;
-	border: 2px solid grey;
-	color: var(--clr-grey);
-	margin: 0 1em;
-	padding: 0.25em 1em;
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid grey;
+  color: var(--clr-grey);
+  margin: 0 1em;
+  padding: 0.25em 1em;
 `;
 // export const heading_dark = styled.h1`
 //   font-family: "Playfair Display", serif;
