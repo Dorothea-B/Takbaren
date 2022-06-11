@@ -8,6 +8,7 @@ import {
   SubHeadingRed,
   RegularText,
   VerySmallText,
+  SquareBtn,
 } from "../globalStyleComponents";
 
 const query = `
@@ -32,7 +33,11 @@ const IntroTextHome = () => {
     <section>
       <HeadingDark>{introText.title}</HeadingDark>
       <IntroQuote>{introText.description}</IntroQuote>
-      <VerySmallText>{introText.link}</VerySmallText>
+      {/* <VerySmallText>{introText.link}</VerySmallText> */}
+      <a href={introText.link} target="_blank">
+        {/* fixa med target blank  */}
+        <SquareBtn>Read more</SquareBtn>
+      </a>
     </section>
   );
 };

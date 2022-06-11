@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import "../index.css";
 
@@ -6,7 +7,7 @@ import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
 const query = `
-  *[ _type == 'menuHome' ] { menuTitle, descriptionOne, descriptionTwo, 
+  *[ _type == 'menuHome' ] { descriptionOne, descriptionTwo, 
     "image": image.asset->{url} }
 `;
 
@@ -21,16 +22,21 @@ const MenuHome = () => {
 
   return (
     <MenuSection>
-      <h2>{menuHome.menuTitle}</h2>
       <ImageDiv>
         <Img src={menuHome.image.url} />
         <DescriptionDiv>
-          <DesOne>
-            <P>{menuHome.descriptionOne}</P>
-          </DesOne>
-          <DesTwo>
-            <P>{menuHome.descriptionTwo}</P>
-          </DesTwo>
+          <Description>
+            <Link to="/menu">
+              <OverlayFood>
+                <P>{menuHome.descriptionOne}</P>
+              </OverlayFood>
+            </Link>
+            <Link to="/menu">
+              <OverlayDrinks>
+                <P>{menuHome.descriptionTwo}</P>
+              </OverlayDrinks>
+            </Link>
+          </Description>
         </DescriptionDiv>
       </ImageDiv>
     </MenuSection>
@@ -50,7 +56,7 @@ const ImageDiv = styled.div`
 `;
 
 const Img = styled.img`
-  max-width: 600px;
+  width: 100%;
 `;
 
 const DescriptionDiv = styled.div`
@@ -58,20 +64,73 @@ const DescriptionDiv = styled.div`
   justify-content: space-around;
 `;
 
-const DesOne = styled.div`
+const Description = styled.div`
   position: absolute;
-  bottom: 200px;
-  right: 400px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 `;
 
-const DesTwo = styled.div`
+const OverlayFood = styled.div`
   position: absolute;
-  bottom: 200px;
-  left: 400px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    background-color: rgba(52, 59, 63, 0.4);
+    background-blend-mode: multiply;
+  }
+
+  @media (min-width: 1024px) {
+    transition-duration: 0.2s;
+    background-color: rgba(52, 59, 63, 0.4);
+    background-blend-mode: multiply;
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+      background-color: rgba(52, 59, 63, 0.4);
+      background-blend-mode: multiply;
+    }
+  }
+`;
+
+const OverlayDrinks = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* left: 194px; */
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+      background-color: rgba(52, 59, 63, 0.4);
+      background-blend-mode: multiply;
+    }
+  }
 `;
 
 const P = styled.p`
   color: var(--clr-white);
   text-transform: uppercase;
-  font-size: 32px;
+  font-size: 28px;
+  text-decoration: none;
+
+  @media (min-width: 1024px) {
+    font-size: 2em;
+  }
 `;

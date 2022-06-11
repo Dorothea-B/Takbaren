@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import react from 'react';
 import styled from 'styled-components/macro';
 import './index.css';
+=======
+import styled from "styled-components/macro";
+import "./index.css";
+>>>>>>> styling/menuHome
 
 export const Heading = styled.h1`
 	font-family: 'Playfair Display', serif;
@@ -70,3 +75,31 @@ export const Button = styled.button`
 //   font-family: "Poppins", sans-serif;
 //   color: var(--clr-grey);
 // `;
+
+export const RoundBtn = styled.button`
+  background-color: var(--clr-grey);
+  color: var(--clr-white);
+  cursor: pointer;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  margin: 1rem;
+  box-shadow: (rgba(0, 0, 0, 0.25));
+`;
+
+export const SquareBtn = styled.button`
+  background-color: var(--clr-medium);
+  color: var(--clr-white);
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  width: 250px;
+  /* osäker på width */
+`;

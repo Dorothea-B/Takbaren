@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
@@ -8,6 +8,7 @@ import {
   HeadingDark,
   SubHeadingLight,
   SubHeadingRed,
+  SquareBtn,
 } from "../globalStyleComponents";
 
 const query = `
@@ -27,6 +28,9 @@ const OpenHoursHome = () => {
     <section>
       <HeadingDark>{openHoursHome.title}</HeadingDark>
       <SubHeadingRed>{openHoursHome.description}</SubHeadingRed>
+      <Link to="/openinghours">
+        <SquareBtn>More</SquareBtn>
+      </Link>
     </section>
   );
 };

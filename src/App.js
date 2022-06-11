@@ -8,7 +8,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import HeaderHome from "./components/HeaderHome";
 import NavBarHome from "./components/NavBarHome";
-import MobileNavBar from "./components/MobileNavBar";
 import Menu from "./Pages/Menu";
 import Contact from "./Pages/Contact";
 import OpenHours from "./Pages/OpenHours";
@@ -24,7 +23,6 @@ const App = () => {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <HeaderHome />
         <NavBarHome />
-        <MobileNavBar />
       </header>
       <Routes>
         <Route path="/" element={<Home />} />

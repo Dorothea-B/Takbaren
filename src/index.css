@@ -1,9 +1,19 @@
 :root {
+<<<<<<< HEAD
 	--clr-white: #fff;
 	--clr-black: #000;
 	--clr-grey: #343b3f;
 	--clr-dark: #6f1132;
 	--clr-light: #f6bdac;
+=======
+  --clr-white: #f7f6f0;
+  --clr-black: #000;
+  --clr-grey: #343b3f;
+  --clr-dark: #6f1132;
+  --clr-medium: #daa79d;
+  --clr-light: #f6bdac;
+  --clr-accent: ##f4dba9;
+>>>>>>> styling/menuHome
 }
 
 * {
@@ -19,6 +29,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+<<<<<<< HEAD
 /*This styling is for the weather*/
 .rw-container-main {
 	background-color: transparent;
@@ -81,6 +92,14 @@ li a:hover:after {
 	nav {
 		display: none;
 	}
+=======
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/*  font, styling fix  */
+.logo {
+  display: flex;
+  justify-content: center;
+>>>>>>> styling/menuHome
+}

@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "styled-components/macro";
-import "../index.css";
+
+import { RoundBtn } from "../globalStyleComponents";
 
 import Arrow from "../assets/Arrow-up.png";
 
@@ -15,23 +15,11 @@ const ScrollUpBtn = () => {
 
   return (
     <div>
-      <ScrollUp onClick={handleScrollUp}>
-        <img src={Arrow} />
-      </ScrollUp>
+      <RoundBtn onClick={handleScrollUp}>
+        <img src={Arrow} alt="arrow-up" />
+      </RoundBtn>
     </div>
   );
 };
 
 export default ScrollUpBtn;
-
-const ScrollUp = styled.button`
-  background-color: var(--clr-grey);
-  color: var(--clr-white);
-  cursor: pointer;
-  border: none;
-  padding: 0.8rem;
-  border-radius: 25px;
-  width: 50px;
-  height: 50px;
-  margin: 1rem;
-`;
