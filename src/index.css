@@ -1,47 +1,52 @@
 :root {
-  --clr-white: #f7f6f0;
-  --clr-black: #000;
-  --clr-grey: #343b3f;
-  --clr-dark: #6f1132;
-  --clr-medium: #daa79d;
-  --clr-light: #f6bdac;
-  --clr-accent: ##f4dba9;
+	--clr-white: #f7f6f0;
+	--clr-black: #000;
+	--clr-grey: #343b3f;
+	--clr-dark: #6f1132;
+	--clr-medium: #daa79d;
+	--clr-light: #f6bdac;
+	--clr-accent: ##f4dba9;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: "Playfair Display", serif;
-  background-color: var(--clr-light);
-  background-image: url("./assets/Background.png");
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: 'Playfair Display', serif;
+	background-color: var(--clr-light);
+	background-image: url('./assets/Background.png');
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /*This styling is for the weather*/
 .rw-container-main {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 .right-0-2-5 {
-  background-color: #f6bdac00;
+	background-color: #f6bdac00;
 }
 /*This styling is for the weather ends here*/
 
+/*This styling is for the map*/
+.map-container {
+	height: 400px;
+}
+
 .logo {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 .logo {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
