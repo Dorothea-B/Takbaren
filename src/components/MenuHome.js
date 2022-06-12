@@ -28,11 +28,14 @@ const MenuHome = () => {
         <Img src={menuHome.image.url} />
         <Link to="/menu">
           <OverlayFood>
+            <Dark></Dark>
             <P>{menuHome.descriptionOne}</P>
           </OverlayFood>
         </Link>
         <Link to="/menu">
           <OverlayDrinks>
+          <Dark></Dark>
+          <DarkMobile></DarkMobile>
             <P>{menuHome.descriptionTwo}</P>
           </OverlayDrinks>
         </Link>
@@ -58,7 +61,7 @@ const OverlayFood = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 1024px) {
+  /* @media (max-width: 1024px) {
     background-color: rgba(52, 59, 63, 0.4);
     background-blend-mode: multiply;
   }
@@ -74,8 +77,56 @@ const OverlayFood = styled.div`
       background-color: rgba(52, 59, 63, 0.4);
       background-blend-mode: multiply;
     }
-  }
+  } */
 `;
+
+const Dark = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(52, 59, 63, 0.4);
+  background-blend-mode: multiply;
+  transition-duration: 0.2s;
+  opacity: 0;
+  z-index: 100;
+
+
+  @media (min-width: 1024px) {
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+      
+    }
+  }
+`
+const DarkMobile = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(52, 59, 63, 0.4);
+  background-blend-mode: multiply;
+  transition-duration: 0.2s;
+  opacity: 1;
+  z-index: 50;
+
+
+  @media (min-width: 1024px) {
+    opacity: 0;
+
+  }
+`
+
 
 const OverlayDrinks = styled.div`
   position: absolute;
@@ -88,7 +139,7 @@ const OverlayDrinks = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 1024px) {
+  /* @media (min-width: 1024px) {
     opacity: 0;
 
     &:hover {
@@ -96,7 +147,7 @@ const OverlayDrinks = styled.div`
       background-color: rgba(52, 59, 63, 0.4);
       background-blend-mode: multiply;
     }
-  }
+  } */
 `;
 
 const P = styled.p`
@@ -104,6 +155,7 @@ const P = styled.p`
   text-transform: uppercase;
   font-size: 28px;
   text-decoration: none;
+  z-index: 500;
 
   @media (min-width: 1024px) {
     font-size: 2em;
