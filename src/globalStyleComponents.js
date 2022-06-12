@@ -26,6 +26,11 @@ export const HeadingDark = styled(Heading)`
   color: var(--clr-grey);
 `;
 
+export const PagesHeading = styled(Heading)`
+  color: var(--clr-white);
+  border-block-end: 2px solid var(--clr-white);
+`;
+
 export const SubHeadingLight = styled(SubHeading)`
   color: var(--clr-white);
 `;
@@ -44,6 +49,41 @@ export const LightText = styled(RegularText)`
 
 export const DarkText = styled(RegularText)`
   color: var(--clr-grey);
+`;
+
+export const ImageDiv = styled.div`
+  position: relative;
+`;
+
+export const ImageText = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const PagesWrapper = styled.div`
+  width: calc(100% - 30px);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PagesImageOverlay = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(52, 59, 63, 0.4);
+  background-blend-mode: multiply;
 `;
 
 export const Button = styled.button`

@@ -8,7 +8,11 @@ const contact = {
       name: "title",
       type: "string",
     },
-
+    {
+      title: "Image",
+      name: "image",
+      type: "image",
+    },
     {
       title: "Telephone Number",
       name: "number",

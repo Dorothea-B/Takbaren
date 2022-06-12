@@ -1,62 +1,51 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 //import { queryCache } from 'react-query'
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { persistQueryClient } from 'react-query/persistQueryClient-experimental';
-import { createWebStoragePersistor } from 'react-query/createWebStoragePersistor-experimental';
+import "mapbox-gl/dist/mapbox-gl.css";
+import { persistQueryClient } from "react-query/persistQueryClient-experimental";
+import { createWebStoragePersistor } from "react-query/createWebStoragePersistor-experimental";
 
 //import { persistWithLocalStorage } from 'react-query/persist-localstorage-experimental';
 
-import 'modern-css-reset';
-import './index.css';
-import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
+import "modern-css-reset";
+import "./index.css";
+import App from "./App";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
 
-import setupNotifications from './setupNotifications';
+import setupNotifications from "./setupNotifications";
 
 const queryClient = new QueryClient({
-	defaultOptions: {
-		queries: {
-			cacheTime: 1000 * 60 * 60 * 24, // 24 hours
-		},
-	},
+  defaultOptions: {
+    queries: {
+      cacheTime: 1000 * 60 * 60 * 24, // 24 hours
+    },
+  },
 });
 
 const localStoragePersistor = createWebStoragePersistor({
-	storage: window.localStorage,
+  storage: window.localStorage,
 });
 
 persistQueryClient({
-	queryClient,
-	persistor: localStoragePersistor,
+  queryClient,
+  persistor: localStoragePersistor,
 });
 
 createWebStoragePersistor(queryClient);
 
 //OLD TEMPLATE RENDER SYNTAX
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<React.StrictMode>
-		<QueryClientProvider client={queryClient}>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</QueryClientProvider>
-	</React.StrictMode>
-);
-
-ReactDOM.render(
-	<React.StrictMode>
-		<QueryClientProvider client={queryClient}>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</QueryClientProvider>
-	</React.StrictMode>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryClientProvider>
+  </React.StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change

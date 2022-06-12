@@ -6,6 +6,8 @@ import "../index.css";
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
+import { ImageDiv } from "../globalStyleComponents";
+
 const query = `
   *[ _type == 'menuHome' ] { descriptionOne, descriptionTwo, 
     "image": image.asset->{url} }
@@ -21,55 +23,28 @@ const MenuHome = () => {
   }
 
   return (
-    <MenuSection>
+    <section>
       <ImageDiv>
         <Img src={menuHome.image.url} />
-        <DescriptionDiv>
-          <Description>
-            <Link to="/menu">
-              <OverlayFood>
-                <P>{menuHome.descriptionOne}</P>
-              </OverlayFood>
-            </Link>
-            <Link to="/menu">
-              <OverlayDrinks>
-                <P>{menuHome.descriptionTwo}</P>
-              </OverlayDrinks>
-            </Link>
-          </Description>
-        </DescriptionDiv>
+        <Link to="/menu">
+          <OverlayFood>
+            <P>{menuHome.descriptionOne}</P>
+          </OverlayFood>
+        </Link>
+        <Link to="/menu">
+          <OverlayDrinks>
+            <P>{menuHome.descriptionTwo}</P>
+          </OverlayDrinks>
+        </Link>
       </ImageDiv>
-    </MenuSection>
+    </section>
   );
 };
 
 export default MenuHome;
 
-const MenuSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ImageDiv = styled.div`
-  position: relative;
-`;
-
 const Img = styled.img`
   width: 100%;
-`;
-
-const DescriptionDiv = styled.div`
-  display: flex;
-  justify-content: space-around;
-`;
-
-const Description = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 `;
 
 const OverlayFood = styled.div`

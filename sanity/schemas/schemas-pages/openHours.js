@@ -8,7 +8,11 @@ const openHours = {
       name: "title",
       type: "string",
     },
-
+    {
+      title: "Image",
+      name: "image",
+      type: "image",
+    },
     {
       title: "Description",
       name: "description",

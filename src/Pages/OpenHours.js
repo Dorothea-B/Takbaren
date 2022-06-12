@@ -1,18 +1,26 @@
 import React from "react";
+import styled from "styled-components/macro";
+import "../index.css";
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
 import {
-  HeadingDark,
-  SubHeading,
-  SubHeadingLight,
-  LightText,
+  PagesHeading,
+  SubHeadingDark,
   DarkText,
+  ImageDiv,
+  ImageText,
+  PagesImageOverlay,
+  PagesWrapper,
 } from "../globalStyleComponents";
 
+import { CardLight } from "../Pages/Home";
+
 const query = `
-  *[ _type == 'openHours' ] { title, description, weatherTitle }
+  *[ _type == 'openHours' ] { title, 
+    "image": image.asset->{url},
+    description, weatherTitle, weatherDescription }
 `;
 
 const OpenHours = () => {
@@ -25,12 +33,21 @@ const OpenHours = () => {
   }
 
   return (
-    <section>
-      <HeadingDark>{openHours.title}</HeadingDark>
-      <LightText>{openHours.description}</LightText>
-      <SubHeadingLight>{openHours.weatherTitle}</SubHeadingLight>
-      {/* <MapHome /> */}
-    </section>
+    <PagesWrapper>
+      <ImageDiv>
+        <PagesImageOverlay></PagesImageOverlay>
+        <ImageText>
+          <PagesHeading>{openHours.title}</PagesHeading>
+        </ImageText>
+        <img src={openHours.image.url} />
+      </ImageDiv>
+      <CardLight>
+        <DarkText>{openHours.description}</DarkText>
+        <SubHeadingDark>{openHours.weatherTitle}</SubHeadingDark>
+        <DarkText>{openHours.weatherDescription}</DarkText>
+        {/* <MapHome /> */}
+      </CardLight>
+    </PagesWrapper>
   );
 };
 

@@ -31,7 +31,7 @@ const IntroTextHome = () => {
 
   return (
     <section>
-      <HeadingDark>{introText.title}</HeadingDark>
+      <p>{introText.title}</p>
       <IntroQuote>{introText.description}</IntroQuote>
       {/* <VerySmallText>{introText.link}</VerySmallText> */}
       <a href={introText.link} target="_blank">
