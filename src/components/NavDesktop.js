@@ -32,6 +32,13 @@ const NavList = styled.ul`
   gap: 3rem;
   text-transform: uppercase;
   color: var(--clr-light);
+  justify-content: center;
+  /* se efter hur det ser ut i mobil */
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    /* se efter hur det ser ut i mobil */
+  }
 
   li a:after {
     content: "";

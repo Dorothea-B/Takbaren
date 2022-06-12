@@ -10,7 +10,6 @@ import MenuHome from "../components/MenuHome";
 import OpenHoursHome from "../components/OpenHoursHome";
 import SocialMediaHome from "../components/SocialMediaHome";
 import WeatherApp from "../components/WeatherApp";
-import ScrollUpBtn from "../components/ScrollUpBtn";
 import HeaderImg from "../assets/Header-img.jpg";
 // import MapHome from '../components/MapHome';
 
@@ -30,7 +29,7 @@ const HomePageWrapper = styled.div`
   }
 `;
 
-const CardLight = styled.div`
+export const CardLight = styled.div`
   background-color: var(--clr-white);
   padding: 2rem;
   width: 100%;
@@ -40,7 +39,6 @@ const Home = () => {
   return (
     <section>
       <img src={HeaderImg} alt="header" />
-      <h1>how fast can you see this?</h1>
       <HomePageWrapper>
         <CardLight>
           <IntroTextHome />
@@ -57,8 +55,6 @@ const Home = () => {
           <ContactHome />
         </CardLight>
       </HomePageWrapper>
-
-      <ScrollUpBtn />
     </section>
   );
 };
