@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from 'react';
+
 import { Routes, Route } from "react-router-dom";
+
 // import WeatherApp from "./components/WeatherApp";
 
 // import MadLibList from './Pages/MadLibList';
@@ -18,6 +20,8 @@ import ScrollUpBtn from "./components/ScrollUpBtn";
 import "./App.css";
 
 const App = () => {
+
+
   return (
     <div className="App">
       <header>
@@ -32,7 +36,9 @@ const App = () => {
         <Route path="/openinghours" element={<OpenHours />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+
       <ScrollUpBtn />
+
     </div>
   );
 };

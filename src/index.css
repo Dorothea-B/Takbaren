@@ -33,7 +33,9 @@ body {
 
 /*This styling is for the map*/
 .map-container {
+	display: flex;
 	height: 400px;
+	width: calc(100vw - 40px);
 }
 
 .logo {
