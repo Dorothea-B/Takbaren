@@ -14,7 +14,7 @@
 
 body {
 	margin: 0;
-	font-family: 'Playfair Display', serif;
+	/* font-family: 'Playfair Display', serif; */
 	background-color: var(--clr-light);
 	background-image: url('./assets/Background.png');
 	-webkit-font-smoothing: antialiased;
@@ -49,4 +49,15 @@ a {
 .logo {
 	display: flex;
 	justify-content: center;
+}
+
+.bigstyleclass {
+	color: pink;
+	font-size: 3rem;
+	text-decoration: underline;
+}
+
+.smallstyleclass {
+	color: red;
+	font-size: 9px;
 }

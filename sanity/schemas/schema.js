@@ -12,6 +12,7 @@ import madLib from "./madLib";
 import contact from "./schemas-pages/contact";
 import menu from "./schemas-pages/menu";
 import openHours from "./schemas-pages/openHours";
+import testPage from "./schemas-pages/testPage";
 
 // Then import schema types from any plugins that might expose them
 
@@ -32,5 +33,6 @@ export default createSchema({
     contact,
     menu,
     openHours,
+    testPage,
   ]),
 });

@@ -12,6 +12,8 @@ import Menu from "./Pages/Menu";
 import Contact from "./Pages/Contact";
 import OpenHours from "./Pages/OpenHours";
 import NotFound from "./Pages/NotFound";
+import TestPage from "./Pages/TestPage";
+
 import ScrollUpBtn from "./components/ScrollUpBtn";
 // import styles from "./App.module.css";
 
@@ -31,6 +33,8 @@ const App = () => {
         <Route path="/menu" element={<Menu />} />
         <Route path="/openinghours" element={<OpenHours />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/test" element={<TestPage />} />
+
       </Routes>
       <ScrollUpBtn />
     </div>
