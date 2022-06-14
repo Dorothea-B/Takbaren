@@ -11,7 +11,7 @@ import OpenHoursHome from "../components/OpenHoursHome";
 import SocialMediaHome from "../components/SocialMediaHome";
 import WeatherApp from "../components/WeatherApp";
 import HeaderImg from "../assets/Header-img.jpg";
-// import MapHome from '../components/MapHome';
+import MapHome from '../components/MapHome';
 
 const HomePageWrapper = styled.div`
   width: calc(100% - 30px);
@@ -49,8 +49,10 @@ const Home = () => {
         </CardLight>
 
         <WeatherApp />
+        <MapHome />
+
         <SocialMediaHome />
-        {/* <MapHome /> */}
+
         <CardLight>
           <ContactHome />
         </CardLight>

@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components/macro";
 import "../index.css";
+import {PortableText} from '@portabletext/react'
+
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
@@ -51,6 +53,9 @@ const TestPage = () => {
             </div>)}
 
       </CardLight>
+
+      <PortableText
+  value={testcontent.main_text} />
     </PagesWrapper>
   );
 };
