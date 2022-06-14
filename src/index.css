@@ -6,6 +6,12 @@
 	--clr-medium: #daa79d;
 	--clr-light: #f6bdac;
 	--clr-accent: ##f4dba9;
+
+	--home-dsktp-w: 49%;
+	--home-dsktp-h: 350px;
+
+	--home-mobile-h: 300px;
+
 }
 
 * {
@@ -21,6 +27,9 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+section {
+	margin: auto;
+}
 /*This styling is for the weather*/
 /* .rw-container-main {
 	background-color: transparent;
@@ -34,9 +43,24 @@ body {
 /*This styling is for the map*/
 .map-container {
 	display: flex;
-	height: 400px;
-	width: calc(100vw - 40px);
+	/* width: calc(100vw - 40px); */
 }
+
+@media (max-width: 768px) {
+
+	.map-container {
+	height: var(--home-mobile-h);
+	}
+}
+@media (min-width: 1024px) {
+	
+	.map-container {
+	height: var(--home-dsktp-h);
+	}
+}
+
+
+
 
 .logo {
 	display: flex;

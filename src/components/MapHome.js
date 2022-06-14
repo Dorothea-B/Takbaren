@@ -5,7 +5,7 @@ import "../index.css";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibWFyaWFubmVhcmRpbiIsImEiOiJjbDQ3Mmc3ZTkwM3drM2tsOXh5NmtqOWhjIn0.yZxjb02HmWVm6P7rG8i8fA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZG9yb3RoZWEtYiIsImEiOiJjbDRlOXBqeWIwMWZxM21ubjBpaWlzZWJ2In0.o6bx6CePhOG6gdhijLBQQQ';
 
 const MapHome = () => {
 	
@@ -15,10 +15,10 @@ const MapHome = () => {
 	const [lat, setLat] = useState(57.64188017795392);
 	const [zoom, setZoom] = useState(17);
 	useEffect(() => {
-		if (map.current) return; // initialize map only once
+		// if (map.current) return; // initialize map only once
 		map.current = new mapboxgl.Map({
 			container: mapContainer.current,
-			style: 'mapbox://styles/mapbox/streets-v11',
+			style: 'mapbox://styles/dorothea-b/cl4ea652m000114mjgcng4s0t',
 			center: [lng, lat],
 			zoom: zoom,
 		});

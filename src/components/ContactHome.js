@@ -10,6 +10,7 @@ import {
   SubHeadingDark,
   SubHeadingRed,
   SquareBtn,
+  CardSpacing,
 } from "../globalStyleComponents";
 
 const query = `
@@ -17,15 +18,11 @@ const query = `
 `;
 
 const ContactWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  
   & > * {
     flex: 1;
   }
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
 `;
 
 const ContactHome = () => {
@@ -38,7 +35,7 @@ const ContactHome = () => {
   }
 
   return (
-    <div>
+    <CardSpacing>
       <HeadingDark>{contactHome.title}</HeadingDark>
       <ContactWrapper>
         <SubHeadingDark>{contactHome.number}</SubHeadingDark>
@@ -47,7 +44,7 @@ const ContactHome = () => {
           <SquareBtn>More</SquareBtn>
         </Link>
       </ContactWrapper>
-    </div>
+    </CardSpacing>
   );
 };
 export default ContactHome;

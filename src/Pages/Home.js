@@ -25,76 +25,170 @@ mapboxgl.accessToken =
 
 
 
+
+
 const HomePageWrapper = styled.div`
-  width: calc(100% - 30px);
   margin: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-
-  & > * {
-    margin-top: 2rem;
-  }
+  flex-wrap: wrap;
 
   @media (max-width: 768px) {
+    width: calc(100% - 30px);
+    flex-direction: column;
   }
+
+  @media (min-width: 1024px) {
+    width: calc(100% - 100px);
+    flex-direction: row;
+
+    //min and max width should be better adjusted to more formats once we set all media queries.
+    min-width: 1000px;
+    max-width: 1500px;
+
+  }
+
+  //RULES FOR ALL CHILD COMPONENTS
+      & > * {
+      margin-top: 2rem;
+      width: 100%;
+      align-self: center;
+      justify-content: center;
+
+      @media (max-width: 768px) {
+      height: var(--home-mobile-h);
+      }
+      @media (min-width: 1024px) {
+      height: var(--home-dsktp-h);
+      /* overflow: hidden; */
+      }
+      }
 `;
 
 export const CardLight = styled.div`
   background-color: var(--clr-white);
   padding: 2rem;
-  width: 100%;
+  overflow: hidden;
+
+  @media (min-width: 1024px) {
+  width: var(--home-dsktp-w);
+  }
 `;
+
+const Map = styled.div`
+    
+  @media (min-width: 1024px) {
+  width: var(--home-dsktp-w);
+  height: var(--home-dsktp-h);
+  }
+`
+const Weather = styled.div`
+  overflow: hidden;
+  background-color: var(--clr-white);
+
+  @media (min-width: 1024px) {
+  width: var(--home-dsktp-w);
+  }    
+`;
+
+const CardOther = styled.div`
+  overflow: hidden;
+  background-color: red;
+  
+  @media (min-width: 1024px) {
+    width: 100%;
+  }
+`
+
+const IntroDesktop = styled.div`
+
+background-color: rgba(247, 246, 240, 0.80);
+display: none;
+padding: 2rem;
+
+  @media (min-width: 1024px) {
+    width: var(--home-dsktp-w);
+    display: block;
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    margin-left: calc(var(--home-dsktp-w) - (var(--home-dsktp-w) * 1.5 ) );    
+    /* This calculation dynamcally centers the div even though it's absolutely positioned 
+    (read more: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/) 
+    100 - (100 x 1.5) = calculate half the value and use it as a negative number*/
+  }
+
+`
+const IntroMobile = styled.div`
+
+background-color: var(--clr-white);
+display: flex;
+padding: 2rem;
+
+  @media (min-width: 1024px) {
+    
+    display: none;
+  }
+`
+
+
+
 
 const Home = () => {
 
-  // const mapContainer = useRef(null);
-	// const map = useRef(null);
-	// const [lng] = useState(18.292565198468033);
-	// const [lat] = useState(57.64188017795392);
-	// const [zoom] = useState(17);
-	// useEffect(() => {
-	// 	if (map.current) return; // initialize map only once
-	// 	map.current = new mapboxgl.Map({
-	// 		container: mapContainer.current,
-	// 		style: 'mapbox://styles/mapbox/streets-v11',
-	// 		center: [lng, lat],
-	// 		zoom: zoom,
-	// 	});
-	// });
+ 
 
   return (
-    // <div className="App">
 
     <section>
       <img src={HeaderImg} alt="header" />
       <HomePageWrapper>
-        <CardLight>
+
+
+        <IntroMobile>
+            <IntroTextHome />
+        </IntroMobile>
+
+
+        <IntroDesktop>
           <IntroTextHome />
-        </CardLight>
-        <MenuHome />
+        </IntroDesktop>
+
+
+        <Weather>
+      <WeatherApp />
+      </Weather>
+       
+
         <CardLight>
           <OpenHoursHome />
         </CardLight>
 
-        <WeatherApp />
-        <MapHome />
-       
-        {/* <div>
-				<div ref={mapContainer} className='map-container' />
-			</div> */}
+      
 
-
-        <SocialMediaHome />
+      <CardOther>
+        <MenuHome />
+        </CardOther>
 
         <CardLight>
           <ContactHome />
         </CardLight>
+
+      
+
+
+        <Map>
+        <MapHome />
+        </Map>
+
+        <CardOther>
+        <SocialMediaHome />
+        </CardOther>
+       
       </HomePageWrapper>
     </section>
 
-    // </div>
   );
 };
 
