@@ -34,21 +34,42 @@ const OpenHours = () => {
 
   return (
     <PagesWrapper>
-      <ImageDiv>
-        <PagesImageOverlay></PagesImageOverlay>
-        <ImageText>
-          <PagesHeading>{openHours.title}</PagesHeading>
-        </ImageText>
-        <img src={openHours.image.url} />
-      </ImageDiv>
-      <CardLight>
-        <DarkText>{openHours.description}</DarkText>
-        <SubHeadingDark>{openHours.weatherTitle}</SubHeadingDark>
-        <DarkText>{openHours.weatherDescription}</DarkText>
-        {/* <MapHome /> */}
-      </CardLight>
+      <div>
+        <ImageDiv>
+          <PagesImageOverlay></PagesImageOverlay>
+          <ImageText>
+            <PagesHeading>{openHours.title}</PagesHeading>
+          </ImageText>
+          <img src={openHours.image.url} />
+        </ImageDiv>
+        <CardLight>
+          <DarkText>{openHours.description}</DarkText>
+          <SubHeadingDark>{openHours.weatherTitle}</SubHeadingDark>
+          <DarkText>{openHours.weatherDescription}</DarkText>
+        </CardLight>
+      </div>
+      <div>
+        <TextDiv></TextDiv>
+        <WeatherDiv></WeatherDiv>
+      </div>
     </PagesWrapper>
   );
 };
 
 export default OpenHours;
+
+const TextDiv = styled.div`
+  padding: 2rem;
+  width: 100%;
+  height: 150px;
+  border: solid 2px #fff;
+  max-width: 600px;
+`;
+
+const WeatherDiv = styled.div`
+  padding: 2rem;
+  width: 100%;
+  height: 300px;
+  border: solid 2px #000;
+  max-width: 600px;
+`;

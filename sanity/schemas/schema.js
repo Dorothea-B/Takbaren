@@ -7,6 +7,8 @@ import introTextHome from "./schemas-components/introTextHome";
 import menuHome from "./schemas-components/menuHome";
 import openHoursHome from "./schemas-components/openHoursHome";
 
+import imageCarousel from "./schemas-components/imageCarousel";
+
 import madLib from "./madLib";
 
 import contact from "./schemas-pages/contact";
@@ -28,7 +30,10 @@ export default createSchema({
     openHoursHome,
     contactHome,
 
+    imageCarousel,
+
     madLib,
+
     contact,
     menu,
     openHours,

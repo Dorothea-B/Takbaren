@@ -1,24 +1,24 @@
 :root {
-	--clr-white: #f7f6f0;
-	--clr-black: #000;
-	--clr-grey: #343b3f;
-	--clr-dark: #6f1132;
-	--clr-medium: #daa79d;
-	--clr-light: #f6bdac;
-	--clr-accent: ##f4dba9;
+  --clr-white: #f7f6f0;
+  --clr-black: #000;
+  --clr-grey: #343b3f;
+  --clr-dark: #6f1132;
+  --clr-medium: #daa79d;
+  --clr-light: #f6bdac;
+  --clr-accent: ##f4dba9;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	font-family: 'Playfair Display', serif;
-	background-color: var(--clr-light);
-	background-image: url('./assets/Background.png');
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  background-color: var(--clr-light);
+  background-image: url("./assets/Background.png");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /*This styling is for the weather*/
@@ -33,20 +33,27 @@ body {
 
 /*This styling is for the map*/
 .map-container {
-	height: 400px;
-}
-
-.logo {
-	display: flex;
-	justify-content: center;
+  height: 400px;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .logo {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
+
+/* .static-nav {
+  background-color: transparent;
+}
+
+.scroll-nav {
+  background-color: var(--clr-medium);
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  z-index: 9999;
+} */

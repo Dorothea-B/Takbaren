@@ -53,6 +53,7 @@ export const DarkText = styled(RegularText)`
 
 export const ImageDiv = styled.div`
   position: relative;
+  max-width: 600px;
 `;
 
 export const ImageText = styled.div`
@@ -74,6 +75,17 @@ export const PagesWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  & > * {
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+  }
 `;
 
 export const PagesImageOverlay = styled.div`

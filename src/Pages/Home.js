@@ -6,6 +6,7 @@ import "../index.css";
 
 import ContactHome from "../components/ContactHome";
 import IntroTextHome from "../components/IntroTextHome";
+import ImageCarousel from "../components/ImageCarousel";
 import MenuHome from "../components/MenuHome";
 import OpenHoursHome from "../components/OpenHoursHome";
 import SocialMediaHome from "../components/SocialMediaHome";
@@ -33,12 +34,14 @@ export const CardLight = styled.div`
   background-color: var(--clr-white);
   padding: 2rem;
   width: 100%;
+  max-width: 600px;
 `;
 
 const Home = () => {
   return (
     <section>
       <img src={HeaderImg} alt="header" />
+      <ImageCarousel />
       <HomePageWrapper>
         <CardLight>
           <IntroTextHome />

@@ -9,6 +9,11 @@ const menu = {
       type: "string",
     },
     {
+      title: "Image",
+      name: "image",
+      type: "image",
+    },
+    {
       title: "Sub title one",
       name: "subTitleOne",
       type: "string",
