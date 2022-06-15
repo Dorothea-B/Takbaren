@@ -21,20 +21,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/*This styling is for the weather*/
-/* .rw-container-main {
-	background-color: transparent;
-}
-
-.right-0-2-5 {
-	background-color: #f6bdac00;
-} */
-/*This styling is for the weather ends here*/
-
 /*This styling is for the map*/
-.map-container {
+/* .map-container {
 	height: 400px;
-}
+} */
 
 .logo {
 	display: flex;
