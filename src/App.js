@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import InstaFeed from './Components/InstaFeed'
+
 // import WeatherApp from "./components/WeatherApp";
 
 // import MadLibList from './Pages/MadLibList';
