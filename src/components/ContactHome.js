@@ -38,8 +38,8 @@ const ContactHome = () => {
     <CardSpacing>
       <HeadingDark>{contactHome.title}</HeadingDark>
       <ContactWrapper>
-        <SubHeadingDark>{contactHome.number}</SubHeadingDark>
-        <SubHeadingDark>{contactHome.mail}</SubHeadingDark>
+        <SubHeadingRed>{contactHome.number}</SubHeadingRed>
+        <SubHeadingRed>{contactHome.mail}</SubHeadingRed>
         <Link to="/contact">
           <SquareBtn>More</SquareBtn>
         </Link>

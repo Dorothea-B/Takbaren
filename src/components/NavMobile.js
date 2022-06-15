@@ -25,7 +25,7 @@ const StyledMobileNav = styled.div`
   width: 2rem;
   height: 2rem;
   position: fixed;
-  top: 15px;
+  top: 20px;
   right: 20px;
   z-index: 20;
   display: none;
@@ -41,7 +41,7 @@ const StyledMobileNav = styled.div`
     width: 2rem;
     height: 0.25rem;
     background-color: ${({ open }) =>
-      open ? "var(--clr-light)" : "var(--clr-black)"};
+      open ? "var(--clr-light)" : "var(--clr-grey)"};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;

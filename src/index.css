@@ -1,34 +1,28 @@
 :root {
-	--clr-white: #f7f6f0;
-	--clr-black: #000;
-	--clr-grey: #343b3f;
-	--clr-dark: #6f1132;
-	--clr-medium: #daa79d;
-	--clr-light: #f6bdac;
-	--clr-accent: ##f4dba9;
-
-	--home-dsktp-w: 49%;
-	--home-dsktp-h: 350px;
-
-	--home-mobile-h: 300px;
-
+  --clr-white: #f7f6f0;
+  --clr-black: #000;
+  --clr-grey: #343b3f;
+  --clr-dark: #6f1132;
+  --clr-medium: #daa79d;
+  --clr-light: #f6bdac;
+  --clr-accent: ##f4dba9;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	font-family: 'Playfair Display', serif;
-	background-color: var(--clr-light);
-	background-image: url('./assets/Background.png');
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  background-color: var(--clr-light);
+  background-image: url("./assets/Background.png");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 section {
-	margin: auto;
+  margin: auto;
 }
 /*This styling is for the weather*/
 /* .rw-container-main {
@@ -42,37 +36,45 @@ section {
 
 /*This styling is for the map*/
 .map-container {
-	display: flex;
-	/* width: calc(100vw - 40px); */
+  display: flex;
+  /* width: calc(100vw - 40px); */
 }
 
 @media (max-width: 768px) {
-
-	.map-container {
-	height: var(--home-mobile-h);
-	}
+  .map-container {
+    height: var(--home-mobile-h);
+  }
 }
 @media (min-width: 1024px) {
-	
-	.map-container {
-	height: var(--home-dsktp-h);
-	}
+  .map-container {
+    height: var(--home-dsktp-h);
+  }
 }
 
-
-
-
 .logo {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
+  height: 400px;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .logo {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
+
+/* .static-nav {
+  background-color: transparent;
+}
+
+.scroll-nav {
+  background-color: var(--clr-medium);
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  z-index: 9999;
+} */

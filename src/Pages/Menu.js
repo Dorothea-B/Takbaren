@@ -4,7 +4,9 @@ import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
 const query = `
-  *[ _type == 'menu' ] { title, subTitleOne, descriptionOne, subTitleTwo, descriptionTwo }
+  *[ _type == 'menu' ] { title, 
+    "image": image.asset->{url},
+    subTitleOne, descriptionOne, subTitleTwo, descriptionTwo }
 `;
 const Menu = () => {
   const { data = [] } = useQuery("menu", () => sanity.fetch(query));
@@ -18,6 +20,7 @@ const Menu = () => {
   return (
     <section>
       <h2>{menu.title}</h2>
+      <img src={menu.image.url} />
       <h3>{menu.subTitleOne}</h3>
       <p>{menu.descriptionOne}</p>
       <h3>{menu.subTitleTwo}</h3>
