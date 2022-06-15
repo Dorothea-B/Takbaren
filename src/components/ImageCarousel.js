@@ -1,15 +1,15 @@
 import React from "react";
-import client from "./sanityClient";
+// import client from "./sanityClient";
 import imageUrlBuilder from "@sanity/image-url";
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
-const builder = imageUrlBuilder(client);
+// const builder = imageUrlBuilder(client);
 
-function urlFor(source) {
-  return builder.image(source);
-}
+// function urlFor(source) {
+//   return builder.image(source);
+// }
 
 const query = `
   *[ _type == 'imageCarousel' ] {  
