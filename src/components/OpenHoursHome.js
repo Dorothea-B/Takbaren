@@ -9,6 +9,7 @@ import {
   SubHeadingLight,
   SubHeadingRed,
   SquareBtn,
+  CardSpacing,
 } from "../globalStyleComponents";
 
 const query = `
@@ -25,13 +26,13 @@ const OpenHoursHome = () => {
   }
 
   return (
-    <section>
+    <CardSpacing>
       <HeadingDark>{openHoursHome.title}</HeadingDark>
       <SubHeadingRed>{openHoursHome.description}</SubHeadingRed>
       <Link to="/openinghours">
         <SquareBtn>More</SquareBtn>
       </Link>
-    </section>
+    </CardSpacing>
   );
 };
 

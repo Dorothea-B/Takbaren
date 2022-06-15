@@ -9,6 +9,7 @@ import {
   RegularText,
   VerySmallText,
   SquareBtn,
+  CardSpacing,
 } from "../globalStyleComponents";
 
 const query = `
@@ -30,7 +31,7 @@ const IntroTextHome = () => {
   }
 
   return (
-    <section>
+    <CardSpacing>
       <p>{introText.title}</p>
       <IntroQuote>{introText.description}</IntroQuote>
       {/* <VerySmallText>{introText.link}</VerySmallText> */}
@@ -38,7 +39,7 @@ const IntroTextHome = () => {
         {/* fixa med target blank  */}
         <SquareBtn>Read more</SquareBtn>
       </a>
-    </section>
+    </CardSpacing>
   );
 };
 

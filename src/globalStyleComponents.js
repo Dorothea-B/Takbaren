@@ -51,6 +51,14 @@ export const DarkText = styled(RegularText)`
   color: var(--clr-grey);
 `;
 
+export const CardSpacing = styled.section`
+display: flex;
+flex-direction: column;
+align-items: space-around;
+gap: 2rem;
+
+`
+
 export const ImageDiv = styled.div`
   position: relative;
 `;

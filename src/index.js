@@ -3,9 +3,10 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 //import { queryCache } from 'react-query'
-import "mapbox-gl/dist/mapbox-gl.css";
+
 import { persistQueryClient } from "react-query/persistQueryClient-experimental";
 import { createWebStoragePersistor } from "react-query/createWebStoragePersistor-experimental";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 //import { persistWithLocalStorage } from 'react-query/persist-localstorage-experimental';
 
