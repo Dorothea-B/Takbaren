@@ -1,10 +1,21 @@
 import React from "react";
+import InstaFeed from './InstaFeed'
+import styled from "styled-components/macro";
+
+
+import {
+  HeadingDark,
+  CardSpacing,
+} from "../globalStyleComponents";
+  
+
 
 const SocialMediaHome = () => {
   return (
-    <section>
-      This will be an instagram section Follow us @takbarenvisby
-    </section>
+    <CardSpacing>
+      <HeadingDark> ~Follow us @takbarenvisby~ </HeadingDark>
+      <InstaFeed  limit={12} />
+    </CardSpacing>
   );
 };
 

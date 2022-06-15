@@ -54,9 +54,10 @@ export const DarkText = styled(RegularText)`
 export const CardSpacing = styled.section`
 display: flex;
 flex-direction: column;
-align-items: space-around;
-gap: 2rem;
-
+align-items: space-between;
+justify-content: space-around;
+/* gap: 1rem; */
+height: 100%;
 `
 
 export const ImageDiv = styled.div`

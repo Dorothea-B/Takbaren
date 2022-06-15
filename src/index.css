@@ -6,6 +6,10 @@
   --clr-medium: #daa79d;
   --clr-light: #f6bdac;
   --clr-accent: ##f4dba9;
+
+  --home-dsktp-w: 49%;
+	--home-dsktp-h: 320px;
+	--home-mobile-h: 300px;
 }
 
 * {
@@ -51,11 +55,6 @@ section {
   }
 }
 
-.logo {
-  display: flex;
-  justify-content: center;
-  height: 400px;
-}
 
 a {
   color: inherit;
@@ -78,3 +77,4 @@ a {
   -moz-transition: all 0.4s ease-in-out;
   z-index: 9999;
 } */
+

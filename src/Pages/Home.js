@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
+
 import styled from "styled-components/macro";
 import "../index.css";
 
@@ -18,8 +19,8 @@ import MapHome from "../components/MapHome";
 
 // import "../App.css";
 
-mapboxgl.accessToken =
-  "pk.eyJ1IjoibWFyaWFubmVhcmRpbiIsImEiOiJjbDQ3Mmc3ZTkwM3drM2tsOXh5NmtqOWhjIn0.yZxjb02HmWVm6P7rG8i8fA";
+// mapboxgl.accessToken =
+//   "pk.eyJ1IjoibWFyaWFubmVhcmRpbiIsImEiOiJjbDQ3Mmc3ZTkwM3drM2tsOXh5NmtqOWhjIn0.yZxjb02HmWVm6P7rG8i8fA";
 
 const HomePageWrapper = styled.div`
   margin: auto;
@@ -66,8 +67,8 @@ export const CardLight = styled.div`
 
   @media (min-width: 1024px) {
     width: var(--home-dsktp-w);
-    width: 100%;
-    max-width: 600px;
+    /* width: 100%;
+    max-width: 600px; */
   }
 `;
 
@@ -87,11 +88,14 @@ const Weather = styled.div`
 `;
 
 const CardOther = styled.div`
+  position: relative;
   overflow: hidden;
-  background-color: red;
+  background-color: var(--clr-white);
 
   @media (min-width: 1024px) {
     width: 100%;
+    height: calc(var(--home-dsktp-h) * 1.3);
+
   }
 `;
 
@@ -122,12 +126,32 @@ const IntroMobile = styled.div`
   }
 `;
 
+const InstaGradient1 = styled.div`
+  background: linear-gradient(.25turn, var(--clr-white), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  /* linear-gradient(.25turn, rgb(255, 255, 255), rgb(255, 255, 255), 120px, rgba(0, 0, 255, 0), 90%, rgb(255, 255, 255), rgb(255, 255, 255) ); */
+  position: absolute;
+  width: 160px;
+  height: 100%;
+  z-index: 300;
+`
+const InstaGradient2 = styled.div`
+  background: linear-gradient(.25turn, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), var(--clr-white));
+  /* linear-gradient(.25turn, rgb(255, 255, 255), rgb(255, 255, 255), 120px, rgba(0, 0, 255, 0), 90%, rgb(255, 255, 255), rgb(255, 255, 255) ); */
+  position: absolute;
+  width: 160px;
+  height: 100%;
+  z-index: 300;
+  right: 0;
+`
+
 const Home = () => {
   return (
     <section>
       <img src={HeaderImg} alt="header" />
       <ImageCarousel />
+
       <HomePageWrapper>
+
         <IntroMobile>
           <IntroTextHome />
         </IntroMobile>
@@ -157,8 +181,12 @@ const Home = () => {
         </Map>
 
         <CardOther>
-          <SocialMediaHome />
+        <InstaGradient1> </InstaGradient1>
+        <InstaGradient2> </InstaGradient2>
+
+        <SocialMediaHome />
         </CardOther>
+
       </HomePageWrapper>
     </section>
   );
