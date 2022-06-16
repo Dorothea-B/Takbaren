@@ -19,7 +19,9 @@ import {
   PagesWrapper,
 } from "../globalStyleComponents";
 
-import { CardLight } from "../Pages/Home";
+import { CardLight, Map } from "../Pages/Home";
+
+import MapHome from "../components/MapHome";
 
 const query = `
   *[ _type == 'contact' ] { title, 
@@ -55,7 +57,9 @@ const Contact = () => {
       </div>
       <div>
         <TextDiv></TextDiv>
-        <MapDiv></MapDiv>
+        <Map>
+          <MapHome />
+        </Map>
       </div>
     </PagesWrapper>
   );
@@ -67,13 +71,5 @@ const TextDiv = styled.div`
   width: 100%;
   height: 185px;
   border: solid 2px #fff;
-  max-width: 600px;
-`;
-
-const MapDiv = styled.div`
-  padding: 2rem;
-  width: 100%;
-  height: 300px;
-  border: solid 2px #000;
   max-width: 600px;
 `;

@@ -6,6 +6,9 @@
   --clr-medium: #daa79d;
   --clr-light: #f6bdac;
   --clr-accent: ##f4dba9;
+  --home-dsktp-w: 49%;
+  --home-dsktp-h: 350px;
+  --home-mobile-h: 300px;
 }
 
 * {
@@ -49,12 +52,6 @@ section {
   .map-container {
     height: var(--home-dsktp-h);
   }
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  height: 400px;
 }
 
 a {
