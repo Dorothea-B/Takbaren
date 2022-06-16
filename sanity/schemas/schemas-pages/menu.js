@@ -9,25 +9,20 @@ const menu = {
       type: "string",
     },
     {
-      title: "Image",
-      name: "image",
-      type: "array",
-
-      of: [
-        {
-          title: "Image",
-          name: "image",
-          type: "image",
-          Options: {
-            hotspot: true,
-          },
-        },
-      ],
+      name: "slug",
+      type: "slug",
+      options: { source: "title" },
+      validation: (Rule) => Rule.required(),
     },
     {
-      title: "Description",
+      title: "Image",
+      name: "image",
+      type: "image",
+    },
+    {
       name: "description",
-      type: "string",
+      type: "array",
+      of: [{ type: "block" }],
     },
   ],
 };
