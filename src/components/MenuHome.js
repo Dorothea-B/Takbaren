@@ -13,6 +13,21 @@ const query = `
     "image": image.asset->{url} }
 `;
 
+
+const MenuImageDiv = styled.div`
+  position: relative;
+
+
+  @media (max-width: 768px) {
+      height: var(--home-mobile-h);
+    }
+    @media (min-width: 1024px) {
+      height: calc(var(--home-dsktp-h) * 1.3);
+    }
+
+`
+
+
 const MenuHome = () => {
   const { data = [] } = useQuery("menuHome", () => sanity.fetch(query));
 
@@ -24,7 +39,7 @@ const MenuHome = () => {
 
   return (
     <section>
-      <ImageDiv>
+      <MenuImageDiv>
         <Img src={menuHome.image.url} />
         <Link to="/menu">
           <OverlayFood>
@@ -39,7 +54,7 @@ const MenuHome = () => {
             <P>{menuHome.descriptionTwo}</P>
           </OverlayDrinks>
         </Link>
-      </ImageDiv>
+      </MenuImageDiv>
     </section>
   );
 };
