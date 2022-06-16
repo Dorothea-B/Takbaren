@@ -72,13 +72,13 @@ export const CardLight = styled.div`
   }
 `;
 
-const Map = styled.div`
+export const Map = styled.div`
   @media (min-width: 1024px) {
     width: var(--home-dsktp-w);
     height: var(--home-dsktp-h);
   }
 `;
-const Weather = styled.div`
+export const Weather = styled.div`
   overflow: hidden;
   background-color: var(--clr-white);
 

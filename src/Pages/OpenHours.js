@@ -15,7 +15,9 @@ import {
   PagesWrapper,
 } from "../globalStyleComponents";
 
-import { CardLight } from "../Pages/Home";
+import { CardLight, Weather } from "../Pages/Home";
+
+import WeatherApp from "../components/WeatherApp";
 
 const query = `
   *[ _type == 'openHours' ] { title, 
@@ -50,7 +52,9 @@ const OpenHours = () => {
       </div>
       <div>
         <TextDiv></TextDiv>
-        <WeatherDiv></WeatherDiv>
+        <Weather>
+          <WeatherApp />
+        </Weather>
       </div>
     </PagesWrapper>
   );
@@ -63,13 +67,5 @@ const TextDiv = styled.div`
   width: 100%;
   height: 150px;
   border: solid 2px #fff;
-  max-width: 600px;
-`;
-
-const WeatherDiv = styled.div`
-  padding: 2rem;
-  width: 100%;
-  height: 300px;
-  border: solid 2px #000;
   max-width: 600px;
 `;

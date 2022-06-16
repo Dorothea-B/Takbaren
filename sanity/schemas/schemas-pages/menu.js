@@ -11,26 +11,22 @@ const menu = {
     {
       title: "Image",
       name: "image",
-      type: "image",
+      type: "array",
+
+      of: [
+        {
+          title: "Image",
+          name: "image",
+          type: "image",
+          Options: {
+            hotspot: true,
+          },
+        },
+      ],
     },
     {
-      title: "Sub title one",
-      name: "subTitleOne",
-      type: "string",
-    },
-    {
-      title: "Description one",
-      name: "descriptionOne",
-      type: "string",
-    },
-    {
-      title: "Sub title two",
-      name: "subTitleTwo",
-      type: "string",
-    },
-    {
-      title: "Description two",
-      name: "descriptionTwo",
+      title: "Description",
+      name: "description",
       type: "string",
     },
   ],
