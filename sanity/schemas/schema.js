@@ -3,7 +3,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import contactHome from "./schemas-components/contactHome";
-import introTextHome from "./schemas-components/introTextHome";
+import introHome from "./schemas-components/introHome";
 import menuHome from "./schemas-components/menuHome";
 import openHoursHome from "./schemas-components/openHoursHome";
 
@@ -25,7 +25,7 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
-    introTextHome,
+    introHome,
     menuHome,
     openHoursHome,
     contactHome,
