@@ -26,11 +26,6 @@ export const HeadingDark = styled(Heading)`
   color: var(--clr-grey);
 `;
 
-export const PagesHeading = styled(Heading)`
-  color: var(--clr-white);
-  border-block-end: 2px solid var(--clr-white);
-`;
-
 export const SubHeadingLight = styled(SubHeading)`
   color: var(--clr-white);
 `;
@@ -52,17 +47,48 @@ export const DarkText = styled(RegularText)`
 `;
 
 export const CardSpacing = styled.section`
-display: flex;
-flex-direction: column;
-align-items: space-between;
-justify-content: space-around;
-/* gap: 1rem; */
-height: 100%;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-around;
+  /* gap: 1rem; */
+  height: 100%;
+`;
+// ---------------- PAGES SPECIFIC GLOBAL STYLING ----------------//
+export const PagesWrapper = styled.div`
+  width: calc(100% - 30px);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > * {
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+`;
+
+export const PagesHeading = styled(Heading)`
+  color: var(--clr-white);
+  border-block-end: 2px solid var(--clr-white);
+`;
 
 export const ImageDiv = styled.div`
   position: relative;
-  max-width: 600px;
+`;
+
+export const PagesImageOverlay = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(52, 59, 63, 0.4);
+  background-blend-mode: multiply;
 `;
 
 export const ImageText = styled.div`
@@ -77,34 +103,12 @@ export const ImageText = styled.div`
   justify-content: center;
 `;
 
-export const PagesWrapper = styled.div`
-  width: calc(100% - 30px);
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  & > * {
-    margin-top: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px;
-  }
-`;
-
-export const PagesImageOverlay = styled.div`
+export const PagesCardLIght = styled.div`
+  background-color: var(--clr-white);
+  padding: 2rem;
+  overflow: hidden;
   width: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(52, 59, 63, 0.4);
-  background-blend-mode: multiply;
+  max-width: 600px;
 `;
 
 export const Button = styled.button`
@@ -142,6 +146,8 @@ export const RoundBtn = styled.button`
   height: 50px;
   margin: 1rem;
   box-shadow: (rgba(0, 0, 0, 0.25));
+  /* position: fixed;
+  bottom: 10px; */
 `;
 
 export const SquareBtn = styled.button`

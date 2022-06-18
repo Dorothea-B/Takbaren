@@ -13,9 +13,8 @@ import {
   ImageText,
   PagesImageOverlay,
   PagesWrapper,
+  PagesCardLIght,
 } from "../globalStyleComponents";
-
-import { CardLight, Weather } from "../Pages/Home";
 
 import WeatherApp from "../components/WeatherApp";
 
@@ -35,37 +34,33 @@ const OpenHours = () => {
   }
 
   return (
-    <PagesWrapper>
-      <div>
-        <ImageDiv>
-          <PagesImageOverlay></PagesImageOverlay>
-          <ImageText>
-            <PagesHeading>{openHours.title}</PagesHeading>
-          </ImageText>
-          <img src={openHours.image.url} />
-        </ImageDiv>
-        <CardLight>
-          <DarkText>{openHours.description}</DarkText>
+    <>
+      <ImageDiv>
+        <PagesImageOverlay></PagesImageOverlay>
+        <ImageText>
+          <PagesHeading>{openHours.title}</PagesHeading>
+        </ImageText>
+        <img src={openHours.image.url} />
+      </ImageDiv>
+
+      <PagesWrapper>
+        <PagesCardLIght>
+          <SubHeadingDark>{openHours.description}</SubHeadingDark>
+        </PagesCardLIght>
+        <div>
           <SubHeadingDark>{openHours.weatherTitle}</SubHeadingDark>
           <DarkText>{openHours.weatherDescription}</DarkText>
-        </CardLight>
-      </div>
-      <div>
-        <TextDiv></TextDiv>
-        <Weather>
-          <WeatherApp />
-        </Weather>
-      </div>
-    </PagesWrapper>
+          <WeatherPages>
+            <WeatherApp />
+          </WeatherPages>
+        </div>
+      </PagesWrapper>
+    </>
   );
 };
 
 export default OpenHours;
 
-const TextDiv = styled.div`
-  padding: 2rem;
-  width: 100%;
-  height: 150px;
-  border: solid 2px #fff;
+const WeatherPages = styled.div`
   max-width: 600px;
 `;

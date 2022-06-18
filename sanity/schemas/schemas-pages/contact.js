@@ -30,6 +30,11 @@ const contact = {
       name: "address",
       type: "string",
     },
+    {
+      title: "Description",
+      name: "description",
+      type: "string",
+    },
   ],
 };
 

@@ -11,23 +11,7 @@ const menu = {
     {
       title: "Image",
       name: "image",
-      type: "array",
-
-      of: [
-        {
-          title: "Image",
-          name: "image",
-          type: "image",
-          Options: {
-            hotspot: true,
-          },
-        },
-      ],
-    },
-    {
-      title: "Description",
-      name: "description",
-      type: "string",
+      type: "image",
     },
   ],
 };

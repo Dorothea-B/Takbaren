@@ -20,7 +20,7 @@ const ImageCarousel = () => {
 
   return (
     <>
-      <img src={imageCarousel.image.url} alt="takbaren-img" />
+      <img src={imageCarousel.image.url} alt='takbaren-img' />
     </>
   );
 };

@@ -17,9 +17,8 @@ import {
   ImageText,
   PagesImageOverlay,
   PagesWrapper,
+  PagesCardLIght,
 } from "../globalStyleComponents";
-
-import { CardLight, Map } from "../Pages/Home";
 
 import MapHome from "../components/MapHome";
 
@@ -39,37 +38,34 @@ const Contact = () => {
   }
 
   return (
-    <PagesWrapper>
-      <div>
-        <ImageDiv>
-          <PagesImageOverlay></PagesImageOverlay>
-          <ImageText>
-            <PagesHeading>{contact.title}</PagesHeading>
-          </ImageText>
-          <img src={contact.image.url} />
-        </ImageDiv>
-        <CardLight>
+    <>
+      <ImageDiv>
+        <PagesImageOverlay></PagesImageOverlay>
+        <ImageText>
+          <PagesHeading>{contact.title}</PagesHeading>
+        </ImageText>
+        <img src={contact.image.url} />
+      </ImageDiv>
+
+      <PagesWrapper>
+        <PagesCardLIght>
           <SubHeadingDark>{contact.number}</SubHeadingDark>
           <SubHeadingDark>{contact.mail}</SubHeadingDark>
-          <SubHeadingDark>{contact.address}</SubHeadingDark>
           <p>add fb & ig symbol</p>
-        </CardLight>
-      </div>
-      <div>
-        <TextDiv></TextDiv>
-        <Map>
+
+          <SubHeadingDark>{contact.address}</SubHeadingDark>
+          <DarkText>
+            Här ska en sanity description in men fick bara error får se om vi
+            kan titta på det
+          </DarkText>
+        </PagesCardLIght>
+        <MapPages>
           <MapHome />
-        </Map>
-      </div>
-    </PagesWrapper>
+        </MapPages>
+      </PagesWrapper>
+    </>
   );
 };
 export default Contact;
 
-const TextDiv = styled.div`
-  padding: 2rem;
-  width: 100%;
-  height: 185px;
-  border: solid 2px #fff;
-  max-width: 600px;
-`;
+const MapPages = styled.div``;
