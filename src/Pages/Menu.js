@@ -1,33 +1,45 @@
 import React from "react";
 
+import "../index.css";
+
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
-import DrinkList from "../components/DrinkList";
+import MenuTabs from "../components/MenuTabs";
+
+// import {
+//   PagesHeading,
+//   ImageDiv,
+//   ImageText,
+//   PagesImageOverlay,
+// } from "../globalStyleComponents";
+
 // const query = `
 //   *[ _type == 'menu' ] { title,
-//     "image": image.asset->{url},
-//     subTitleOne, descriptionOne, subTitleTwo, descriptionTwo }
+//     "image": image.asset->{url}
+//   }
 // `;
+
 const Menu = () => {
-  //   const { data = [] } = useQuery("menu", () => sanity.fetch(query));
-  //   const [menu] = data;
-  //   if (!menu) {
-  //     return <h1>Loading…</h1>;
-  //   }
-    return (
+  // const { data = [] } = useQuery("menu", () => sanity.fetch(query));
+  // const [menu] = data;
+
+  // if (!menu) {
+  //   return <h1>Loading…</h1>;
+  // }
+
+  return (
     <>
-      <div>Hello there!</div>
-      <DrinkList />
-      {/* // <section>
-      //   <h2>{menu.title}</h2>
-      //   <img src={menu.image.url} />
-      //   <h3>{menu.subTitleOne}</h3>
-      //   <p>{menu.descriptionOne}</p>
-      //   <h3>{menu.subTitleTwo}</h3>
-      //   <p>{menu.descriptionTwo}</p>
-      // </section> */}
+      {/* <ImageDiv>
+        <PagesImageOverlay></PagesImageOverlay>
+        <ImageText>
+          <PagesHeading>{menu.title}</PagesHeading>
+        </ImageText>
+        <img src={menu.image.url} />
+      </ImageDiv> */}
+      <MenuTabs />
     </>
-    );
+  );
 };
+
 export default Menu;
