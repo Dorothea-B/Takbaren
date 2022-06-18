@@ -1,46 +1,47 @@
-import React from "react";
-import styled from "styled-components/macro";
-
-import { useQuery } from "react-query";
-import { sanity } from "../sanity";
+import React from 'react';
+import styled from 'styled-components/macro';
+import CrossBtn from './CrossBtn';
+import { useQuery } from 'react-query';
+import { sanity } from '../sanity';
 import {
-  HeadingDark,
-  SubHeadingRed,
-  RegularText,
-  VerySmallText,
-  SquareBtn,
-  CardSpacing,
-} from "../globalStyleComponents";
+	HeadingDark,
+	SubHeadingRed,
+	RegularText,
+	VerySmallText,
+	SquareBtn,
+	CardSpacing,
+} from '../globalStyleComponents';
 
 const query = `
   *[ _type == 'introTextHome' ] { title, description, link }
 `;
 
 const IntroQuote = styled(SubHeadingRed)`
-  font-size: 18px;
-  font-weight: 600;
+	font-size: 18px;
+	font-weight: 600;
 `;
 
 const IntroTextHome = () => {
-  const { data = [] } = useQuery("introTextHome", () => sanity.fetch(query));
+	const { data = [] } = useQuery('introTextHome', () => sanity.fetch(query));
 
-  const [introText] = data;
+	const [introText] = data;
 
-  if (!introText) {
-    return <h1>Loading…</h1>;
-  }
+	if (!introText) {
+		return <h1>Loading…</h1>;
+	}
 
-  return (
-    <CardSpacing>
-      <p>{introText.title}</p>
-      <IntroQuote>{introText.description}</IntroQuote>
-      {/* <VerySmallText>{introText.link}</VerySmallText> */}
-      <a href={introText.link} target="_blank">
-        {/* fixa med target blank  */}
-        <SquareBtn>Read more</SquareBtn>
-      </a>
-    </CardSpacing>
-  );
+	return (
+		<CardSpacing>
+			<CrossBtn />
+			<p>{introText.title}</p>
+			<IntroQuote>{introText.description}</IntroQuote>
+			{/* <VerySmallText>{introText.link}</VerySmallText> */}
+			<a href={introText.link} target='_blank'>
+				{/* fixa med target blank  */}
+				<SquareBtn>Read more</SquareBtn>
+			</a>
+		</CardSpacing>
+	);
 };
 
 export default IntroTextHome;
