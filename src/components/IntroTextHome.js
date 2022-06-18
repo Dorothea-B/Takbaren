@@ -11,13 +11,13 @@ import { sanity } from "../sanity";
 import '../index.css'
 
 import {
- 
+  HeadingDark,
   SquareBtn,
   CardSpacing,
 } from "../globalStyleComponents";
 
 const query = `
-  *[ _type == 'introTextHome' ] { title, story, link }
+  *[ _type == 'introHome' ] { title, story, link }
 `;
 
 // const IntroQuote = styled(SubHeadingRed)`
@@ -28,7 +28,7 @@ const query = `
 
 
 const IntroTextHome = () => {
-  const { data = [] } = useQuery("introTextHome", () => sanity.fetch(query));
+  const { data = [] } = useQuery("introHome", () => sanity.fetch(query));
 
   const [introText] = data;
 
@@ -52,16 +52,10 @@ const IntroTextHome = () => {
       {/* <IntroQuote>{introText.description}</IntroQuote> */}
 
       {introText.story && (
-
-      <div>
-
-      <BlockContent 
+      <div><BlockContent 
       blocks={introText.story}
       serializers={{types: {block: BlockRenderer}}} 
-      />
-
-      </div>
-
+      /></div>
       )}
 
       <a href={introText.link} target="_blank">

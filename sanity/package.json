@@ -27,6 +27,6 @@
     "react": "^17.0",
     "react-dom": "^17.0",
     "sanity-plugin-hotspot-array": "^0.0.6",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.3.5"
   }
 }

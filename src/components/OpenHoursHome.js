@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import BlockContent from '@sanity/block-content-to-react';
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
+import BlockRenderer from "../BlockRenderer";
+import '../index.css'
+
 
 import {
   HeadingDark,
@@ -13,7 +17,7 @@ import {
 } from "../globalStyleComponents";
 
 const query = `
-  *[ _type == 'openHoursHome' ] { title, description }
+  *[ _type == 'openHoursHome' ] { title, description, story, link }
 `;
 
 const OpenHoursHome = () => {
@@ -28,7 +32,16 @@ const OpenHoursHome = () => {
   return (
     <CardSpacing>
       <HeadingDark>{openHoursHome.title}</HeadingDark>
-      <SubHeadingRed>{openHoursHome.description}</SubHeadingRed>
+
+      {/* <SubHeadingRed>{openHoursHome.description}</SubHeadingRed> */}
+      {openHoursHome.story && (
+      <div><BlockContent 
+      blocks={openHoursHome.story}
+      serializers={{types: {block: BlockRenderer}}} 
+      /></div>
+      )}
+     
+     
       <Link to="/openinghours">
         <SquareBtn>More</SquareBtn>
       </Link>
