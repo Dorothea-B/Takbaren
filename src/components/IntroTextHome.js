@@ -1,20 +1,24 @@
-import React from "react";
+import React from 'react';
 import BlockContent from '@sanity/block-content-to-react';
-import styled from "styled-components/macro";
+import styled from 'styled-components/macro';
 
+import BlockRenderer from '../BlockRenderer';
 
-import BlockRenderer from "../BlockRenderer";
+import { useQuery } from 'react-query';
+import { sanity } from '../sanity';
 
-import { useQuery } from "react-query";
-import { sanity } from "../sanity";
+import '../index.css';
 
-import '../index.css'
+import CrossBtn from './CrossBtn';
 
 import {
-  HeadingDark,
-  SquareBtn,
-  CardSpacing,
-} from "../globalStyleComponents";
+	HeadingDark,
+	SubHeadingRed,
+	RegularText,
+	VerySmallText,
+	SquareBtn,
+	CardSpacing,
+} from '../globalStyleComponents';
 
 const query = `
   *[ _type == 'introHome' ] { title, story, link }
@@ -25,45 +29,43 @@ const query = `
 //   font-weight: 600;
 // `;
 
-
-
 const IntroTextHome = () => {
-  const { data = [] } = useQuery("introHome", () => sanity.fetch(query));
+	const { data = [] } = useQuery('introHome', () => sanity.fetch(query));
 
-  const [introText] = data;
+	const [introText] = data;
 
+	// const stylings = introText?.story
+	// .map((block) => block.styles)
+	// .flat();
 
+	// console.log(`Styles avaliable:`, stylings);
 
-// const stylings = introText?.story
-// .map((block) => block.styles)
-// .flat();
+	if (!introText) {
+		return <h1>Loading…</h1>;
+	}
 
-// console.log(`Styles avaliable:`, stylings);
+	return (
+		<CardSpacing>
+			<CrossBtn />
+			<HeadingDark>{introText.title}</HeadingDark>
 
+			{/* <IntroQuote>{introText.description}</IntroQuote> */}
 
-  if (!introText) {
-    return <h1>Loading…</h1>;
-  }
+			{introText.story && (
+				<div>
+					<BlockContent
+						blocks={introText.story}
+						serializers={{ types: { block: BlockRenderer } }}
+					/>
+				</div>
+			)}
 
-  return (
-    <CardSpacing>
-      <HeadingDark>{introText.title}</HeadingDark>
-
-      {/* <IntroQuote>{introText.description}</IntroQuote> */}
-
-      {introText.story && (
-      <div><BlockContent 
-      blocks={introText.story}
-      serializers={{types: {block: BlockRenderer}}} 
-      /></div>
-      )}
-
-      <a href={introText.link} target="_blank">
-        {/* fixa med target blank  */}
-        <SquareBtn>Read more</SquareBtn>
-      </a>
-    </CardSpacing>
-  );
+			<a href={introText.link} target='_blank'>
+				{/* fixa med target blank  */}
+				<SquareBtn>Read more</SquareBtn>
+			</a>
+		</CardSpacing>
+	);
 };
 
 export default IntroTextHome;

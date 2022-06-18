@@ -1,119 +1,119 @@
-import styled from "styled-components/macro";
-import "./index.css";
+import styled from 'styled-components/macro';
+import './index.css';
 
 export const Heading = styled.h1`
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
-  font-size: 2em;
+	font-family: 'Playfair Display', serif;
+	text-transform: uppercase;
+	font-size: 2em;
 `;
 
 export const SubHeading = styled.h3`
-  font-family: "Playfair Display", serif;
-  font-size: 1.3em;
-  font-style: italic;
+	font-family: 'Playfair Display', serif;
+	font-size: 1.3em;
+	font-style: italic;
 `;
 
 export const RegularText = styled.p`
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 12px;
 `;
 
 export const VerySmallText = styled(RegularText)`
-  font-size: 8px;
+	font-size: 8px;
 `;
 
-// export const HeadingDark = styled(Heading)`
-//   color: var(--clr-grey);
-// `;
+export const HeadingDark2 = styled(Heading)`
+	color: var(--clr-grey);
+`;
 
 export const PagesHeading = styled(Heading)`
-  color: var(--clr-white);
-  border-block-end: 2px solid var(--clr-white);
+	color: var(--clr-white);
+	border-block-end: 2px solid var(--clr-white);
 `;
 
-// export const SubHeadingLight = styled(SubHeading)`
-//   color: var(--clr-white);
-// `;
+export const SubHeadingLight2 = styled(SubHeading)`
+	color: var(--clr-white);
+`;
 
-// export const SubHeadingDark = styled(SubHeading)`
-//   color: var(--clr-grey);
-// `;
+export const SubHeadingDark2 = styled(SubHeading)`
+	color: var(--clr-grey);
+`;
 
-// export const SubHeadingRed = styled(SubHeading)`
-//   color: var(--clr-dark);
-// `;
+export const SubHeadingRed2 = styled(SubHeading)`
+	color: var(--clr-dark);
+`;
 
 export const LightText = styled(RegularText)`
-  color: var(--clr-white);
+	color: var(--clr-white);
 `;
 
 export const DarkText = styled(RegularText)`
-  color: var(--clr-grey);
+	color: var(--clr-grey);
 `;
 
 export const CardSpacing = styled.section`
-display: flex;
-flex-direction: column;
-align-items: space-between;
-justify-content: space-around;
-/* gap: 1rem; */
-height: 100%;
-`
+	display: flex;
+	flex-direction: column;
+	align-items: space-between;
+	justify-content: space-around;
+	/* gap: 1rem; */
+	height: 100%;
+`;
 
 export const ImageDiv = styled.div`
-  position: relative;
-  max-width: 600px;
+	position: relative;
+	max-width: 600px;
 `;
 
 export const ImageText = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 
 export const PagesWrapper = styled.div`
-  width: calc(100% - 30px);
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	width: calc(100% - 30px);
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
-  & > * {
-    margin-top: 2rem;
-  }
+	& > * {
+		margin-top: 2rem;
+	}
 
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px;
-  }
+	@media (min-width: 768px) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr 1fr 1fr;
+		gap: 10px;
+	}
 `;
 
 export const PagesImageOverlay = styled.div`
-  width: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(52, 59, 63, 0.4);
-  background-blend-mode: multiply;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(52, 59, 63, 0.4);
+	background-blend-mode: multiply;
 `;
 
 export const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid grey;
-  color: var(--clr-grey);
-  margin: 0 1em;
-  padding: 0.25em 1em;
+	background: transparent;
+	border-radius: 3px;
+	border: 2px solid grey;
+	color: var(--clr-grey);
+	margin: 0 1em;
+	padding: 0.25em 1em;
 `;
 // export const heading_dark = styled.h1`
 //   font-family: "Playfair Display", serif;
@@ -132,31 +132,45 @@ export const Button = styled.button`
 // `;
 
 export const RoundBtn = styled.button`
-  background-color: var(--clr-grey);
-  color: var(--clr-white);
-  cursor: pointer;
-  border: none;
-  padding: 0.8rem;
-  border-radius: 25px;
-  width: 50px;
-  height: 50px;
-  margin: 1rem;
-  box-shadow: (rgba(0, 0, 0, 0.25));
+	background-color: var(--clr-grey);
+	color: var(--clr-white);
+	cursor: pointer;
+	border: none;
+	padding: 0.8rem;
+	border-radius: 25px;
+	width: 50px;
+	height: 50px;
+	margin: 1rem;
+	box-shadow: (rgba(0, 0, 0, 0.25));
 `;
 
 export const SquareBtn = styled.button`
-  background-color: var(--clr-medium);
-  color: var(--clr-white);
-  font-family: "Poppins", sans-serif;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  margin-top: 1.5rem;
-  padding: 0.5rem;
-  width: 250px;
-  /* osäker på width */
+	background-color: var(--clr-medium);
+	color: var(--clr-white);
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	letter-spacing: 0.25em;
+	text-transform: uppercase;
+	margin-top: 1.5rem;
+	padding: 0.5rem;
+	width: 250px;
+	/* osäker på width */
+`;
+
+export const CrossBtn = styled.button`
+	background-color: transparent;
+	display: flex;
+	align-self: flex-end;
+	color: black;
+	cursor: pointer;
+	border: none;
+	padding: 0.8rem;
+	width: 50px;
+	height: 50px;
+	margin: 1rem;
+	box-shadow: (rgba(0, 0, 0, 0.25));
 `;
 
 
