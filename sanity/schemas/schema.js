@@ -10,6 +10,7 @@ import openHoursHome from "./schemas-components/openHoursHome";
 import imageCarousel from "./schemas-components/imageCarousel";
 
 import madLib from "./madLib";
+import drinkItem from "./drinkItem";
 
 import contact from "./schemas-pages/contact";
 import menu from "./schemas-pages/menu";
@@ -33,6 +34,7 @@ export default createSchema({
     imageCarousel,
 
     madLib,
+    drinkItem,
 
     contact,
     menu,

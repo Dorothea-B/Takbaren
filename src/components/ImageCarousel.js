@@ -1,6 +1,6 @@
 import React from "react";
 // import client from "./sanityClient";
-import { sanity } from "../sanity";
+import { sanity, imageUrlBuilder } from "../sanity";
 import { useQuery } from "react-query";
 
 const query = `
@@ -8,6 +8,9 @@ const query = `
   "image": image.asset->{url}
 }
 `;
+
+// export const imageBuilder = imageUrlBuilder(useQuery.config());
+
 
 const ImageCarousel = () => {
   const { data = [] } = useQuery("imageCarousel", () => sanity.fetch(query));
@@ -17,10 +20,17 @@ const ImageCarousel = () => {
   if (!imageCarousel) {
     return <h1>Loading…</h1>;
   }
+  console.log(imageCarousel);
 
   return (
     <>
-      <img src={imageCarousel.image.url} alt="takbaren-img" />
+{/* 
+    {  imageCarousel.map((img) => {
+      <img src={img.item.images.url} alt="takbaren-img" />
+
+    })} */}
+    
+
     </>
   );
 };
