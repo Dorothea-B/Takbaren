@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import "../index.css";
+import { device } from "../toolcomponents/Devices";
+
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
@@ -21,7 +23,11 @@ const MenuImageDiv = styled.div`
   @media (max-width: 768px) {
       height: var(--home-mobile-h);
     }
-    @media (min-width: 1024px) {
+    @media ${device.tablet} {
+
+    
+    }
+    @media ${device.laptop} {
       height: calc(var(--home-dsktp-h) * 1.3);
     }
 
@@ -110,13 +116,11 @@ const Dark = styled.div`
   opacity: 0;
   z-index: 100;
 
-
-  @media (min-width: 1024px) {
+  @media ${device.laptop} {
     opacity: 0;
 
     &:hover {
       opacity: 1;
-      
     }
   }
 `
@@ -136,9 +140,8 @@ const DarkMobile = styled.div`
   z-index: 50;
 
 
-  @media (min-width: 1024px) {
+  @media ${device.laptop} {
     opacity: 0;
-
   }
 `
 

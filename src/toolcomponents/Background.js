@@ -41,6 +41,14 @@
     top: -50px;
     background-color: red;
   }
+  @media ${device.laptopL} {
+    top: -50px;
+    background-color: purple;
+  }
+  @media ${device.desktop} {
+    top: -50px;
+    background-color: white;
+  }
 
   `
 
