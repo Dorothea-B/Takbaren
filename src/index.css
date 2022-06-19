@@ -7,10 +7,12 @@
   --clr-light: #f6bdac;
   --clr-accent: ##f4dba9;
 
+
+  /* These variables are used in homepage and homepage components,
+  be careful if altering!!
+   */
   --home-mobile-h: 300px;
-
   --home-tablet-w: 80%;
-
   --home-dsktp-w: 49%;
   --home-dsktp-h: 320px;
 

@@ -30,11 +30,10 @@ const HomePageWrapper = styled.div`
 	align-items: center;
 	flex-wrap: wrap;
 
-	@media ${device.mobileL} {
+	@media ${device.mobileS} {
 		width: calc(100% - 30px);
 		flex-direction: column;
 		gap: 1rem;	
-
 	}
 
 	@media ${device.tablet} {
@@ -58,7 +57,11 @@ const HomePageWrapper = styled.div`
 
 		@media ${device.mobileS} {
 			margin-top: 2rem;
-
+			height: calc(var(--home-mobile-h)*0.8);
+		}
+		
+		@media ${device.mobileL} {
+			margin-top: 2rem;
 			height: var(--home-mobile-h);
 		}
 		

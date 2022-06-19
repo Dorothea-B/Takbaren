@@ -5,9 +5,10 @@
   import styled from "styled-components/macro";
   import { device } from "./Devices";
 
-
-
-  import top from '../assets/Backgrounds/BG_top.svg'
+  import top from '../assets/Backgrounds/BG_left.svg'
+  import right from '../assets/Backgrounds/BG_left.svg'
+  import bottom from '../assets/Backgrounds/BG_left.svg'
+  import left from '../assets/Backgrounds/BG_left.svg'
 
   const BGWrapper = styled.div`
   position: fixed;
