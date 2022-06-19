@@ -9,6 +9,7 @@ import './index.css';
 
 import Home from './Pages/Home';
 import HeaderHome from './components/HeaderHome';
+import Footer from './components/Footer';
 import Menu from './Pages/Menu';
 import Contact from './Pages/Contact';
 import OpenHours from './Pages/OpenHours';
@@ -37,6 +38,7 @@ const App = () => {
 			</Routes>
 			<ScrollUpBtn />
 			<GoToTop />
+			<Footer />
 		</div>
 	);
 };
