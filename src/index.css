@@ -20,7 +20,7 @@ body {
   margin: 0;
   font-family: "Playfair Display", serif;
   background-color: var(--clr-light);
-  background-image: url("./assets/Background.png");
+  /* background-image: url("./assets/Background.png"); */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

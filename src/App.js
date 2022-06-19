@@ -16,14 +16,18 @@ import OpenHours from './Pages/OpenHours';
 import NotFound from './Pages/NotFound';
 import ScrollUpBtn from './components/ScrollUpBtn';
 import Loader from './components/Loader';
+
 import GoToTop from './toolcomponents/GoToTop';
+import Background from './toolcomponents/Background';
 // import styles from "./App.module.css";
 
 import './App.css';
 
 const App = () => {
 	return (
+		
 		<div className='App'>
+			<Background />
 			<header>
 				{/* <img src={logo} className="App-logo" alt="logo" /> */}
 				<HeaderHome />

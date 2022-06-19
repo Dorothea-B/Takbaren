@@ -60,6 +60,12 @@ const HomePageWrapper = styled.div`
 	}
 `;
 
+export const HeaderImageSection = styled.div`
+width: 100%;
+position: relative;
+
+`
+
 export const CardLight = styled.div`
 	background-color: var(--clr-white);
 	padding: 2rem;
@@ -103,17 +109,30 @@ const IntroDesktop = styled.div`
 	display: none;
 	padding: 2rem;
 
+	@media (min-width: 700px) {
+		width: 500px;
+		display: block;
+		position: absolute;
+		top: 20%;
+		left: 50%;
+		margin-left: calc(500px - (500px * 1.5));
+		/* This calculation dynamcally centers the div even though it's absolutely positioned 
+    (read more: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/) 
+    100 - (100 x 1.5) = calculate half the value and use it as a negative number*/
+	}
+
 	@media (min-width: 1024px) {
 		width: var(--home-dsktp-w);
 		display: block;
 		position: absolute;
-		top: 500px;
+		top: 40vh;
 		left: 50%;
 		margin-left: calc(var(--home-dsktp-w) - (var(--home-dsktp-w) * 1.5));
 		/* This calculation dynamcally centers the div even though it's absolutely positioned 
     (read more: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/) 
     100 - (100 x 1.5) = calculate half the value and use it as a negative number*/
 	}
+
 `;
 const IntroMobile = styled.div`
 	background-color: var(--clr-white);
@@ -158,17 +177,24 @@ const InstaGradient2 = styled.div`
 const Home = () => {
 	return (
 		<section>
-			<img src={HeaderImg} alt='header' />
-			<ImageCarousel />
+			<HeaderImageSection>
+				{/* either one headerimage or the image carousel, right? 
+				Wrapping these in a separate container to control the position of the intro text desktop*/}
+				<img src={HeaderImg} alt='header' />
+				<ImageCarousel />
+
+				<IntroDesktop>
+						<IntroTextHome />
+				</IntroDesktop>
+			</HeaderImageSection>
+
 
 			<HomePageWrapper>
 				<IntroMobile>
 					<IntroTextHome />
 				</IntroMobile>
 
-				<IntroDesktop>
-					<IntroTextHome />
-				</IntroDesktop>
+				
 
 				<Weather>
 					<WeatherApp />

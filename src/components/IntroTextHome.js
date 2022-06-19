@@ -46,7 +46,7 @@ const IntroTextHome = () => {
 
 	return (
 		<CardSpacing>
-			<CrossBtn />
+			{/* <CrossBtn /> */}
 			<HeadingDark>{introText.title}</HeadingDark>
 
 			{/* <IntroQuote>{introText.description}</IntroQuote> */}
