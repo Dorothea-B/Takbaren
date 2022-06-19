@@ -29,6 +29,7 @@ font-size: 0.65rem;
 color: var(--clr-grey);
 opacity: 0.6;
 font-family: Poppins;
+align-self: flex-end;
 `
 
 

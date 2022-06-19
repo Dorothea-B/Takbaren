@@ -36,7 +36,7 @@ const MapHome = () => {
   const map = useRef(null);
   // const [lng, setLng] = useState(18.292565198468033);
   // const [lat, setLat] = useState(57.64188017795392);
-  const [zoom, setZoom] = useState(17);
+  const [zoom, setZoom] = useState(15);
 
   useEffect(() => {
     // if (map.current) return; // initialize map only once

@@ -1,5 +1,7 @@
 import styled from "styled-components/macro";
 import "./index.css";
+import { device } from "./toolcomponents/Devices";
+
 
 export const Heading = styled.h1`
   font-family: "Playfair Display", serif;
@@ -7,11 +9,11 @@ export const Heading = styled.h1`
   font-size: 2em;
 `;
 
-export const SubHeading = styled.h3`
-  font-family: "Playfair Display", serif;
-  font-size: 1.3em;
-  font-style: italic;
-`;
+// export const SubHeading = styled.h3`
+//   font-family: "Playfair Display", serif;
+//   font-size: 1.3em;
+//   font-style: italic;
+// `;
 
 export const RegularText = styled.p`
   font-family: "Poppins", sans-serif;
@@ -26,17 +28,6 @@ export const HeadingDark2 = styled(Heading)`
   color: var(--clr-grey);
 `;
 
-export const SubHeadingLight2 = styled(SubHeading)`
-  color: var(--clr-white);
-`;
-
-export const SubHeadingDark2 = styled(SubHeading)`
-  color: var(--clr-grey);
-`;
-
-export const SubHeadingRed2 = styled(SubHeading)`
-  color: var(--clr-dark);
-`;
 
 export const LightText = styled(RegularText)`
   color: var(--clr-white);
@@ -195,7 +186,6 @@ export const HeadingLight = styled.h1`
 export const MediumHeadingDark = styled.h2`
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
-  text-decoration: underline;
   font-size: 1.3em;
   color: var(--clr-grey);
 `;
@@ -203,7 +193,6 @@ export const MediumHeadingDark = styled.h2`
 export const MediumHeadingLight = styled.h2`
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
-  text-decoration: underline;
   font-size: 1.3em;
   color: var(--clr-white);
 `;
@@ -211,42 +200,47 @@ export const MediumHeadingLight = styled.h2`
 export const MediumHeadingRed = styled.h2`
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
-  text-decoration: underline;
   font-size: 1.5em;
   color: var(--clr-dark);
 `;
 
-export const SubHeadingDark = styled.h3`
+export const SubHeading = styled.h3`
   font-family: "Playfair Display", serif;
-  font-size: 1.3em;
+  /* font-size: 1.3em; */
   font-style: italic;
   font-weight: 500;
-  color: var(--clr-grey);
-`;
+  
+  @media ${device.mobileS} {
+    font-size: 0.8em;
+  }
+  @media ${device.mobileS} {
+    font-size: 1em;
+    font-weight: 500;
+  }
+  
+  @media ${device.tablet} {
+    font-size: 1.5em;
+    font-weight: 700;
 
-export const SubHeadingLight = styled.h3`
-  font-family: "Playfair Display", serif;
-  font-size: 1.3em;
-  font-style: italic;
-  font-weight: 500;
+  }
+`
+
+export const SubHeadingLight = styled(SubHeading)`
   color: var(--clr-white);
 `;
 
-export const SubHeadingRed = styled.h3`
-  font-family: "Playfair Display", serif;
-  font-size: 1.3em;
-  font-style: italic;
-  font-weight: 500;
+export const SubHeadingDark = styled(SubHeading)`
+  color: var(--clr-grey);
+`;
+
+export const SubHeadingRed = styled(SubHeading)`
   color: var(--clr-dark);
 `;
 
-export const SubHeadingPink = styled.h3`
-  font-family: "Playfair Display", serif;
-  font-size: 1.3em;
-  font-style: italic;
-  font-weight: 500;
-  color: var(--clr-medium);
+export const SubHeadingPink = styled(SubHeading)`
+  color: var(--clr-light);
 `;
+
 
 export const MainTextDark = styled.div`
   font-family: "Playfair Display", serif;
@@ -347,4 +341,17 @@ export const RegularLinkRed = styled.a`
   color: var(--clr-dark);
   & :hover {
   }
+`;
+
+// Gamla textstilar - uppdatera där de fortf. används!
+export const SubHeadingLight2 = styled(SubHeading)`
+  color: var(--clr-white);
+`;
+
+export const SubHeadingDark2 = styled(SubHeading)`
+  color: var(--clr-grey);
+`;
+
+export const SubHeadingRed2 = styled(SubHeading)`
+  color: var(--clr-dark);
 `;
