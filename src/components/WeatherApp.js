@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 // import { API } from '../utils/API';
 import { round } from '../utils/helpers';
-// import styled from 'styled-components';
-
+import styled from 'styled-components';
 // import {
-// 	// SubHeadingDark,
-// 	DarkText,
-// 	// ImageDiv,
-// 	// ImageText,
-// 	PagesHeading,
-// 	// PagesImageOverlay,
-// 	// PagesWrapper,
-// } from '../globalStyleComponents';
+// 	clear,
+// 	clouds,
+// 	dust,
+// 	fog,
+// 	rain,
+// 	snow,
+// 	squall,
+// 	thunderstorm,
+// 	tornado,
+// } from '../assets';
+
 // import { render } from 'react-dom';
 import axios from 'axios';
 
@@ -38,7 +40,7 @@ const WeatherApp = () => {
 				},
 			}
 		);
-		console.log(res);
+		// console.log(res);
 		setTemperature(res.data.main.temp);
 		setWeather(res.data.weather[0].main);
 		setIcon(res.data.weather[0].icon);
@@ -48,24 +50,102 @@ const WeatherApp = () => {
 		fetchWeather(latlng.lat, latlng.lng);
 	}, [latlng]);
 	return (
-		<div>
-			Takbaren just now:
-			{round(temperature)} °C
-			{weather}
-			{weather === 'Clear' && <p>It's sunny on the roof top! </p>}
-			{weather === 'Rain' && (
-				<p>It's raining, check our instagram to see if we're open </p>
-			)}
-			{weather === 'Cloudy' && <p>Cloudy day, perfect for a roof top drink</p>}
-		</div>
+		<WeatherCard>
+			<WeatherTextDiv>
+				<WeatherHeading>Takbaren just now:</WeatherHeading>
+				<TemperatureText>{round(temperature)} C</TemperatureText>
+				{weather}
+				{weather === 'Clear' && (
+					<WeatherDescription>It's sunny on the roof top! </WeatherDescription>
+				)}
+				{weather === 'Rain' && (
+					<WeatherDescription>
+						It's raining, check our instagram to see if we're open
+					</WeatherDescription>
+				)}
+				{weather === 'Snow' && (
+					<WeatherDescription>
+						Brr! It's snowing, check our instagram to see if we're open
+					</WeatherDescription>
+				)}
+				{weather === 'Extreme' && (
+					<WeatherDescription>
+						Wow it's wild out there, check our instagram to see if we're open
+					</WeatherDescription>
+				)}
+				{weather === 'Clouds' && (
+					<WeatherDescription>
+						Cloudy day, perfect for a roof top drink
+					</WeatherDescription>
+				)}
+			</WeatherTextDiv>
+			<WeatherImageDiv>
+				{/* {weather === 'Clear' && <img src={clear} alt='sun icon' />} */}
+				{/* {weather === 'Rain' && <img src={rain} alt='rain icon' />} */}
+				{/* {weather === 'Snow' && <img src={snow} alt='snow icon' />} */}
+				{/* {weather === 'Extreme' && <img src={thunderstorm} alt='thunder icon' />} */}
+				{/* {weather === 'Clouds' && <img src={clouds} alt='cloud icon' />} */}
+			</WeatherImageDiv>
+		</WeatherCard>
 	);
 };
 export default WeatherApp;
 //Styling for the weather
-// const TextDiv = styled.div`
-// 	padding: 2rem;
-// 	width: 100%;
-// 	height: 150px;
-// 	border: solid 2px #fff;
-// 	max-width: 600px;
-// `;
+export const WeatherCard = styled.section`
+	display: flex;
+	flex-direction: row;
+	align-items: space-between;
+	/* justify-content: space-around; */
+	/* gap: 1rem; */
+	/* height: 100%; */
+`;
+
+const WeatherTextDiv = styled.div`
+	/* display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center; */
+	background-color: var(--clr-medium);
+	padding: 2rem;
+	width: 100%;
+	height: 100%;
+	/* border: solid 2px #fff; */
+	max-width: 600px;
+`;
+
+const WeatherImageDiv = styled.div`
+	/* display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center; */
+	/* padding: 2rem; */
+	width: 100%;
+	/* height: 150px; */
+	border: solid 2px #fff;
+	max-width: 600px;
+`;
+
+export const WeatherHeading = styled.h1`
+	font-family: 'Playfair Display', serif;
+	font-size: 1.3em;
+	font-style: italic;
+	font-weight: 500;
+	color: var(--clr-grey);
+`;
+
+export const TemperatureText = styled.h2`
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+	font-size: 4em;
+	font-weight: 500;
+	color: var(--clr-grey);
+`;
+
+export const WeatherDescription = styled.h3`
+	font-family: 'Poppins', sans-serif;
+	/* font-weight: bold; */
+	letter-spacing: 0.25em;
+	text-transform: lowercase;
+	text-align: right;
+	color: var(--clr-grey);
+`;
