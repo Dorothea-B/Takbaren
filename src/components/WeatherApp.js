@@ -1,18 +1,16 @@
 import { useState, useEffect } from 'react';
 // import { API } from '../utils/API';
 import { round } from '../utils/helpers';
-import styled from 'styled-components';
-// import {
-// 	clear,
-// 	clouds,
-// 	dust,
-// 	fog,
-// 	rain,
-// 	snow,
-// 	squall,
-// 	thunderstorm,
-// 	tornado,
-// } from '../assets';
+import styled from 'styled-components/macro';
+import clouds from '../assets/clouds.svg';
+import clear from '../assets/clear.svg';
+import dust from '../assets/dust.svg';
+import fog from '../assets/fog.svg';
+import rain from '../assets/rain.svg';
+import snow from '../assets/snow.svg';
+import squall from '../assets/squall.svg';
+import thunderstorm from '../assets/thunderstorm.svg';
+import tornado from '../assets/tornado.svg';
 
 // import { render } from 'react-dom';
 import axios from 'axios';
@@ -24,7 +22,7 @@ const WeatherApp = () => {
 		lng: 18.29,
 	});
 	const [temperature, setTemperature] = useState(0);
-	const [icon, setIcon] = useState('');
+	const [setIcon] = useState('');
 
 	const fetchWeather = async (lat, lng) => {
 		// const res = await axios.get({ API });
@@ -80,11 +78,16 @@ const WeatherApp = () => {
 				)}
 			</WeatherTextDiv>
 			<WeatherImageDiv>
-				{/* {weather === 'Clear' && <img src={clear} alt='sun icon' />} */}
-				{/* {weather === 'Rain' && <img src={rain} alt='rain icon' />} */}
-				{/* {weather === 'Snow' && <img src={snow} alt='snow icon' />} */}
-				{/* {weather === 'Extreme' && <img src={thunderstorm} alt='thunder icon' />} */}
-				{/* {weather === 'Clouds' && <img src={clouds} alt='cloud icon' />} */}
+				{/* <img src={clear} alt='sun icon' /> */}
+				{/* <img src={rain} alt='rain icon' />
+				<img src={snow} alt='snow icon' />
+				<img src={thunderstorm} alt='thunder icon' />
+				<img src={clouds} alt='cloud icon' /> */}
+				{weather === 'Clear' && <img src={clear} alt='sun icon' />}
+				{weather === 'Rain' && <img src={rain} alt='rain icon' />}
+				{weather === 'Snow' && <img src={snow} alt='snow icon' />}
+				{weather === 'Extreme' && <img src={thunderstorm} alt='thunder icon' />}
+				{weather === 'Clouds' && <img src={clouds} alt='cloud icon' />}
 			</WeatherImageDiv>
 		</WeatherCard>
 	);
@@ -101,15 +104,12 @@ export const WeatherCard = styled.section`
 `;
 
 const WeatherTextDiv = styled.div`
-	/* display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center; */
+	display: flex;
+	flex-direction: column;
+	align-items: space-between;
 	background-color: var(--clr-medium);
-	padding: 2rem;
+	padding: 3rem;
 	width: 100%;
-	height: 100%;
-	/* border: solid 2px #fff; */
 	max-width: 600px;
 `;
 
@@ -118,11 +118,11 @@ const WeatherImageDiv = styled.div`
 	flex-direction: row;
 	justify-content: center;
 	align-items: center; */
-	/* padding: 2rem; */
 	width: 100%;
 	/* height: 150px; */
 	border: solid 2px #fff;
 	max-width: 600px;
+	gap: 1rem;
 `;
 
 export const WeatherHeading = styled.h1`
