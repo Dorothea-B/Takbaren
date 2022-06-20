@@ -16,6 +16,7 @@ import {
   PagesCardLIght,
 } from "../globalStyleComponents";
 
+import Loader from "../components/Loader";
 import WeatherApp from "../components/WeatherApp";
 
 const query = `
@@ -30,7 +31,7 @@ const OpenHours = () => {
   const [openHours] = data;
 
   if (!openHours) {
-    return <h1>Loading…</h1>;
+    return <Loader />;
   }
 
   return (

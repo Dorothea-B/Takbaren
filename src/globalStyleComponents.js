@@ -194,9 +194,12 @@ export const SubHeading = styled.h3`
     font-size: 1.3em;
   }
   @media ${device.tablet} {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   @media ${device.laptop} {
+    font-size: 1.5em;
+  }
+  @media ${device.desktop} {
     font-size: 2em;
   }
 `

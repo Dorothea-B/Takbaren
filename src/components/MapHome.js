@@ -25,6 +25,9 @@ mapboxgl.accessToken =
       @media ${device.laptop} {
       height: var(--home-dsktp-h);
       }
+      @media ${device.desktop} {
+      height: var(--home-large-dsktp-h);
+      }
       
   `
   

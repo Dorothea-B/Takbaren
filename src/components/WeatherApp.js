@@ -22,7 +22,7 @@ const WeatherApp = () => {
 		lng: 18.29,
 	});
 	const [temperature, setTemperature] = useState(0);
-	const [setIcon] = useState('');
+	const [icon, setIcon] = useState('');
 
 	const fetchWeather = async (lat, lng) => {
 		// const res = await axios.get({ API });

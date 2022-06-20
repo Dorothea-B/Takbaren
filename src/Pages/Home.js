@@ -18,6 +18,12 @@ import HeaderImg from '../assets/Header-img.jpg';
 import MapHome from '../components/MapHome';
 import GoToTop from '../toolcomponents/GoToTop';
 
+// import HomepageDecor from '../assets/HomepageDecor';
+
+import  leaf1  from '../assets/Leaves/leaf_1.svg'
+import  leaf2  from '../assets/Leaves/leaf_2.svg'
+import  leaf3  from '../assets/Leaves/leaf_3.svg'
+
 // import "../App.css";
 
 // mapboxgl.accessToken =
@@ -48,6 +54,12 @@ const HomePageWrapper = styled.div`
 		min-width: 1000px;
 		max-width: 1500px;
 	}
+	@media ${device.desktop} {
+		width: calc(100% - 100px);
+		flex-direction: row;
+		min-width: 1000px;
+		max-width: 1900px;
+	}
 
 	//RULES FOR ALL CHILD COMPONENTS
 	& > * {
@@ -71,6 +83,12 @@ const HomePageWrapper = styled.div`
 			height: var(--home-dsktp-h);
 			/* overflow: hidden; */
 		}
+		@media ${device.desktop} {
+			margin-top: 0;
+			width: var(--home-tablet-w);
+			height: var(--home-large-dsktp-h);
+			/* overflow: hidden; */
+		}
 	}
 `;
 
@@ -79,17 +97,37 @@ width: 100%;
 position: relative;
 overflow: hidden;
 margin-bottom: 2rem;
+height: 70vh;
+background-image: url(${HeaderImg});
+background-repeat: no-repeat;
+background-size: cover;
+z-index: -100;
 
+@media ${device.mobileS} {
+	height: 40vh;
+	width: 100%;
+	}
+@media ${device.mobileL} {
+	height: 40vh;
+	width: 100%;
+	}
+@media ${device.tablet} {
+	height: 60vh;
+	width: 100%;
+	}
+@media ${device.laptop} {
+	height: 70vh;
+	width: 100%;
+	}
 @media ${device.desktop} {
 	height: 70vh;
 	width: 100%;
-
 	}
 
-& > img {
+/* & > img {
 	margin: auto;
-	width: 100%;
-}
+	object-fit: cover;
+} */
 `
 
 export const CardLight = styled.div`
@@ -132,6 +170,10 @@ const CardOther = styled.div`
 	@media ${device.laptop} {
 		width: 100%;
 		height: calc(var(--home-dsktp-h) * 1.3);
+	}
+	@media ${device.desktop} {
+		
+		height: calc(var(--home-large-dsktp-h) * 1.3);
 	}
 `;
 
@@ -184,11 +226,12 @@ const IntroDesktop = styled.div`
 		margin-left: calc(500px - (500px * 1.5));
 	}
 
-	@media ${device.laptopL} {
+	@media ${device.laptop} {
 		width: var(--home-dsktp-w);
 		height: var(--home-dsktp-h);
 		display: block;
 		position: absolute;
+		padding: 3rem;
 		top: 20vh;
 		left: 50%;
 		margin-left: calc(var(--home-dsktp-w) - (var(--home-dsktp-w) * 1.5));
@@ -259,13 +302,14 @@ const hideDiv = () => {
 		<section>
 			<HeaderImageSection>
 				
-				<img src={HeaderImg} alt='header' />
-				<ImageCarousel />
+				{/* <img src={HeaderImg} alt='header' /> */}
 
 				<IntroDesktop id="desktopIntro">
 						<Hide id="hide" onClick={() => hideDiv()}>&#215;</Hide>
 						<IntroTextHome />
 				</IntroDesktop>
+				{/* <ImageCarousel /> */}
+
 
 			</HeaderImageSection>
 
@@ -276,6 +320,7 @@ const hideDiv = () => {
 					<IntroTextHome />
 				</IntroMobile>
 
+				<Leaf1 />
 
 				<Weather>
 					<WeatherApp />
@@ -284,6 +329,8 @@ const hideDiv = () => {
 				<CardLight>
 					<OpenHoursHome />
 				</CardLight>
+				
+				<Leaf2 />
 
 				<CardOther>
 					<MenuHome />
@@ -296,6 +343,8 @@ const hideDiv = () => {
 				<Map>
 					<MapHome />
 				</Map>
+				
+				<Leaf3 />
 
 				<CardOther>
 					<InstaGradient1> </InstaGradient1>
@@ -303,6 +352,7 @@ const hideDiv = () => {
 
 					<SocialMediaHome />
 				</CardOther>
+
 			</HomePageWrapper>
 			<GoToTop />
 		</section>
@@ -341,3 +391,40 @@ const InstaGradient2 = styled.div`
 	z-index: 300;
 	right: 0;
 `;
+
+const Leaf1 = styled.div`
+width: 13rem;
+height: 15rem;
+background-image: url(${leaf1});
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top: 350px;
+left: -70px;
+filter: drop-shadow(40px -5px 3px #343b3f20);
+
+`
+const Leaf2 = styled.div`
+width: 17rem;
+height: 20rem;
+background-image: url(${leaf2});
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+bottom: -650px;
+right: -150px;
+z-index: 300;
+filter: drop-shadow(10px 17px 4px #343b3f59);
+
+`
+const Leaf3 = styled.div`
+width: 15rem;
+height: 20rem;
+background-image: url(${leaf3});
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+bottom: -1220px;
+left: -200px;
+transform: rotate(130deg);
+`
