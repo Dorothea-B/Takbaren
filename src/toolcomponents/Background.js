@@ -51,7 +51,7 @@
   @media ${device.desktop} {
     top: -120px;
     height: 15rem;
-    background-color: white;
+    /* background-color: white; */
   }
   `
   const Left = styled.div`

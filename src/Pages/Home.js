@@ -79,7 +79,19 @@ const HomePageWrapper = styled.div`
 export const HeaderImageSection = styled.div`
 width: 100%;
 position: relative;
+overflow: hidden;
+margin-bottom: 2rem;
 
+@media ${device.laptopL} {
+	height: 80vh;
+	width: 100%;
+
+	}
+
+& > img {
+	margin: auto;
+	width: 100%;
+}
 `
 
 export const CardLight = styled.div`
