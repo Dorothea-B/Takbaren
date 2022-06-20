@@ -1,22 +1,22 @@
-import React from "react";
-import styled from "styled-components/macro";
-import "../index.css";
+import React from 'react';
+import styled from 'styled-components/macro';
+import '../index.css';
 
-import { useQuery } from "react-query";
-import { sanity } from "../sanity";
+import { useQuery } from 'react-query';
+import { sanity } from '../sanity';
 
 import {
-  PagesHeading,
-  SubHeadingDark,
-  DarkText,
-  ImageDiv,
-  ImageText,
-  PagesImageOverlay,
-  PagesWrapper,
-  PagesCardLIght,
-} from "../globalStyleComponents";
+	PagesHeading,
+	SubHeadingDark,
+	DarkText,
+	ImageDiv,
+	ImageText,
+	PagesImageOverlay,
+	PagesWrapper,
+	PagesCardLIght,
+} from '../globalStyleComponents';
 
-import WeatherApp from "../components/WeatherApp";
+import WeatherPage from '../components/WeatherPage';
 
 const query = `
   *[ _type == 'openHours' ] { title, 
@@ -25,42 +25,42 @@ const query = `
 `;
 
 const OpenHours = () => {
-  const { data = [] } = useQuery("openHours", () => sanity.fetch(query));
+	const { data = [] } = useQuery('openHours', () => sanity.fetch(query));
 
-  const [openHours] = data;
+	const [openHours] = data;
 
-  if (!openHours) {
-    return <h1>Loading…</h1>;
-  }
+	if (!openHours) {
+		return <h1>Loading…</h1>;
+	}
 
-  return (
-    <>
-      <ImageDiv>
-        <PagesImageOverlay></PagesImageOverlay>
-        <ImageText>
-          <PagesHeading>{openHours.title}</PagesHeading>
-        </ImageText>
-        <img src={openHours.image.url} />
-      </ImageDiv>
+	return (
+		<>
+			<ImageDiv>
+				<PagesImageOverlay></PagesImageOverlay>
+				<ImageText>
+					<PagesHeading>{openHours.title}</PagesHeading>
+				</ImageText>
+				<img src={openHours.image.url} alt='sunset' />
+			</ImageDiv>
 
-      <PagesWrapper>
-        <PagesCardLIght>
-          <SubHeadingDark>{openHours.description}</SubHeadingDark>
-        </PagesCardLIght>
-        <div>
-          <SubHeadingDark>{openHours.weatherTitle}</SubHeadingDark>
-          <DarkText>{openHours.weatherDescription}</DarkText>
-          <WeatherPages>
-            <WeatherApp />
-          </WeatherPages>
-        </div>
-      </PagesWrapper>
-    </>
-  );
+			<PagesWrapper>
+				<PagesCardLIght>
+					<SubHeadingDark>{openHours.description}</SubHeadingDark>
+				</PagesCardLIght>
+				<div>
+					<SubHeadingDark>{openHours.weatherTitle}</SubHeadingDark>
+					<DarkText>{openHours.weatherDescription}</DarkText>
+					<WeatherPages>
+						<WeatherPage />
+					</WeatherPages>
+				</div>
+			</PagesWrapper>
+		</>
+	);
 };
 
 export default OpenHours;
 
 const WeatherPages = styled.div`
-  max-width: 600px;
+	max-width: 600px;
 `;

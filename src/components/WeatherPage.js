@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import { API } from '../utils/API';
+
 import { round } from '../utils/helpers';
 import styled from 'styled-components/macro';
 import clouds from '../assets/clouds.svg';
@@ -12,7 +12,6 @@ import squall from '../assets/squall.svg';
 import thunderstorm from '../assets/thunderstorm.svg';
 import tornado from '../assets/tornado.svg';
 
-// import { render } from 'react-dom';
 import axios from 'axios';
 
 const WeatherApp = () => {
@@ -22,10 +21,8 @@ const WeatherApp = () => {
 		lng: 18.29,
 	});
 	const [temperature, setTemperature] = useState(0);
-	const [setIcon] = useState('');
 
 	const fetchWeather = async (lat, lng) => {
-		// const res = await axios.get({ API });
 		const KEY = 'a97e7de7f03fde16353def46be2c83e7';
 		const res = await axios.get(
 			`https://api.openweathermap.org/data/2.5/weather?q=Visby&units=metric
@@ -38,15 +35,13 @@ const WeatherApp = () => {
 				},
 			}
 		);
-		// console.log(res);
 		setTemperature(res.data.main.temp);
 		setWeather(res.data.weather[0].main);
-		setIcon(res.data.weather[0].icon);
 	};
 
 	useEffect(() => {
 		fetchWeather(latlng.lat, latlng.lng);
-	}, [latlng]);
+	});
 	return (
 		<WeatherCard>
 			<WeatherTextDiv>
@@ -78,29 +73,26 @@ const WeatherApp = () => {
 				)}
 			</WeatherTextDiv>
 			<WeatherImageDiv>
-				{/* <img src={clear} alt='sun icon' /> */}
-				{/* <img src={rain} alt='rain icon' />
-				<img src={snow} alt='snow icon' />
-				<img src={thunderstorm} alt='thunder icon' />
-				<img src={clouds} alt='cloud icon' /> */}
 				{weather === 'Clear' && <img src={clear} alt='sun icon' />}
 				{weather === 'Rain' && <img src={rain} alt='rain icon' />}
 				{weather === 'Snow' && <img src={snow} alt='snow icon' />}
 				{weather === 'Extreme' && <img src={thunderstorm} alt='thunder icon' />}
 				{weather === 'Clouds' && <img src={clouds} alt='cloud icon' />}
+				{weather === 'Squall' && <img src={squall} alt='squall icon' />}
+				{weather === 'Tornado' && <img src={tornado} alt='tornado icon' />}
+				{weather === 'Fog' && <img src={fog} alt='fog icon' />}
+				{weather === 'Dust' && <img src={dust} alt='dust icon' />}
 			</WeatherImageDiv>
 		</WeatherCard>
 	);
 };
 export default WeatherApp;
-//Styling for the weather
+
 export const WeatherCard = styled.section`
 	display: flex;
 	flex-direction: row;
 	align-items: space-between;
-	/* justify-content: space-around; */
-	/* gap: 1rem; */
-	/* height: 100%; */
+	height: 100%;
 `;
 
 const WeatherTextDiv = styled.div`
@@ -114,12 +106,7 @@ const WeatherTextDiv = styled.div`
 `;
 
 const WeatherImageDiv = styled.div`
-	/* display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center; */
 	width: 100%;
-	/* height: 150px; */
 	border: solid 2px #fff;
 	max-width: 600px;
 	gap: 1rem;
@@ -143,7 +130,6 @@ export const TemperatureText = styled.h2`
 
 export const WeatherDescription = styled.h3`
 	font-family: 'Poppins', sans-serif;
-	/* font-weight: bold; */
 	letter-spacing: 0.25em;
 	text-transform: lowercase;
 	text-align: right;

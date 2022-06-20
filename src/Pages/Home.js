@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import styled from 'styled-components/macro';
-import { device } from "../toolcomponents/Devices";
+import { device } from '../toolcomponents/Devices';
 import '../index.css';
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
@@ -13,7 +13,7 @@ import ImageCarousel from '../components/ImageCarousel';
 import MenuHome from '../components/MenuHome';
 import OpenHoursHome from '../components/OpenHoursHome';
 import SocialMediaHome from '../components/SocialMediaHome';
-import WeatherApp from '../components/WeatherApp';
+import WeatherHome from '../components/WeatherHome';
 import HeaderImg from '../assets/Header-img.jpg';
 import MapHome from '../components/MapHome';
 import GoToTop from '../toolcomponents/GoToTop';
@@ -35,13 +35,13 @@ const HomePageWrapper = styled.div`
 	@media ${device.mobileS} {
 		width: calc(100% - 30px);
 		flex-direction: column;
-		gap: 1rem;	
+		gap: 1rem;
 	}
 
 	@media ${device.tablet} {
 		width: 90%;
 		flex-direction: column;
-		gap: 2rem;	
+		gap: 2rem;
 	}
 
 	@media ${device.laptop} {
@@ -59,14 +59,14 @@ const HomePageWrapper = styled.div`
 
 		@media ${device.mobileS} {
 			margin-top: 2rem;
-			height: calc(var(--home-mobile-h)*0.8);
+			height: calc(var(--home-mobile-h) * 0.8);
 		}
-		
+
 		@media ${device.mobileL} {
 			margin-top: 2rem;
 			height: var(--home-mobile-h);
 		}
-		
+
 		@media ${device.laptop} {
 			margin-top: 0;
 			width: var(--home-tablet-w);
@@ -77,10 +77,9 @@ const HomePageWrapper = styled.div`
 `;
 
 export const HeaderImageSection = styled.div`
-width: 100%;
-position: relative;
-
-`
+	width: 100%;
+	position: relative;
+`;
 
 export const CardLight = styled.div`
 	background-color: var(--clr-white);
@@ -101,7 +100,6 @@ export const CardLight = styled.div`
 	}
 	@media ${device.laptop} {
 		/* width: var(--home-dsktp-w); */
-		
 	}
 `;
 
@@ -158,7 +156,6 @@ export const Weather = styled.div`
 	}
 `;
 
-
 const IntroDesktop = styled.div`
 	background-color: rgba(247, 246, 240, 0.8);
 	display: none;
@@ -195,13 +192,11 @@ const IntroDesktop = styled.div`
     (read more: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/) 
     100 - (100 x 1.5) = calculate half the value and use it as a negative number*/
 	}
-
 `;
 const IntroMobile = styled.div`
 	background-color: var(--clr-white);
 	display: flex;
 	padding: 2rem;
-
 
 	@media ${device.tablet} {
 		display: none;
@@ -211,7 +206,6 @@ const IntroMobile = styled.div`
 		display: none;
 	} */
 `;
-
 
 const Home = () => {
 	return (
@@ -223,21 +217,17 @@ const Home = () => {
 				<ImageCarousel />
 
 				<IntroDesktop>
-						<IntroTextHome />
+					<IntroTextHome />
 				</IntroDesktop>
-
 			</HeaderImageSection>
 
-
 			<HomePageWrapper>
-
 				<IntroMobile>
 					<IntroTextHome />
 				</IntroMobile>
 
-
 				<Weather>
-					<WeatherApp />
+					<WeatherHome />
 				</Weather>
 
 				<CardLight>
@@ -269,7 +259,6 @@ const Home = () => {
 };
 
 export default Home;
-
 
 const InstaGradient1 = styled.div`
 	background: linear-gradient(

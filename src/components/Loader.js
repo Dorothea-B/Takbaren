@@ -6,7 +6,8 @@ import ClipLoader from 'react-spinners/ClipLoader';
 const override = css`
 	display: block;
 	margin: 0 auto;
-	border-color: red;
+	border: solid 2px #fff;
+	border-color: var(--clr-grey);
 `;
 
 function Loader() {
