@@ -190,14 +190,14 @@ export const SubHeading = styled.h3`
   @media ${device.mobileS} {
     font-size: 0.8em;
   }
-  @media ${device.mobileS} {
-    font-size: 1em;
-    font-weight: 500;
+  @media ${device.mobileL} {
+    font-size: 1.3em;
   }
-  
   @media ${device.tablet} {
     font-size: 1.5em;
-    font-weight: 700;
+  }
+  @media ${device.laptop} {
+    font-size: 2em;
   }
 `
 

@@ -80,8 +80,8 @@ position: relative;
 overflow: hidden;
 margin-bottom: 2rem;
 
-@media ${device.laptopL} {
-	height: 80vh;
+@media ${device.desktop} {
+	height: 70vh;
 	width: 100%;
 
 	}
@@ -178,6 +178,7 @@ const IntroDesktop = styled.div`
 		width: 500px;
 		display: block;
 		position: absolute;
+		padding: 3.3rem;
 		top: 20%;
 		left: 50%;
 		margin-left: calc(500px - (500px * 1.5));
@@ -185,6 +186,7 @@ const IntroDesktop = styled.div`
 
 	@media ${device.laptopL} {
 		width: var(--home-dsktp-w);
+		height: var(--home-dsktp-h);
 		display: block;
 		position: absolute;
 		top: 20vh;
@@ -196,9 +198,11 @@ const IntroDesktop = styled.div`
 	}
 	@media ${device.desktop} {
 		width: var(--home-dsktp-w);
+		height: calc(var(--home-dsktp-h)*1.25);
 		display: block;
 		position: absolute;
-		top: 40vh;
+		padding: 4rem;
+		top: 30vh;
 		left: 50%;
 		margin-left: calc(var(--home-dsktp-w) - (var(--home-dsktp-w) * 1.5));
 		/* This calculation dynamcally centers the div even though it's absolutely positioned 
@@ -221,10 +225,14 @@ const IntroMobile = styled.div`
 		display: none;
 	} */
 `;
+
 const Hide = styled.button`
 width: 50px;
 height: 50px;
 color: black;
+display: flex;
+justify-content: center;
+align-items: center;
 position: absolute;
 right: 0;
 top: 0;
@@ -233,6 +241,12 @@ background: none;
 font-size: 2rem;
 color: var(--clr-dark);
 cursor: pointer;
+
+
+@media ${device.laptopL} {
+	font-size: 3rem;
+	padding: 2rem;
+}
 `
 
 const Home = () => {
@@ -244,8 +258,7 @@ const hideDiv = () => {
 	return (
 		<section>
 			<HeaderImageSection>
-				{/* either one headerimage or the image carousel, right? 
-				Wrapping these in a separate container to control the position of the intro text desktop*/}
+				
 				<img src={HeaderImg} alt='header' />
 				<ImageCarousel />
 
