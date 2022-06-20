@@ -9,20 +9,25 @@ import './index.css';
 
 import Home from './Pages/Home';
 import HeaderHome from './components/HeaderHome';
+import Footer from './components/Footer';
 import Menu from './Pages/Menu';
 import Contact from './Pages/Contact';
 import OpenHours from './Pages/OpenHours';
 import NotFound from './Pages/NotFound';
 import ScrollUpBtn from './components/ScrollUpBtn';
 import Loader from './components/Loader';
+
 import GoToTop from './toolcomponents/GoToTop';
+import Background from './toolcomponents/Background';
 // import styles from "./App.module.css";
 
 import './App.css';
 
 const App = () => {
 	return (
+		
 		<div className='App'>
+			<Background />
 			<header>
 				{/* <img src={logo} className="App-logo" alt="logo" /> */}
 				<HeaderHome />
@@ -37,6 +42,7 @@ const App = () => {
 			</Routes>
 			<ScrollUpBtn />
 			<GoToTop />
+			<Footer />
 		</div>
 	);
 };

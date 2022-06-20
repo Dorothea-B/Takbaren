@@ -7,9 +7,15 @@
   --clr-light: #f6bdac;
   --clr-accent: ##f4dba9;
 
+
+  /* These variables are used in homepage and homepage components,
+  be careful if altering!!
+   */
+  --home-mobile-h: 300px;
+  --home-tablet-w: 80%;
   --home-dsktp-w: 49%;
   --home-dsktp-h: 320px;
-  --home-mobile-h: 300px;
+
 }
 
 * {
@@ -20,7 +26,7 @@ body {
   margin: 0;
   font-family: "Playfair Display", serif;
   background-color: var(--clr-light);
-  background-image: url("./assets/Background.png");
+  /* background-image: url("./assets/Background.png"); */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,21 +45,7 @@ section {
 /*This styling is for the weather ends here*/
 
 /*This styling is for the map*/
-.map-container {
-  display: flex;
-  /* width: calc(100vw - 40px); */
-}
 
-@media (max-width: 768px) {
-  .map-container {
-    height: var(--home-mobile-h);
-  }
-}
-@media (min-width: 1024px) {
-  .map-container {
-    height: var(--home-dsktp-h);
-  }
-}
 
 a {
   color: inherit;

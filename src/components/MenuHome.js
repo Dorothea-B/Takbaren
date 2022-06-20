@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import "../index.css";
+import { device } from "../toolcomponents/Devices";
+
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
@@ -13,19 +15,6 @@ const query = `
     "image": image.asset->{url} }
 `;
 
-
-const MenuImageDiv = styled.div`
-  position: relative;
-
-
-  @media (max-width: 768px) {
-      height: var(--home-mobile-h);
-    }
-    @media (min-width: 1024px) {
-      height: calc(var(--home-dsktp-h) * 1.3);
-    }
-
-`
 
 
 const MenuHome = () => {
@@ -39,8 +28,8 @@ const MenuHome = () => {
 
   return (
     <section>
-      <MenuImageDiv>
-        <Img src={menuHome.image.url} />
+      <MenuImageDiv bgimg={menuHome.image.url}>
+
         <Link to="/menu">
           <OverlayFood>
             <Dark></Dark>
@@ -62,8 +51,41 @@ const MenuHome = () => {
 export default MenuHome;
 
 const Img = styled.img`
-  width: 100%;
+  /* width: 100%; */
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
 `;
+
+
+const MenuImageDiv = styled.div`
+  position: relative;
+  background: url(${(props) => props.bgimg});
+  background-size: cover;
+
+  @media ${device.mobileS} {
+    height: calc(var(--home-mobile-h)*0.8);
+    background-position: center bottom;
+
+    } 
+  @media ${device.mobileL} {
+      height: var(--home-mobile-h);
+    }
+    @media ${device.tablet} {
+      background-position: 90% 50%;
+      height: var(--home-dsktp-h);
+
+    }
+    @media ${device.laptop} {
+      height: calc(var(--home-dsktp-h) * 1.3);
+      background-position: center bottom;
+    }
+
+`
+
+
 
 const OverlayFood = styled.div`
   position: absolute;
@@ -76,23 +98,6 @@ const OverlayFood = styled.div`
   justify-content: center;
   align-items: center;
 
-  /* @media (max-width: 1024px) {
-    background-color: rgba(52, 59, 63, 0.4);
-    background-blend-mode: multiply;
-  }
-
-  @media (min-width: 1024px) {
-    transition-duration: 0.2s;
-    background-color: rgba(52, 59, 63, 0.4);
-    background-blend-mode: multiply;
-    opacity: 0;
-
-    &:hover {
-      opacity: 1;
-      background-color: rgba(52, 59, 63, 0.4);
-      background-blend-mode: multiply;
-    }
-  } */
 `;
 
 const Dark = styled.div`
@@ -110,13 +115,11 @@ const Dark = styled.div`
   opacity: 0;
   z-index: 100;
 
-
-  @media (min-width: 1024px) {
+  @media ${device.laptop} {
     opacity: 0;
 
     &:hover {
       opacity: 1;
-      
     }
   }
 `
@@ -135,10 +138,8 @@ const DarkMobile = styled.div`
   opacity: 1;
   z-index: 50;
 
-
-  @media (min-width: 1024px) {
+  @media ${device.laptop} {
     opacity: 0;
-
   }
 `
 
@@ -153,16 +154,6 @@ const OverlayDrinks = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* @media (min-width: 1024px) {
-    opacity: 0;
-
-    &:hover {
-      opacity: 1;
-      background-color: rgba(52, 59, 63, 0.4);
-      background-blend-mode: multiply;
-    }
-  } */
 `;
 
 const P = styled.p`
