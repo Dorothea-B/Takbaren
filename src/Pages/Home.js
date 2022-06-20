@@ -18,6 +18,8 @@ import HeaderImg from '../assets/Header-img.jpg';
 import MapHome from '../components/MapHome';
 import GoToTop from '../toolcomponents/GoToTop';
 
+import Cross from '../assets/Cross.png';
+
 // import "../App.css";
 
 // mapboxgl.accessToken =
