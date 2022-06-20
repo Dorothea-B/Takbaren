@@ -20,6 +20,7 @@
 
 * {
   box-sizing: border-box;
+
 }
 
 body {
@@ -29,6 +30,7 @@ body {
   /* background-image: url("./assets/Background.png"); */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 section {

@@ -60,12 +60,17 @@ const IntroTextHome = () => {
 				</div>
 			)}
 
-			<a href={introText.link} target='_blank'>
+			{introText.link &&
+				<a href={introText.link} target='_blank'>
 				{/* fixa med target blank  */}
 				<SquareBtn>Read more</SquareBtn>
-			</a>
+				</a>
+			}
+		
+			
 		</CardSpacing>
 	);
 };
 
 export default IntroTextHome;
+{/* <h1 style={{display: 'block'}}>Loading…</h1>; */}
