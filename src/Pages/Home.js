@@ -18,8 +18,6 @@ import HeaderImg from '../assets/Header-img.jpg';
 import MapHome from '../components/MapHome';
 import GoToTop from '../toolcomponents/GoToTop';
 
-import Cross from '../assets/Cross.png';
-
 // import "../App.css";
 
 // mapboxgl.accessToken =
@@ -223,9 +221,26 @@ const IntroMobile = styled.div`
 		display: none;
 	} */
 `;
-
+const Hide = styled.button`
+width: 50px;
+height: 50px;
+color: black;
+position: absolute;
+right: 0;
+top: 0;
+border: none; 
+background: none;
+font-size: 2rem;
+color: var(--clr-dark);
+cursor: pointer;
+`
 
 const Home = () => {
+
+const hideDiv = () => {
+	document.getElementById("desktopIntro").style.display="none"
+}
+
 	return (
 		<section>
 			<HeaderImageSection>
@@ -234,7 +249,8 @@ const Home = () => {
 				<img src={HeaderImg} alt='header' />
 				<ImageCarousel />
 
-				<IntroDesktop>
+				<IntroDesktop id="desktopIntro">
+						<Hide id="hide" onClick={() => hideDiv()}>&#215;</Hide>
 						<IntroTextHome />
 				</IntroDesktop>
 
