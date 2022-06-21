@@ -7,14 +7,13 @@ import introHome from "./schemas-components/introHome";
 import menuHome from "./schemas-components/menuHome";
 import openHoursHome from "./schemas-components/openHoursHome";
 
-// import imageCarousel from "./schemas-components/imageCarousel";
+import imageCarousel from "./schemas-components/imageCarousel";
 
 import madLib from "./madLib";
-import drinkItem from "./drinkItem";
 
 import contact from "./schemas-pages/contact";
-// import menu from "./schemas-pages/menu";
-// import menuDrinks from "./schemas-pages/menuDrinks";
+import menu from "./schemas-pages/menu";
+import menuDrink from "./schemas-pages/menuDrink";
 import menuFood from "./schemas-pages/menuFood";
 import openHours from "./schemas-pages/openHours";
 
@@ -33,14 +32,13 @@ export default createSchema({
     openHoursHome,
     contactHome,
 
-    // imageCarousel,
+    imageCarousel,
 
     madLib,
-    drinkItem,
 
     contact,
-    // menu,
-    // menuDrinks,
+    menu,
+    menuDrink,
     menuFood,
     openHours,
   ]),

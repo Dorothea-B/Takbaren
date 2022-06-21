@@ -6,16 +6,16 @@ const NavDesktop = ({ open }) => {
   return (
     <NavList open={open}>
       <li>
-        <a href="/">Home</a>
+        <a href='/'>Home</a>
       </li>
       <li>
-        <a href="/openinghours">Open</a>
+        <a href='/openinghours'>Open</a>
       </li>
       <li>
-        <a href="/menu">Menu</a>
+        <a href='/menu'>Menu</a>
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <a href='/contact'>Contact</a>
       </li>
     </NavList>
   );
@@ -24,7 +24,6 @@ const NavDesktop = ({ open }) => {
 export default NavDesktop;
 
 const NavList = styled.ul`
-  list-style: none;
   display: flex;
   flex-flow: row nowrap;
   padding: 0;

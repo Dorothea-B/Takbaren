@@ -7,36 +7,36 @@ import { sanity } from "../sanity";
 
 import MenuTabs from "../components/MenuTabs";
 
-// import {
-//   PagesHeading,
-//   ImageDiv,
-//   ImageText,
-//   PagesImageOverlay,
-// } from "../globalStyleComponents";
+import {
+  PagesHeading,
+  ImageDiv,
+  ImageText,
+  PagesImageOverlay,
+} from "../globalStyleComponents";
 
-// const query = `
-//   *[ _type == 'menu' ] { title,
-//     "image": image.asset->{url}
-//   }
-// `;
+const query = `
+  *[ _type == 'menuHeader' ] { title,
+    "image": image.asset->{url}
+  }
+`;
 
 const Menu = () => {
-  // const { data = [] } = useQuery("menu", () => sanity.fetch(query));
-  // const [menu] = data;
+  const { data = [] } = useQuery("menuHeader", () => sanity.fetch(query));
+  const [menuHeader] = data;
 
-  // if (!menu) {
-  //   return <h1>Loading…</h1>;
-  // }
+  if (!menuHeader) {
+    return <h1>Loading…</h1>;
+  }
 
   return (
     <>
-      {/* <ImageDiv>
+      <ImageDiv>
         <PagesImageOverlay></PagesImageOverlay>
         <ImageText>
-          <PagesHeading>{menu.title}</PagesHeading>
+          <PagesHeading>{menuHeader.title}</PagesHeading>
         </ImageText>
-        <img src={menu.image.url} />
-      </ImageDiv> */}
+        <img src={menuHeader.image.url} />
+      </ImageDiv>
       <MenuTabs />
     </>
   );

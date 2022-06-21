@@ -70,4 +70,6 @@ const Contact = () => {
 };
 export default Contact;
 
-const MapPages = styled.div``;
+const MapPages = styled.div`
+  width: 800px;
+`;
