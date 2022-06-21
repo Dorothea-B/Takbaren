@@ -1,5 +1,5 @@
 const menuHome = {
-  title: "Menu Home",
+  title: "Menu Homepage",
   name: "menuHome",
   type: "document",
   fields: [

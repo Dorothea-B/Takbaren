@@ -264,3 +264,17 @@ a {
   cursor: pointer;
   color: var(--clr-dark);
 }
+
+/* #card {
+  background-color: aliceblue;
+} */
+
+/* #card:nth-of-type(even) {
+  background-color: red;
+}
+#card:nth-of-type(odd) {
+  background-color: aliceblue;
+} */
+/* #card:nth-child-of-type(even) {
+  background: lightgreen;
+} */

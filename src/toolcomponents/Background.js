@@ -1,26 +1,25 @@
+/* background-image: url("./assets/Background.png"); */
 
-  /* background-image: url("./assets/Background.png"); */
+import React from "react";
+import styled from "styled-components/macro";
+import { device } from "./Devices";
 
-  import React from "react";
-  import styled from "styled-components/macro";
-  import { device } from "./Devices";
+import top from "../assets/Backgrounds/BG_top.svg";
+import right from "../assets/Backgrounds/BG_right.svg";
+import bottom from "../assets/Backgrounds/BG_bottom.svg";
+import left from "../assets/Backgrounds/BG_left.svg";
 
-  import top from '../assets/Backgrounds/BG_top.svg'
-  import right from '../assets/Backgrounds/BG_right.svg'
-  import bottom from '../assets/Backgrounds/BG_bottom.svg'
-  import left from '../assets/Backgrounds/BG_left.svg'
-
-  const BGWrapper = styled.div`
+const BGWrapper = styled.div`
   position: fixed;
   width: 100%;
   height: 100vh;
   z-index: -200;
-  `
-  const Relative = styled.div`
+`;
+const Relative = styled.div`
   position: relative;
-  `
-  
-  const Top = styled.div`
+`;
+
+const Top = styled.div`
   position: absolute;
   background-image: url(${top});
   background-repeat: repeat-x;
@@ -53,8 +52,8 @@
     height: 15rem;
     /* background-color: white; */
   }
-  `
-  const Left = styled.div`
+`;
+const Left = styled.div`
   position: absolute;
   background-image: url(${left});
   background-repeat: repeat-y;
@@ -62,12 +61,10 @@
   height: 100vh;
   top: 10rem;
 
-
   @media ${device.mobileS} {
     left: -50px;
     width: 8rem;
     top: 3rem;
-
   }
   @media ${device.mobileL} {
     left: -50px;
@@ -78,14 +75,11 @@
     left: -70px;
     top: 6rem;
     width: 14rem;
-
-
   }
   @media ${device.laptop} {
     left: -70px;
     width: 15rem;
     top: 6rem;
-
   }
   @media ${device.laptopL} {
     left: -80px;
@@ -93,8 +87,8 @@
   @media ${device.desktop} {
     left: -50px;
   }
-  `
-  const Right = styled.div`
+`;
+const Right = styled.div`
   position: absolute;
 
   background-image: url(${right});
@@ -115,7 +109,6 @@
     /* right: 50px; */
     top: 6rem;
     width: 12rem;
-
   }
   @media ${device.laptop} {
     /* right: 50px; */
@@ -126,8 +119,8 @@
   @media ${device.desktop} {
     /* right: -50px; */
   }
-  `
-  const Bottom = styled.div`
+`;
+const Bottom = styled.div`
   position: absolute;
   background-image: url(${bottom});
   background-repeat: repeat-x;
@@ -145,16 +138,13 @@
   @media ${device.laptop} {
   }
   @media ${device.laptopL} {
-   
   }
   @media ${device.desktop} {
-  
   }
-  `
+`;
 
-  const Background = () => {
-
-    return (
+const Background = () => {
+  return (
     <BGWrapper>
       <Relative>
         <Top />
@@ -163,8 +153,7 @@
         <Right />
       </Relative>
     </BGWrapper>
+  );
+};
 
-    )
-  }
-
-  export default Background
+export default Background;

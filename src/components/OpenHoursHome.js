@@ -17,7 +17,7 @@ import {
 } from "../globalStyleComponents";
 
 const query = `
-  *[ _type == 'openHoursHome' ] { title, description, story, link }
+  *[ _type == 'openHoursHome' ] { title, story, link }
 `;
 
 const OpenHoursHome = () => {

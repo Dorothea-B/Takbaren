@@ -1,5 +1,5 @@
 const menu = {
-  title: "Menu Header",
+  title: "Menu Page Header",
   name: "menuHeader",
   type: "document",
   fields: [

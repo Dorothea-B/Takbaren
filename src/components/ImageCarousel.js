@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-// import sanityClient from "../client.js";
+// import React from "react";
+// import { useQuery } from "react-query";
+// import { sanity, imageUrlBuilder } from "../sanity";
 
 // const query = `
 // *[ _type == 'imageCarousel' ] {
@@ -8,27 +9,20 @@ import React, { useState, useEffect } from "react";
 // `;
 // // export const imageBuilder = imageUrlBuilder(useQuery.config());
 
-const ImageCarousel = () => {
-  //   const [carousel, setCarousel] = useState(null);
+// const ImageCarousel = () => {
+//   const { data = [] } = useQuery("imageCarousel", () => sanity.fetch(query));
+//   const [imageCarousel] = data;
 
-  //   useEffect(() => {
-  //     sanityClient
-  //       .fetch(
-  //         `*[ _type == 'imageCarousel' ] {
-  //       _id,
-  //   "image": image.asset->{url}
-  //   }`
-  //       )
-  //       .then((data) => {
-  //         setCarousel(data);
-  //         console.log("carousel", data);
-  //       });
-  //   }, []);
+//   console.log("imageCarousel", imageCarousel);
 
-  return <></>;
-};
+//   if (!imageCarousel) {
+//     return <h1>Loading…</h1>;
+//   }
 
-export default ImageCarousel;
+//   return <></>;
+// };
+
+// export default ImageCarousel;
 
 // import React from "react";
 // import { useQuery } from "react-query";
@@ -71,34 +65,3 @@ export default ImageCarousel;
 // export default ImageCarousel;
 
 ///////////////////////////////////////////////////
-
-// import React from "react";
-// // import client from "./sanityClient";
-// import { useQuery } from "react-query";
-// import { sanity, imageUrlBuilder } from "../sanity";
-
-// const query = `
-// *[ _type == 'imageCarousel' ] {
-//   "image": image.asset->{url}
-// }
-// `;
-// // export const imageBuilder = imageUrlBuilder(useQuery.config());
-
-// const ImageCarousel = () => {
-//   const { data = [] } = useQuery("imageCarousel", () => sanity.fetch(query));
-
-//   const [imageCarousel] = data;
-//   console.log("imageCarousel", imageCarousel);
-
-//   if (!imageCarousel) {
-//     return <h1>Loading…</h1>;
-//   }
-
-//   return (
-//     <>
-
-//     </>
-//   );
-// };
-
-// export default ImageCarousel;

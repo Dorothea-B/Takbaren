@@ -31,7 +31,7 @@ const MenuDrink = () => {
         {menuDrinks.map(
           ({ title, ingredients, description, prize, slug, image }) => (
             <li key={slug.current}>
-              <DrinkSection>
+              <DrinkSection id='card'>
                 <img
                   alt={title}
                   // use the sanity `imageUrlBuilder` to
@@ -75,7 +75,7 @@ const TextWrapper = styled.div`
   width: 300px;
   line-height: 1.4;
   position: absolute;
-  right: -24px;
+  right: 550px;
 
   @media (min-width: 768px) {
     width: 500px;

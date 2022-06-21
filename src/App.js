@@ -19,6 +19,7 @@ import Loader from "./components/Loader";
 
 import GoToTop from "./toolcomponents/GoToTop";
 import Background from "./toolcomponents/Background";
+import PopUp from "./components/PopUp";
 // import styles from "./App.module.css";
 
 import "./App.css";

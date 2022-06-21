@@ -5,6 +5,9 @@ import "../index.css";
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
+import BlockContent from "@sanity/block-content-to-react";
+import BlockRenderer from "../BlockRenderer";
+
 import {
   HeadingDark,
   PagesHeading,
@@ -27,7 +30,7 @@ import MapHome from "../components/MapHome";
 const query = `
   *[ _type == 'contact' ] { title, 
     "image": image.asset->{url},
-    number, mail, address }
+    story }
 `;
 
 const Contact = () => {
@@ -51,7 +54,7 @@ const Contact = () => {
 
       <PagesWrapper>
         <PagesCardLIght>
-          <SubHeadingDark>{contact.number}</SubHeadingDark>
+          {/* <SubHeadingDark>{contact.number}</SubHeadingDark>
           <SubHeadingDark>{contact.mail}</SubHeadingDark>
           <p>add fb & ig symbol</p>
 
@@ -59,8 +62,17 @@ const Contact = () => {
           <DarkText>
             Här ska en sanity description in men fick bara error får se om vi
             kan titta på det
-          </DarkText>
+          </DarkText> */}
+          {contact.story && (
+            <div>
+              <BlockContent
+                blocks={contact.story}
+                serializers={{ types: { block: BlockRenderer } }}
+              />
+            </div>
+          )}
         </PagesCardLIght>
+
         <MapPages>
           <MapHome />
         </MapPages>

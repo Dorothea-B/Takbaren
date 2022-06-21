@@ -25,6 +25,7 @@
     "eslint": "^8.6.0",
     "prop-types": "^15.7",
     "react": "^17.0",
+    "react-cookie-consent": "^7.5.0",
     "react-dom": "^17.0",
     "sanity-plugin-hotspot-array": "^0.0.6",
     "styled-components": "^5.3.5"

@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "priv-takbaren"
+    "name": "takbaren"
   },
   "api": {
     "projectId": "2w7j8jyv",
@@ -17,9 +17,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
