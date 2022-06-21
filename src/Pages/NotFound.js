@@ -1,16 +1,29 @@
 import React from 'react';
 import '../index.css';
-import { Heading, RegularText, Button } from '../globalStyleComponents';
+import {
+	PagesWrapper,
+	HeadingDark,
+	Heading,
+	SquareBtn,
+} from '../globalStyleComponents';
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
 	return (
 		<section>
-			<Heading>404</Heading>
-			<RegularText>Page not found</RegularText>
-			<Link to='/'>
-				<Button>Go back to start</Button>
-			</Link>
+			<PagesWrapper>
+				<div>
+					<HeadingDark style={{ marginTop: '2rem' }}>404</HeadingDark>
+				</div>
+				<div>
+					<Heading style={{ marginTop: '2rem' }}>Page not found</Heading>
+				</div>
+				<div>
+					<Link to='/'>
+						<SquareBtn style={{ margin: '2rem' }}>Go back to start</SquareBtn>
+					</Link>
+				</div>
+			</PagesWrapper>
 		</section>
 	);
 };
