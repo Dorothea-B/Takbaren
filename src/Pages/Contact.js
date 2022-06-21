@@ -51,21 +51,13 @@ const Contact = () => {
         <ImageText>
           <PagesHeading>{contact.title}</PagesHeading>
         </ImageText>
-        <img src={contact.image.url} />
+        <img src={contact.image.url} alt='contact page header image'/>
       </ImageDiv>
 
       <PagesWrapper>
         <HomePageWrapper>
           <CardLight>
-            {/* <SubHeadingDark>{contact.number}</SubHeadingDark>
-          <SubHeadingDark>{contact.mail}</SubHeadingDark>
-          <p>add fb & ig symbol</p>
-
-          <SubHeadingDark>{contact.address}</SubHeadingDark>
-          <DarkText>
-            Här ska en sanity description in men fick bara error får se om vi
-            kan titta på det
-          </DarkText> */}
+          
             {contact.story && (
               <div>
                 <BlockContent

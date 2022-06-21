@@ -30,7 +30,7 @@ import leaf3 from '../assets/Leaves/leaf_3.svg';
 // mapboxgl.accessToken =
 //   "pk.eyJ1IjoibWFyaWFubmVhcmRpbiIsImEiOiJjbDQ3Mmc3ZTkwM3drM2tsOXh5NmtqOWhjIn0.yZxjb02HmWVm6P7rG8i8fA";
 
-const HomePageWrapper = styled.div`
+export const HomePageWrapper = styled.div`
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
