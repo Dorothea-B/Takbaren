@@ -4,7 +4,7 @@ import styled from "styled-components/macro";
 import "../index.css";
 
 import MenuFood from "../Pages/MenuFood";
-import MenuDrinks from "../Pages/MenuDrinks";
+import MenuDrink from "../Pages/MenuDrink";
 
 const MenuTabs = () => {
   const [currentTab, setCurrentTab] = useState("1");
@@ -12,13 +12,11 @@ const MenuTabs = () => {
     {
       id: 1,
       tabTitle: "Drinks",
-      title: "Drink Menu",
-      content: <MenuDrinks />,
+      content: <MenuDrink />,
     },
     {
       id: 2,
       tabTitle: "Food",
-      title: "Food Menu",
       content: <MenuFood />,
     },
   ];
@@ -32,6 +30,7 @@ const MenuTabs = () => {
       <TabDiv>
         {tabs.map((tab, i) => (
           <button
+            className='__tab'
             key={i}
             id={tab.id}
             disabled={currentTab === `${tab.id}`}
@@ -46,8 +45,7 @@ const MenuTabs = () => {
           <div key={i}>
             {currentTab === `${tab.id}` && (
               <div>
-                <p>{tab.title}</p>
-                <p>{tab.content}</p>
+                <div>{tab.content}</div>
               </div>
             )}
           </div>
@@ -74,35 +72,30 @@ const MenuWrapper = styled.div`
 const TabDiv = styled.div`
   display: flex;
   justify-content: space-between;
+
   button {
     border: none;
-    color: var(--clr-grey);
+    color: rgba(52, 59, 63, 0.7);
     font-family: "Playfair Display", serif;
     font-size: 1.3em;
     font-style: italic;
-    border-block-end: 2px solid var(--clr-grey);
+
     cursor: pointer;
     padding: 25px;
     width: 100%;
     background-color: transparent;
-    transition: all 0.5s ease-out;
+    transition: all 0.1s ease-in-out;
   }
   button:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
+    color: var(--clr-grey);
   }
   button:disabled {
     border-block-end: 4px solid var(--clr-grey);
+    color: var(--clr-grey);
   }
 `;
 
 const Content = styled.div`
-  padding: 50px 80px;
-  background-color: var(--clr-white);
-  font-weight: 300;
-  line-height: 30px;
-  font-size: 16px;
-  text-align: justify;
   button {
     font-size: 15px;
   }

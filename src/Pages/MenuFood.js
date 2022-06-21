@@ -1,14 +1,16 @@
 import React from "react";
-
-import "../index.css";
+import BlockContent from "@sanity/block-content-to-react";
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
+import BlockRenderer from "../BlockRenderer";
 
+import styled from "styled-components/macro";
+import "../index.css";
 import { SubHeadingDark } from "../globalStyleComponents";
 
 const query = `
-  *[ _type == 'menuFood' ] { description }
+  *[ _type == 'menuFood' ] { story }
 `;
 
 const MenuFood = () => {
@@ -22,9 +24,20 @@ const MenuFood = () => {
 
   return (
     <>
-      <p>{menuFood.description}</p>
+      {menuFood.story && (
+        <MenuWrapper>
+          <BlockContent
+            blocks={menuFood.story}
+            serializers={{ types: { block: BlockRenderer } }}
+          />
+        </MenuWrapper>
+      )}
     </>
   );
 };
 
 export default MenuFood;
+
+const MenuWrapper = styled.div`
+  height: 1000px;
+`;
