@@ -33,6 +33,8 @@ const MenuDrink = () => {
             <li key={slug.current}>
               <DrinkSection id='card'>
                 <img
+                  className='image-card'
+                  id='card'
                   alt={title}
                   // use the sanity `imageUrlBuilder` to
                   // generate optimized images on the fly
@@ -74,8 +76,15 @@ const TextWrapper = styled.div`
   padding: 1.5rem;
   width: 300px;
   line-height: 1.4;
-  position: absolute;
-  right: 550px;
+
+  &:nth-child(even) {
+    position: absolute;
+  }
+
+  &:nth-child(odd) {
+    position: absolute;
+    right: -24px;
+  }
 
   @media (min-width: 768px) {
     width: 500px;
