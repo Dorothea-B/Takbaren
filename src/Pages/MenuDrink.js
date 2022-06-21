@@ -2,6 +2,8 @@ import React from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { sanity, imageUrlBuilder } from "../sanity";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import styles from '../MadLibList.module.css';
 
 import styled from "styled-components/macro";
@@ -27,33 +29,35 @@ const MenuDrink = () => {
   return (
     <>
       <ul>
-        {/* loop through all of the mabLib and show them in a list */}
-        {menuDrinks.map(
-          ({ title, ingredients, description, prize, slug, image }) => (
-            <li key={slug.current}>
-              <DrinkSection id='card'>
-                <img
-                  className='image-card'
-                  id='card'
-                  alt={title}
-                  // use the sanity `imageUrlBuilder` to
-                  // generate optimized images on the fly
-                  src={imageUrlBuilder.image(image).url()}
-                />
-                <TextWrapper>
-                  <PagesHeadingDark>{title}</PagesHeadingDark>
-                  <DescriptionText>
-                    {ingredients}
-                    {description}
-                    <Price>
-                      <DarkText>{prize}</DarkText>
-                    </Price>
-                  </DescriptionText>
-                </TextWrapper>
-              </DrinkSection>
-            </li>
-          )
-        )}
+        <Carousel infiniteLoop useKeyboardArrows>
+          {/* loop through all of the mabLib and show them in a list */}
+          {menuDrinks.map(
+            ({ title, ingredients, description, prize, slug, image }) => (
+              <li key={slug.current}>
+                <DrinkSection id='card'>
+                  <img
+                    className='image-card'
+                    id='card'
+                    alt={title}
+                    // use the sanity `imageUrlBuilder` to
+                    // generate optimized images on the fly
+                    src={imageUrlBuilder.image(image).url()}
+                  />
+                  <TextWrapper>
+                    <PagesHeadingDark>{title}</PagesHeadingDark>
+                    <DescriptionText>
+                      {ingredients}
+                      {description}
+                      <Price>
+                        <DarkText>{prize}</DarkText>
+                      </Price>
+                    </DescriptionText>
+                  </TextWrapper>
+                </DrinkSection>
+              </li>
+            )
+          )}
+        </Carousel>
       </ul>
     </>
   );
