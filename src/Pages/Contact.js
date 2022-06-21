@@ -20,12 +20,14 @@ import {
   ImageText,
   PagesImageOverlay,
   PagesWrapper,
-  PagesCardLIght,
 } from "../globalStyleComponents";
+
+import { CardLight, HomePageWrapper, Map } from "./Home";
 
 import Loader from "../components/Loader";
 
 import MapHome from "../components/MapHome";
+import { device } from "../toolcomponents/Devices";
 
 const query = `
   *[ _type == 'contact' ] { title, 
@@ -53,8 +55,9 @@ const Contact = () => {
       </ImageDiv>
 
       <PagesWrapper>
-        <PagesCardLIght>
-          {/* <SubHeadingDark>{contact.number}</SubHeadingDark>
+        <HomePageWrapper>
+          <CardLight>
+            {/* <SubHeadingDark>{contact.number}</SubHeadingDark>
           <SubHeadingDark>{contact.mail}</SubHeadingDark>
           <p>add fb & ig symbol</p>
 
@@ -63,25 +66,22 @@ const Contact = () => {
             Här ska en sanity description in men fick bara error får se om vi
             kan titta på det
           </DarkText> */}
-          {contact.story && (
-            <div>
-              <BlockContent
-                blocks={contact.story}
-                serializers={{ types: { block: BlockRenderer } }}
-              />
-            </div>
-          )}
-        </PagesCardLIght>
+            {contact.story && (
+              <div>
+                <BlockContent
+                  blocks={contact.story}
+                  serializers={{ types: { block: BlockRenderer } }}
+                />
+              </div>
+            )}
+          </CardLight>
 
-        <MapPages>
-          <MapHome />
-        </MapPages>
+          <Map>
+            <MapHome />
+          </Map>
+        </HomePageWrapper>
       </PagesWrapper>
     </>
   );
 };
 export default Contact;
-
-const MapPages = styled.div`
-  width: 800px;
-`;

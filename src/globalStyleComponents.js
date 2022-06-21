@@ -19,18 +19,7 @@ export const CardSpacing = styled.section`
 
 // ---------------- PAGES SPECIFIC GLOBAL STYLING ----------------//
 export const PagesWrapper = styled.div`
-  width: calc(100% - 30px);
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  & > * {
-    margin-top: 2rem;
-  }
-  @media (min-width: 1024px) {
-    flex-direction: row;
-  }
+  margin-top: 2rem;
 `;
 
 export const ImageDiv = styled.div`
