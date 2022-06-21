@@ -154,6 +154,7 @@ export const MediumHeading = styled.h2`
   text-transform: uppercase;
   font-size: 1.3em;
   white-space: break-spaces;
+
 `;
 
 export const MediumHeadingDark = styled(MediumHeading)`

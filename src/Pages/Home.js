@@ -36,6 +36,12 @@ const HomePageWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  /* overflow: hidden; */
+  overflow: visible;
+
+  position: relative;
+  width: 100%;
+
 
   @media ${device.mobileS} {
     width: calc(100% - 30px);
@@ -133,7 +139,6 @@ export const HeaderImageSection = styled.div`
 export const CardLight = styled.div`
   background-color: var(--clr-white);
   flex: 1;
-
   padding: 2rem;
   /* overflow: hidden; */
 
@@ -255,6 +260,7 @@ const IntroMobile = styled.div`
   display: flex;
   padding: 2rem;
 
+
   @media ${device.tablet} {
     display: none;
   }
@@ -293,6 +299,9 @@ const Home = () => {
 
   return (
     <section>
+        <Leaf2 />
+        <Leaf3 />
+        <Leaf5 />
       <HeaderImageSection>
         {/* <img src={HeaderImg} alt='header' /> */}
 
@@ -300,6 +309,7 @@ const Home = () => {
           <Hide id='hide' onClick={() => hideDiv()}>
             &#215;
           </Hide>
+          <Leaf4 />
           <IntroTextHome />
         </IntroDesktop>
         {/* <ImageCarousel /> */}
@@ -307,10 +317,11 @@ const Home = () => {
 
       <HomePageWrapper>
         <IntroMobile>
+          <Leaf1 />
           <IntroTextHome />
         </IntroMobile>
 
-        <Leaf1 />
+      
 
         <Weather>
           <WeatherHome />
@@ -320,7 +331,8 @@ const Home = () => {
           <OpenHoursHome />
         </CardLight>
 
-        <Leaf2 />
+       
+      
 
         <CardOther>
           <MenuHome />
@@ -334,8 +346,7 @@ const Home = () => {
           <MapHome />
         </Map>
 
-        <Leaf3 />
-
+      
         <CardOther>
           <InstaGradient1> </InstaGradient1>
           <InstaGradient2> </InstaGradient2>
@@ -343,7 +354,9 @@ const Home = () => {
           <SocialMediaHome />
         </CardOther>
       </HomePageWrapper>
+
       <GoToTop />
+
       {/* <Popup /> */}
     </section>
   );
@@ -381,6 +394,17 @@ const InstaGradient2 = styled.div`
   right: 0;
 `;
 
+const LeafWrapper = styled.div`
+position: fixed;
+top: 0;
+margin:0;
+top:0;
+left:0;
+bottom: 0;
+right: 0;
+
+`
+
 const Leaf1 = styled.div`
   width: 13rem;
   height: 15rem;
@@ -388,30 +412,99 @@ const Leaf1 = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  top: 350px;
+  top: -20px;
   left: -70px;
+  overflow: visible;
   filter: drop-shadow(40px -5px 3px #343b3f20);
+  @media ${device.mobileS} {
+    left: -110px;
+    top: -110px;
+  }
+  @media ${device.laptop} {
+    
+  }
 `;
-const Leaf2 = styled.div`
-  width: 17rem;
-  height: 20rem;
-  background-image: url(${leaf2});
+const Leaf4 = styled.div`
+  width: 15rem;
+  height: 15rem;
+  background-image: url(${leaf1});
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  bottom: -650px;
-  right: -150px;
+  top: 60px;
+  left: -300px;
+  overflow: visible;
+  filter: drop-shadow(40px -5px 3px #343b3f60);
+  @media ${device.laptop} {
+    left: -500px;
+    height: 18rem;
+  }
+`;
+const Leaf2 = styled.div`
+  width: 9rem;
+  height: 14rem;
+  background-image: url(${leaf2});
+  background-size: cover;
+  background-repeat: repeat-x;
+  position: absolute;
+  right: 0px;
+  top: 170px;
   z-index: 300;
   filter: drop-shadow(10px 17px 4px #343b3f59);
+
+  @media ${device.mobileS} {
+    width: 7rem;
+    height: 10rem;
+  }
+  @media ${device.laptop} {
+    width: 13rem;
+    height: 15rem;
+  }
+  `
+
+const Leaf5 = styled.div`
+  width: 9rem;
+  height: 14rem;
+  background-image: url(${leaf2});
+  background-size: cover;
+  background-repeat: repeat-x;
+  position: absolute;
+  right: 0px;
+  top: 1400px;
+  z-index: 300;
+  filter: drop-shadow(10px 17px 4px #343b3f59);
+  @media ${device.mobileS} {
+    height: 12rem;
+  }
+  @media ${device.laptop} {
+    height: 15rem;
+    top: 1300px;
+    width: 12rem;
+
+  }
+
 `;
 const Leaf3 = styled.div`
-  width: 15rem;
+  width: 13rem;
   height: 20rem;
   background-image: url(${leaf3});
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  bottom: -1220px;
-  left: -200px;
-  transform: rotate(130deg);
+  bottom: -1580px;
+  left: -140px;
+  transform: rotate(120deg);
+  z-index: 600;
+  filter: drop-shadow(50px -20px 3px #343b3f14);
+  @media ${device.mobileS} {
+    height: 12rem;
+    left: -100px;
+    bottom: -1490px;
+  }
+  @media ${device.laptop} {
+    height: 12rem;
+    left: -120px;
+    bottom: -1200px;
+  }
+
 `;
