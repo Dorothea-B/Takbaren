@@ -82,7 +82,6 @@ export const Button = styled.button`
 
 export const RoundBtn = styled.button`
   background-color: var(--clr-grey);
-  color: var(--clr-white);
   cursor: pointer;
   border: none;
   padding: 0.8rem;
@@ -90,7 +89,6 @@ export const RoundBtn = styled.button`
   width: 50px;
   height: 50px;
   margin: 1rem;
-  box-shadow: (rgba(0, 0, 0, 0.25));
 `;
 
 export const SquareBtn = styled.button`
@@ -105,7 +103,6 @@ export const SquareBtn = styled.button`
   margin-top: 1.5rem;
   padding: 0.5rem;
   width: 250px;
-  /* osäker på width */
 `;
 
 export const CrossBtn = styled.button`

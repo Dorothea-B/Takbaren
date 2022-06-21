@@ -33,6 +33,8 @@ const MenuDrink = () => {
             <li key={slug.current}>
               <DrinkSection id='card'>
                 <img
+                  className='image-card'
+                  id='card'
                   alt={title}
                   // use the sanity `imageUrlBuilder` to
                   // generate optimized images on the fly
