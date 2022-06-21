@@ -55,9 +55,26 @@ a {
 }
 
 .logo {
+  max-width: 65%;
   display: flex;
   justify-content: center;
+  margin: 1rem;
 }
+.shrink-logo {
+  display: flex;
+  justify-content: center;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  max-width: 40%;
+}
+
+/* @media (min-width: 768px) {
+  .shrink-logo {
+    display: none;
+    width: 100%;
+  }
+} */
 
 .orange {
   color: orange;
@@ -81,17 +98,22 @@ a {
   font-size: 50px;
   font-weight: bold;
 }
-/* .static-nav {
+.static-nav {
   background-color: transparent;
 }
 
 .scroll-nav {
-  background-color: var(--clr-medium);
-  transition: all 0.4s ease-in-out;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  background-image: url("./assets/Background.png");
+  box-shadow: 7px 7px 15px 1px rgba(52, 59, 63, 0.72);
+  /* transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out; */
   z-index: 9999;
-} */
+  position: fixed;
+}
 
 /* Används inte i nuläget */
 
@@ -265,16 +287,14 @@ a {
   color: var(--clr-dark);
 }
 
-/* #card {
-  background-color: aliceblue;
-} */
-
-/* #card:nth-of-type(even) {
-  background-color: red;
+/* .image-card {
+  width: 400px;
 }
-#card:nth-of-type(odd) {
-  background-color: aliceblue;
-} */
-/* #card:nth-child-of-type(even) {
-  background: lightgreen;
+
+.image-card:nth-child(even) {
+  position: absolute;
+}
+.image-card:nth-child(odd) {
+  position: absolute;
+  right: -24px;
 } */

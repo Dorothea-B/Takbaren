@@ -11,6 +11,10 @@ import squall from '../assets/squall.svg';
 import thunderstorm from '../assets/thunderstorm.svg';
 import tornado from '../assets/tornado.svg';
 
+import { device } from "../toolcomponents/Devices";
+import "../index.css";
+
+
 import axios from 'axios';
 
 const WeatherApp = () => {
@@ -45,11 +49,14 @@ const WeatherApp = () => {
 	return (
 		<WeatherCard>
 			<WeatherTextDiv>
+				<div>
 				<WeatherHeading>Takbaren just now:</WeatherHeading>
-				<TemperatureText>{round(temperature)} C</TemperatureText>
-				{weather}
+				<TemperatureText>{round(temperature)}{'\u00b0'}C</TemperatureText>
+				<TemperatureDescription>{weather}</TemperatureDescription>
+				</div>
 			</WeatherTextDiv>
 			<WeatherImageDiv>
+				<Icon>
 				{weather === 'Clear' && <img src={clear} alt='sun icon' />}
 				{weather === 'Rain' && <img src={rain} alt='rain icon' />}
 				{weather === 'Snow' && <img src={snow} alt='snow icon' />}
@@ -59,6 +66,7 @@ const WeatherApp = () => {
 				{weather === 'Tornado' && <img src={tornado} alt='tornado icon' />}
 				{weather === 'Fog' && <img src={fog} alt='fog icon' />}
 				{weather === 'Dust' && <img src={dust} alt='dust icon' />}
+				</Icon>
 			</WeatherImageDiv>
 		</WeatherCard>
 	);
@@ -75,34 +83,98 @@ export const WeatherCard = styled.section`
 const WeatherTextDiv = styled.div`
 	display: flex;
 	flex-direction: column;
-	align-items: space-between;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--clr-medium);
-	padding: 3rem;
-	width: 100%;
-	max-width: 600px;
+	flex: 1;
+	height: 100%;
+& > * {
+	
+	@media ${device.mobileS} {
+	
+	}
+	@media ${device.mobileL} {
+	
+	}
+	@media ${device.tablet} {
+	
+	}
+}
+	
 `;
 
 const WeatherImageDiv = styled.div`
 	width: 100%;
-	border: solid 2px #fff;
-	max-width: 600px;
-	gap: 1rem;
+	height: 100%;
+	display: flex;
+	flex: 1;
+
+	align-items: center;
+	justify-content: center;
+
+	/* border: solid 2px #fff; */
+	/* max-width: 600px; */
+	/* padding: 3rem; */
+	/* gap: 1rem; */
+`;
+const Icon = styled.div`
+width: 70%;
+height: 70%;
+display: flex;
+align-items: center;
+justify-content: center;
+/* border: solid 2px #fff; */
+	/* max-width: 600px; */
+	/* gap: 1rem; */
+	& > img {
+		height: 100%;
+		width: 100%;
+	}
 `;
 
 export const WeatherHeading = styled.h1`
 	font-family: 'Playfair Display', serif;
-	font-size: 1.3em;
+	font-size: 1.7em;
 	font-style: italic;
-	font-weight: 500;
+	font-weight: 700;
+	text-align: end;
 	color: var(--clr-grey);
+	@media ${device.mobileS} {
+		font-size: 1em;
+	}
+	@media ${device.mobileL} {
+		font-size: 2em;
+	}
+	@media ${device.tablet} {
+	font-size: 2em;
+	}
 `;
 
-export const TemperatureText = styled.h2`
+export const TemperatureText = styled.p`
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
-	font-size: 4em;
+	font-size: 6em;
 	font-weight: 500;
 	color: var(--clr-grey);
+	text-align: end;
+
+	@media ${device.mobileS} {
+		font-size: 3em;
+	}
+	@media ${device.mobileL} {
+		font-size: 4em;
+	}
+	@media ${device.tablet} {
+	font-size: 4em;
+	}
+`;
+export const TemperatureDescription = styled.h3`
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+	font-size: 1.8em;
+	font-weight: 500;
+	color: var(--clr-grey);
+	text-align: end;
 `;
 
 export const WeatherDescription = styled.h3`

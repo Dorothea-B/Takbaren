@@ -381,6 +381,16 @@ const InstaGradient2 = styled.div`
 	right: 0;
 `;
 
+const LeafWrapper = styled.div`
+	position: fixed;
+	top: 0;
+	margin: 0;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+`;
+
 const Leaf1 = styled.div`
 	width: 13rem;
 	height: 15rem;

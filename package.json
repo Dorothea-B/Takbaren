@@ -13,6 +13,7 @@
 		"mapbox-gl": "^2.8.2",
 		"modern-css-reset": "^1.4.0",
 		"react": "^18.1.0",
+		"react-cookie-consent": "^7.5.0",
 		"react-dom": "^18.1.0",
 		"react-open-weather": "^1.2.0",
 		"react-query": "^3.39.1",

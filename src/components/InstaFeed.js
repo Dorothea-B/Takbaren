@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import Feed from './Feed'
+import { device } from '../toolcomponents/Devices'
 
 import '../index.css'
 
@@ -11,6 +12,9 @@ const SomeWrapper = styled.div`
 	height: var(--home-dsktp-h);
 	position: relative;
 	z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 
@@ -22,16 +26,20 @@ const InstaContainer = styled.div `
 	flex-wrap: nowrap;
 	margin: auto;
 	overflow: scroll;
-	gap: 2rem;
+	gap: 1rem;
 	position: absolute;
 
     & > * {
-        width: calc(100% * 0.333333);
-      
-        @media (min-width: 1024px) {
-        
-        width: 300px;
+        /* width: calc(100% * 0.333333); */
+        height: 13rem;
+
+        @media ${device.laptop} {
+            height: 17rem;
         }
+
+        /* @media (min-width: 1024px) {
+        
+        } */
     }
     
     

@@ -6,14 +6,19 @@ import styled from "styled-components/macro";
 import {
   HeadingDark,
   CardSpacing,
+  MediumHeadingDark,
+  SubHeadingDark,
 } from "../globalStyleComponents";
   
-
+const MediumHeadingDarkSOME = styled(MediumHeadingDark)`
+margin-top: 1.3rem;
+/* transform: scale(1.2); */
+`
 
 const SocialMediaHome = () => {
   return (
     <CardSpacing>
-      <HeadingDark> ~Follow us @takbarenvisby~ </HeadingDark>
+      <MediumHeadingDarkSOME> » Follow us @takbarenvisby « </MediumHeadingDarkSOME>
       <InstaFeed  limit={12} />
     </CardSpacing>
   );

@@ -6,34 +6,36 @@ import Logo from "../assets/Takbar_logo.png";
 import NavBarHome from "./NavBarHome";
 
 const HeaderHome = () => {
-  // const [navbar, setNavbar] = useState(false);
-  // const [logo, setLogo] = useState(false);
+  const [navbar, setNavbar] = useState(false);
+  const [logo, setLogo] = useState(false);
 
-  // const fixedNavbar = () => {
-  //   if (window.scrollY >= 50) {
-  //     setNavbar(true);
-  //   } else {
-  //     setNavbar(false);
-  //   }
-  // };
-  // window.addEventListener("scroll", fixedNavbar);
+  const fixedNavbar = () => {
+    if (window.scrollY >= 50) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener("scroll", fixedNavbar);
 
-  // const shrinkLogo = () => {
-  //   if (window.scrollY >= 50) {
-  //     setLogo(true);
-  //   } else {
-  //     setLogo(false);
-  //   }
-  // };
-  // window.addEventListener("scroll", shrinkLogo);
+  const shrinkLogo = () => {
+    if (window.scrollY >= 50) {
+      setLogo(true);
+    } else {
+      setLogo(false);
+    }
+  };
+  window.addEventListener("scroll", shrinkLogo);
 
   return (
     <>
-      <HeaderSection>
-        {/* className={navbar ? "scroll-nav" : "static-nav"}  FOR HEADERSECTION*/}
+      <HeaderSection className={navbar ? "scroll-nav" : "static-nav"}>
         <Link to='/' className='logo'>
-          <Img src={Logo} alt='logo' />
-          {/* className={logo ? "shrink-logo" : "logo"} FOR IMG */}
+          <img
+            src={Logo}
+            alt='logo'
+            className={logo ? "shrink-logo" : "logo"}
+          />
         </Link>
         <NavBarHome />
       </HeaderSection>
@@ -49,23 +51,23 @@ const HeaderSection = styled.section`
 `;
 
 const Img = styled.img`
-  max-width: 50%;
+  /* max-width: 50%;
   display: flex;
   justify-content: center;
-  margin: 1rem;
+  margin: 1rem; */
 
-  @media (min-width: 768px) {
-    max-width: 30%;
-  }
+  //   @media (min-width: 768px) {
+  //     max-width: 30%;
+  //   }
   /* .shrink-logo {
     display: flex;
     justify-content: center;
     transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
-    max-width: 40%;
-  }
-  @media (min-width: 768px) {
+    max-width: 20%;
+  } */
+  /* @media (min-width: 768px) {
     max-width: 50%;
   } */
 `;

@@ -19,18 +19,7 @@ export const CardSpacing = styled.section`
 
 // ---------------- PAGES SPECIFIC GLOBAL STYLING ----------------//
 export const PagesWrapper = styled.div`
-  width: calc(100% - 30px);
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  & > * {
-    margin-top: 2rem;
-  }
-  @media (min-width: 1024px) {
-    flex-direction: row;
-  }
+  margin-top: 2rem;
 `;
 
 export const ImageDiv = styled.div`
@@ -93,7 +82,6 @@ export const Button = styled.button`
 
 export const RoundBtn = styled.button`
   background-color: var(--clr-grey);
-  color: var(--clr-white);
   cursor: pointer;
   border: none;
   padding: 0.8rem;
@@ -101,7 +89,6 @@ export const RoundBtn = styled.button`
   width: 50px;
   height: 50px;
   margin: 1rem;
-  box-shadow: (rgba(0, 0, 0, 0.25));
 `;
 
 export const SquareBtn = styled.button`
@@ -116,7 +103,6 @@ export const SquareBtn = styled.button`
   margin-top: 1.5rem;
   padding: 0.5rem;
   width: 250px;
-  /* osäker på width */
 `;
 
 export const CrossBtn = styled.button`
@@ -154,6 +140,7 @@ export const MediumHeading = styled.h2`
   text-transform: uppercase;
   font-size: 1.3em;
   white-space: break-spaces;
+
 `;
 
 export const MediumHeadingDark = styled(MediumHeading)`

@@ -18,6 +18,8 @@ import {
   PagesCardLIght,
 } from "../globalStyleComponents";
 
+import { CardLight, HomePageWrapper, Weather } from "./Home";
+
 import WeatherPage from "../components/WeatherPage";
 
 const query = `
@@ -46,23 +48,25 @@ const OpenHours = () => {
       </ImageDiv>
 
       <PagesWrapper>
-        <PagesCardLIght>
-          {openHours.story && (
-            <div>
-              <BlockContent
-                blocks={openHours.story}
-                serializers={{ types: { block: BlockRenderer } }}
-              />
-            </div>
-          )}
-        </PagesCardLIght>
-        <div>
-          <SubHeadingDark>{openHours.weatherTitle}</SubHeadingDark>
+        <HomePageWrapper>
+          <CardLight>
+            {openHours.story && (
+              <div>
+                <BlockContent
+                  blocks={openHours.story}
+                  serializers={{ types: { block: BlockRenderer } }}
+                />
+              </div>
+            )}
+          </CardLight>
+          <div>
+            <SubHeadingDark>{openHours.weatherTitle}</SubHeadingDark>
 
-          <WeatherPages>
-            <WeatherPage />
-          </WeatherPages>
-        </div>
+            <Weather>
+              <WeatherPage />
+            </Weather>
+          </div>
+        </HomePageWrapper>
       </PagesWrapper>
     </>
   );
@@ -70,6 +74,6 @@ const OpenHours = () => {
 
 export default OpenHours;
 
-const WeatherPages = styled.div`
-  max-width: 600px;
-`;
+// const WeatherPages = styled.div`
+//   max-width: 600px;
+// `;
