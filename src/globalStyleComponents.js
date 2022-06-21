@@ -33,22 +33,6 @@ export const PagesWrapper = styled.div`
   }
 `;
 
-export const PagesHeading = styled(Heading)`
-  color: var(--clr-white);
-  border-block-end: 2px solid var(--clr-white);
-`;
-
-export const PagesHeadingDark = styled(Heading)`
-  color: var(--clr-grey);
-  border-block-end: 2px solid var(--clr-grey);
-  padding: 1rem;
-  width: min-content;
-
-  @media (max-width: 768px) {
-    font-size: 1.5em;
-  }
-`;
-
 export const ImageDiv = styled.div`
   position: relative;
 `;
@@ -345,4 +329,20 @@ export const LightText = styled(RegularText)`
 
 export const DarkText = styled(RegularText)`
   color: var(--clr-grey);
+`;
+
+export const PagesHeading = styled(Heading)`
+  color: var(--clr-white);
+  border-block-end: 2px solid var(--clr-white);
+`;
+
+export const PagesHeadingDark = styled(Heading)`
+  color: var(--clr-grey);
+  border-block-end: 2px solid var(--clr-grey);
+  padding: 1rem;
+  width: min-content;
+
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
 `;
