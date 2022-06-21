@@ -20,6 +20,8 @@ import {
   PagesCardLIght,
 } from "../globalStyleComponents";
 
+import Loader from "../components/Loader";
+
 import MapHome from "../components/MapHome";
 
 const query = `
@@ -34,7 +36,7 @@ const Contact = () => {
   const [contact] = data;
 
   if (!contact) {
-    return <h1>Loading…</h1>;
+    return <Loader />;
   }
 
   return (

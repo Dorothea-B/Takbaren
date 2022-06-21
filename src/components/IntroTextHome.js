@@ -9,7 +9,6 @@ import { sanity } from '../sanity';
 
 import '../index.css';
 
-import CrossBtn from './CrossBtn';
 
 import {
 	HeadingDark,
@@ -24,21 +23,12 @@ const query = `
   *[ _type == 'introHome' ] { title, story, link }
 `;
 
-// const IntroQuote = styled(SubHeadingRed)`
-//   font-size: 18px;
-//   font-weight: 600;
-// `;
 
 const IntroTextHome = () => {
 	const { data = [] } = useQuery('introHome', () => sanity.fetch(query));
 
 	const [introText] = data;
 
-	// const stylings = introText?.story
-	// .map((block) => block.styles)
-	// .flat();
-
-	// console.log(`Styles avaliable:`, stylings);
 
 	if (!introText) {
 		return <h1>Loading…</h1>;
@@ -46,10 +36,8 @@ const IntroTextHome = () => {
 
 	return (
 		<CardSpacing>
-			{/* <CrossBtn /> */}
-			<HeadingDark>{introText.title}</HeadingDark>
 
-			{/* <IntroQuote>{introText.description}</IntroQuote> */}
+			<HeadingDark>{introText.title}</HeadingDark>
 
 			{introText.story && (
 				<div>
@@ -60,10 +48,14 @@ const IntroTextHome = () => {
 				</div>
 			)}
 
-			<a href={introText.link} target='_blank'>
+			{introText.link &&
+				<a href={introText.link} target='_blank'>
 				{/* fixa med target blank  */}
 				<SquareBtn>Read more</SquareBtn>
-			</a>
+				</a>
+			}
+		
+			
 		</CardSpacing>
 	);
 };

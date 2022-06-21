@@ -3,11 +3,6 @@ import "./index.css";
 import { device } from "./toolcomponents/Devices";
 
 
-export const Heading = styled.h1`
-	font-family: 'Playfair Display', serif;
-	text-transform: uppercase;
-	font-size: 2em;
-`;
 
 // export const SubHeading = styled.h3`
 //   font-family: "Playfair Display", serif;
@@ -15,27 +10,7 @@ export const Heading = styled.h1`
 //   font-style: italic;
 // `;
 
-export const RegularText = styled.p`
-	font-family: 'Poppins', sans-serif;
-	font-size: 12px;
-`;
 
-export const VerySmallText = styled(RegularText)`
-	font-size: 8px;
-`;
-
-export const HeadingDark2 = styled(Heading)`
-	color: var(--clr-grey);
-`;
-
-
-export const LightText = styled(RegularText)`
-	color: var(--clr-white);
-`;
-
-export const DarkText = styled(RegularText)`
-	color: var(--clr-grey);
-`;
 
 export const CardSpacing = styled.section`
 	display: flex;
@@ -60,11 +35,6 @@ export const PagesWrapper = styled.div`
 	@media (min-width: 1024px) {
 		flex-direction: row;
 	}
-`;
-
-export const PagesHeading = styled(Heading)`
-	color: var(--clr-white);
-	border-block-end: 2px solid var(--clr-white);
 `;
 
 export const ImageDiv = styled.div`
@@ -169,107 +139,111 @@ export const CrossBtn = styled.button`
 
 /*Alla text-stilkomponenter. */
 
-export const HeadingDark = styled.h1`
+export const Heading = styled.h1`
 	font-family: 'Playfair Display', serif;
 	text-transform: uppercase;
 	font-size: 2em;
+	white-space: break-spaces;
+
+`;
+export const HeadingDark = styled(Heading)`
 	color: var(--clr-grey);
 `;
 
-export const HeadingLight = styled.h1`
-	font-family: 'Playfair Display', serif;
-	text-transform: uppercase;
-	font-size: 2em;
+export const HeadingLight = styled(Heading)`
 	color: var(--clr-white);
 `;
 
-export const MediumHeadingDark = styled.h2`
+export const MediumHeading = styled.h2`
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
   font-size: 1.3em;
+  white-space: break-spaces;
+
+`;
+
+export const MediumHeadingDark = styled(MediumHeading)`
   color: var(--clr-grey);
 `;
 
-export const MediumHeadingLight = styled.h2`
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
-  font-size: 1.3em;
+export const MediumHeadingLight = styled(MediumHeading)`
   color: var(--clr-white);
 `;
 
-export const MediumHeadingRed = styled.h2`
+export const MediumHeadingRed = styled(MediumHeading)`
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
   font-size: 1.5em;
   color: var(--clr-dark);
 `;
 
+
 export const SubHeading = styled.h3`
   font-family: "Playfair Display", serif;
   /* font-size: 1.3em; */
   font-style: italic;
   font-weight: 500;
+  white-space: break-spaces;
+  vertical-align: bottom;
+
   
   @media ${device.mobileS} {
     font-size: 0.8em;
   }
-  @media ${device.mobileS} {
-    font-size: 1em;
-    font-weight: 500;
+  @media ${device.mobileL} {
+    font-size: 1.3em;
   }
-  
   @media ${device.tablet} {
+    font-size: 1.3em;
+  }
+  @media ${device.laptop} {
     font-size: 1.5em;
-    font-weight: 700;
-
+  }
+  @media ${device.desktop} {
+    font-size: 2em;
   }
 `
 
 export const SubHeadingLight = styled(SubHeading)`
   color: var(--clr-white);
 `;
-
 export const SubHeadingDark = styled(SubHeading)`
   color: var(--clr-grey);
 `;
-
 export const SubHeadingRed = styled(SubHeading)`
   color: var(--clr-dark);
 `;
-
 export const SubHeadingPink = styled(SubHeading)`
   color: var(--clr-light);
 `;
 
 
-export const MainTextDark = styled.div`
+export const MainText = styled.div`
 	font-family: 'Playfair Display', serif;
 	font-size: 1em;
 	font-style: italic;
 	font-weight: 300;
+	white-space: break-spaces;
+
+`;
+
+export const MainTextDark = styled(MainText)`
+	
 	color: var(--clr-grey);
 `;
-export const MainTextLight = styled.div`
-	font-family: 'Playfair Display', serif;
-	font-size: 1em;
-	font-style: italic;
-	font-weight: 300;
+export const MainTextLight = styled(MainText)`
+	
 	color: var(--clr-white);
 `;
-export const MainTextRed = styled.div`
-	font-family: 'Playfair Display', serif;
-	font-size: 1em;
-	font-style: italic;
-	font-weight: 300;
+export const MainTextRed = styled(MainText)`
+
 	color: var(--clr-dark);
 `;
-export const MainTextPink = styled.div`
-	font-family: 'Playfair Display', serif;
-	font-size: 1em;
-	font-style: italic;
-	font-weight: 300;
+export const MainTextPink = styled(MainText)`
+	
 	color: var(--clr-medium);
 `;
+
 export const MainLinkDark = styled.a`
 	font-family: 'Playfair Display', serif;
 	font-size: 1em;
@@ -292,24 +266,23 @@ export const MainLinkLight = styled.a`
 	& :hover {
 	}
 `;
-export const RegularTextDark = styled.p`
+
+export const RegularText = styled.p`
 	font-family: 'Poppins', sans-serif;
 	font-size: 12px;
+	white-space: break-spaces;
+
+`;
+export const RegularTextDark = styled(RegularText)`
 	color: var(--clr-grey);
 `;
-export const RegularTextLight = styled.p`
-	font-family: 'Poppins', sans-serif;
-	font-size: 12px;
+export const RegularTextLight = styled(RegularText)`
 	color: var(--clr-white);
 `;
-export const RegularTextRed = styled.p`
-	font-family: 'Poppins', sans-serif;
-	font-size: 12px;
+export const RegularTextRed = styled(RegularText)`
 	color: var(--clr-dark);
 `;
-export const RegularTextPink = styled.p`
-	font-family: 'Poppins', sans-serif;
-	font-size: 12px;
+export const RegularTextPink = styled(RegularText)`
 	color: var(--clr-medium);
 `;
 export const RegularLinkDark = styled.a`
@@ -344,6 +317,13 @@ export const RegularLinkRed = styled.a`
 `;
 
 // Gamla textstilar - uppdatera där de fortf. används!
+
+
+export const PagesHeading = styled(Heading)`
+	color: var(--clr-white);
+	border-block-end: 2px solid var(--clr-white);
+`;
+
 export const SubHeadingLight2 = styled(SubHeading)`
   color: var(--clr-white);
 `;
@@ -354,4 +334,21 @@ export const SubHeadingDark2 = styled(SubHeading)`
 
 export const SubHeadingRed2 = styled(SubHeading)`
   color: var(--clr-dark);
+`;
+
+export const VerySmallText = styled(RegularText)`
+	font-size: 8px;
+`;
+
+export const HeadingDark2 = styled(Heading)`
+	color: var(--clr-grey);
+`;
+
+
+export const LightText = styled(RegularText)`
+	color: var(--clr-white);
+`;
+
+export const DarkText = styled(RegularText)`
+	color: var(--clr-grey);
 `;

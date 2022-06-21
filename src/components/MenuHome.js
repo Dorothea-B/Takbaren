@@ -82,6 +82,10 @@ const MenuImageDiv = styled.div`
       height: calc(var(--home-dsktp-h) * 1.3);
       background-position: center bottom;
     }
+    @media ${device.laptop} {
+      height: calc(var(--home-large-dsktp-h) * 1.3);
+      background-position: center bottom;
+    }
 
 `
 

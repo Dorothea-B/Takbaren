@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { css } from '@emotion/react';
 import ClipLoader from 'react-spinners/ClipLoader';
+import styled from 'styled-components';
 
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 const override = css`
@@ -10,19 +11,35 @@ const override = css`
 	border-color: var(--clr-grey);
 `;
 
+const LoadingScreen = styled.div`
+position:fixed;
+padding:0;
+margin:0;
+
+top:0;
+left:0;
+
+width: 100%;
+height: 100%;
+
+z-index: 600;
+`
+
 function Loader() {
 	let [loading, setLoading] = useState(false);
-	let [color] = useState('#ffffff');
-	useEffect(() => {
-		setLoading(true);
-		setTimeout(() => {
-			setLoading(false);
-		}, 2000);
-	}, []);
+	let [color] = useState('#F7F6F0');
+	// useEffect(() => {
+	// 	setLoading(true);
+	// 	setTimeout(() => {
+	// 		setLoading(false);
+	// 	}, 2000);
+	//}, []);
 	return (
+		<LoadingScreen>
 		<div className='sweet-loading'>
 			<ClipLoader color={color} loading={loading} css={override} size={150} />
 		</div>
+		</LoadingScreen>
 	);
 }
 

@@ -15,11 +15,13 @@
   --home-tablet-w: 80%;
   --home-dsktp-w: 49%;
   --home-dsktp-h: 320px;
+  --home-large-dsktp-h: 400px;
 
 }
 
 * {
   box-sizing: border-box;
+
 }
 
 body {
@@ -29,6 +31,7 @@ body {
   /* background-image: url("./assets/Background.png"); */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 section {
