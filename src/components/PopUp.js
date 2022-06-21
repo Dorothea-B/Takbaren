@@ -1,28 +1,26 @@
-// import React from "react";
-// import CookieConsent from "react-cookie-consent";
+import React from 'react';
+import CookieConsent from 'react-cookie-consent';
 
-// const Popup = () => {
-//   return (
-//     <div>
-//       <CookieConsent>
-//         This website uses cookies to enhance the user experience.
-//       </CookieConsent>
+const PopUp = () => {
+	return (
+		<div>
+			<CookieConsent
+				location='bottom'
+				buttonText='Accept'
+				cookieName='myAwesomeCookieName2'
+				style={{ background: '#DAA79D', color: '#343B3F' }}
+				buttonStyle={{
+					background: '#E5E55E5',
+					color: '#6F1132',
+					fontSize: '13px',
+				}}
+				font-family='Poppins'
+				expires={150}>
+				{' '}
+				This website uses cookies to enhance the user experience.{' '}
+			</CookieConsent>
+		</div>
+	);
+};
 
-//       option */}
-//       {/* <CookieConsent>
-//         location='bottom'
-//         buttonText='Sure man!!'
-//         cookieName='myAwesomeCookieName2'
-//         style={{ background: "#2B373B" }}
-//         buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
-//         expires={150}
-//       >
-//         This website uses cookies to enhance the user experience.
-//         {/* {" "}
-//         <span style={{ fontSize: "10px" }}>This bit of text is smaller :O</span> */}
-//       {/* </CookieConsent>
-//     </div>
-//   );
-// };
-
-// export default Popup;
+export default PopUp;
