@@ -1,28 +1,43 @@
-// import React from "react";
-// import { useQuery } from "react-query";
-// import { sanity, imageUrlBuilder } from "../sanity";
+import React from "react";
+import { useQuery } from "react-query";
+import { sanity, imageUrlBuilder } from "../sanity";
+// import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-// const query = `
-// *[ _type == 'imageCarousel' ] {
-//   "image": image.asset->{url}
-// }
-// `;
+const query = `
+*[ _type == 'imageCarousel' ] { title, slug, image }
+`;
 // // export const imageBuilder = imageUrlBuilder(useQuery.config());
 
-// const ImageCarousel = () => {
-//   const { data = [] } = useQuery("imageCarousel", () => sanity.fetch(query));
-//   const [imageCarousel] = data;
+const ImageCarousel = () => {
+  const { data: imageCarousel } = useQuery("imageCarousel", () =>
+    sanity.fetch(query)
+  );
+  //   const [imageCarousel] = data;
 
-//   console.log("imageCarousel", imageCarousel);
+  //   console.log("imageCarousel", imageCarousel);
 
-//   if (!imageCarousel) {
-//     return <h1>Loading…</h1>;
-//   }
+  if (!imageCarousel) {
+    return <h1>Loading…</h1>;
+  }
 
-//   return <></>;
-// };
+  return (
+    <>
+      <ul>
+        {/* <Carousel> */}
+        {imageCarousel.map(({ title, slug, image }) => (
+          <li key={slug.current}>
+            <img alt={title} src={imageUrlBuilder.image(image).url()} />
+            {/* <div>{title}</div> */}
+          </li>
+        ))}
+        {/* </Carousel> */}
+      </ul>
+    </>
+  );
+};
 
-// export default ImageCarousel;
+export default ImageCarousel;
 
 // import React from "react";
 // import { useQuery } from "react-query";
