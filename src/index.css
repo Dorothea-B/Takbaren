@@ -314,11 +314,24 @@ a {
   right: -24px;
 } */
 
-.even {
-  position: absolute;
-}
+@media (min-width: 768px) {
+  .even {
+    position: absolute;
+    right: 150px;
+  }
 
-.odd {
-  position: absolute;
-  right: -24px;
+  .odd {
+    position: absolute;
+    left: 210px;
+  }
+
+  .evenImg {
+    position: absolute;
+    right: 150px;
+  }
+
+  .oddImg {
+    position: absolute;
+    left: 210px;
+  }
 }

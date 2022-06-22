@@ -34,9 +34,9 @@ const MenuDrink = () => {
 
   const drinkImg = (index) => {
     if (index % 2 === 0) {
-      return "odd";
+      return "oddImg";
     } else {
-      return "even";
+      return "evenImg";
     }
   };
 
@@ -76,15 +76,26 @@ export default MenuDrink;
 const DrinkWrapper = styled.section`
   overflow: hidden;
   position: relative;
+  width: 1000px;
 `;
 
 const DrinkList = styled.section`
-  margin-bottom: 32rem;
+  margin-bottom: 2rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    margin-bottom: 32rem;
+  }
 `;
 
 const Img = styled.img`
-  width: 300px;
+  max-width: 250px;
+
+  @media (min-width: 768px) {
+    max-width: 300px;
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -94,36 +105,16 @@ const TextWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 1.5rem;
+  padding: 0.8rem;
   line-height: 1.4;
-  width: 300px;
-  padding: 3rem;
-  max-width: 100%;
-  position: absolute;
-
-  /* .even {
-    position: absolute;
-    background-color: red;
-  }
-
-  .odd {
-    position: absolute;
-    right: -24px;
-    background-color: blue;
-  } */
-
-  /* &:nth-child(even) {
-    position: absolute;
-  }
-
-  &:nth-child(odd) {
-    position: absolute;
-    right: -24px;
-  } */
+  max-width: 250px;
+  width: 100%;
 
   @media (min-width: 768px) {
-    width: 500px;
+    max-width: 400px;
     padding: 3rem;
+    margin-top: 2rem;
+    height: 350px;
   }
 `;
 
@@ -131,6 +122,7 @@ const DescriptionText = styled.div`
   font-family: "Playfair Display", serif;
   font-style: italic;
   padding-top: 1rem;
+  font-size: 0.9em;
 
   @media (min-width: 768px) {
     font-size: 1.3em;

@@ -120,15 +120,15 @@ export const CrossBtn = styled.button`
 `;
 
 export const LoadingScreen = styled.div`
-position:fixed;
-padding:0;
-margin:0;
-top:0;
-left:0;
-width: 100%;
-height: 100%;
-z-index: 600;
-`
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 600;
+`;
 
 /*Alla text-stilkomponenter. */
 
@@ -137,7 +137,6 @@ export const Heading = styled.h1`
   text-transform: uppercase;
   font-size: 1.5em;
   white-space: break-spaces;
-
 
   @media ${device.mobileS} {
     font-size: 1.5em;
@@ -154,7 +153,6 @@ export const Heading = styled.h1`
   @media ${device.desktop} {
     font-size: 2.8em;
   }
-
 `;
 export const HeadingDark = styled(Heading)`
   color: var(--clr-grey);
@@ -169,7 +167,6 @@ export const MediumHeading = styled.h2`
   text-transform: uppercase;
   font-size: 1.3em;
   white-space: break-spaces;
-
 
   @media ${device.mobileS} {
     font-size: 1.3em;
@@ -186,8 +183,6 @@ export const MediumHeading = styled.h2`
   @media ${device.desktop} {
     font-size: 2em;
   }
-
-
 `;
 
 export const MediumHeadingDark = styled(MediumHeading)`
@@ -264,7 +259,6 @@ export const MainText = styled.div`
   @media ${device.desktop} {
     font-size: 2em;
   }
-
 `;
 
 export const MainTextDark = styled(MainText)`
@@ -313,7 +307,6 @@ export const RegularText = styled.p`
   white-space: break-spaces;
   line-height: 1.3;
 
-
   @media ${device.mobileS} {
     font-size: 0.7em;
   }
@@ -329,9 +322,6 @@ export const RegularText = styled.p`
   @media ${device.desktop} {
     font-size: 0.9em;
   }
-
-
-
 `;
 export const RegularTextDark = styled(RegularText)`
   color: var(--clr-grey);
@@ -346,7 +336,6 @@ export const RegularTextPink = styled(RegularText)`
   color: var(--clr-medium);
 `;
 
-
 export const RegularLink = styled.a`
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -355,8 +344,6 @@ export const RegularLink = styled.a`
   white-space: break-spaces;
 
   cursor: pointer;
-
-
 
   @media ${device.mobileS} {
     font-size: 0.7em;
@@ -435,8 +422,13 @@ export const PagesHeadingDark = styled(Heading)`
   border-block-end: 2px solid var(--clr-grey);
   padding: 1rem;
   width: min-content;
+  font-size: 1em;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
+    font-size: 1.3em;
+  }
+
+  @media (min-width: 1024px) {
     font-size: 1.5em;
   }
 `;
