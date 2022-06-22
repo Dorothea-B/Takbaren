@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { sanity, imageUrlBuilder } from "../sanity";
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 // import styles from '../MadLibList.module.css';
 
@@ -16,8 +16,6 @@ const query = `
 `;
 
 const MenuDrink = () => {
-  // in this one line, data is fetched from sanity via the sanity client and
-  // stored into application state via react-query!
   const { data: menuDrinks } = useQuery("menuDrinks", () =>
     sanity.fetch(query)
   );
@@ -29,35 +27,27 @@ const MenuDrink = () => {
   return (
     <>
       <ul>
-        <Carousel infiniteLoop useKeyboardArrows>
-          {/* loop through all of the mabLib and show them in a list */}
-          {menuDrinks.map(
-            ({ title, ingredients, description, prize, slug, image }) => (
-              <li key={slug.current}>
-                <DrinkSection id='card'>
-                  <img
-                    className='image-card'
-                    id='card'
-                    alt={title}
-                    // use the sanity `imageUrlBuilder` to
-                    // generate optimized images on the fly
-                    src={imageUrlBuilder.image(image).url()}
-                  />
-                  <TextWrapper>
-                    <PagesHeadingDark>{title}</PagesHeadingDark>
-                    <DescriptionText>
-                      {ingredients}
-                      {description}
-                      <Price>
-                        <DarkText>{prize}</DarkText>
-                      </Price>
-                    </DescriptionText>
-                  </TextWrapper>
-                </DrinkSection>
-              </li>
-            )
-          )}
-        </Carousel>
+        {/* <Carousel infiniteLoop useKeyboardArrows> */}
+        {menuDrinks.map(
+          ({ title, ingredients, description, prize, slug, image }) => (
+            <li key={slug.current}>
+              <DrinkSection id='card'>
+                <Img alt={title} src={imageUrlBuilder.image(image).url()} />
+                <TextWrapper>
+                  <PagesHeadingDark>{title}</PagesHeadingDark>
+                  <DescriptionText>
+                    {ingredients}
+                    {description}
+                    <Price>
+                      <DarkText>{prize}</DarkText>
+                    </Price>
+                  </DescriptionText>
+                </TextWrapper>
+              </DrinkSection>
+            </li>
+          )
+        )}
+        {/* </Carousel> */}
       </ul>
     </>
   );
@@ -70,6 +60,10 @@ const DrinkSection = styled.section`
   display: flex;
 `;
 
+const Img = styled.img`
+  max-with: 600px;
+`;
+
 const TextWrapper = styled.div`
   background-color: rgba(247, 246, 240, 0.5);
   color: var(--clr-grey);
@@ -78,17 +72,19 @@ const TextWrapper = styled.div`
   align-items: center;
   text-align: center;
   padding: 1.5rem;
-  width: 300px;
   line-height: 1.4;
+  width: 600px;
+  padding: 3rem;
+  max-width: 100%;
 
-  &:nth-child(even) {
+  /* &:nth-child(even) {
     position: absolute;
   }
 
   &:nth-child(odd) {
     position: absolute;
     right: -24px;
-  }
+  } */
 
   @media (min-width: 768px) {
     width: 500px;
