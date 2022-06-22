@@ -34,9 +34,9 @@ const MenuDrink = () => {
 
   const drinkImg = (index) => {
     if (index % 2 === 0) {
-      return "even";
-    } else {
       return "odd";
+    } else {
+      return "even";
     }
   };
 
@@ -74,7 +74,7 @@ const MenuDrink = () => {
 export default MenuDrink;
 
 const DrinkList = styled.section`
-  margin-bottom: 8rem;
+  margin-bottom: 32rem;
   display: flex;
 `;
 
