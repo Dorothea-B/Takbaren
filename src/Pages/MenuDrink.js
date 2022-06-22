@@ -11,7 +11,7 @@ import "../index.css";
 import { PagesHeadingDark, DarkText } from "../globalStyleComponents";
 
 const query = `
-  *[ _type == 'menuDrink' ] { title, ingredients, description, prize, slug, image }
+  *[ _type == 'menuDrink' ] { title, ingredients, description, prize, slug, image, index }
 `;
 
 const MenuDrink = () => {
@@ -32,15 +32,27 @@ const MenuDrink = () => {
     }
   };
 
+  const drinkImg = (index) => {
+    if (index % 2 === 0) {
+      return "even";
+    } else {
+      return "odd";
+    }
+  };
+
   return (
     <>
       <ul>
         {/* <Carousel infiniteLoop useKeyboardArrows> */}
         {menuDrinks.map(
-          ({ title, ingredients, description, prize, slug, image, index }) => (
-            <DrinkList key={slug.current} className={drinkItem(index)}>
-              <Img alt={title} src={imageUrlBuilder.image(image).url()} />
-              <TextWrapper>
+          ({ title, ingredients, description, prize, slug, image }, index) => (
+            <DrinkList key={slug.current}>
+              <Img
+                alt={title}
+                src={imageUrlBuilder.image(image).url()}
+                className={drinkImg(index)}
+              />
+              <TextWrapper className={drinkItem(index)}>
                 <PagesHeadingDark>{title}</PagesHeadingDark>
                 <DescriptionText>
                   {ingredients}
@@ -63,8 +75,14 @@ export default MenuDrink;
 
 const DrinkList = styled.section`
   margin-bottom: 8rem;
-  /* display: flex; */
+  display: flex;
+`;
 
+const Img = styled.img`
+  max-with: 600px;
+`;
+
+const TextWrapper = styled.div`
   background-color: rgba(247, 246, 240, 0.5);
   color: var(--clr-grey);
   display: flex;
@@ -76,35 +94,18 @@ const DrinkList = styled.section`
   width: 600px;
   padding: 3rem;
   max-width: 100%;
-  /* position: absolute; */
+  position: absolute;
 
-  .even {
-    text-align: left;
+  /* .even {
+    position: absolute;
+    background-color: red;
   }
 
   .odd {
-    /* right: -24px; */
-    text-align: right;
-  }
-`;
-
-const Img = styled.img`
-  max-with: 600px;
-`;
-
-const TextWrapper = styled.div`
-  /* background-color: rgba(247, 246, 240, 0.5);
-  color: var(--clr-grey);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 1.5rem;
-  line-height: 1.4;
-  width: 600px;
-  padding: 3rem;
-  max-width: 100%;
-  position: absolute; */
+    position: absolute;
+    right: -24px;
+    background-color: blue;
+  } */
 
   /* &:nth-child(even) {
     position: absolute;

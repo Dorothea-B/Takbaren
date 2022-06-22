@@ -15,7 +15,7 @@ const ImageCarousel = () => {
   );
   //   const [imageCarousel] = data;
 
-  //   console.log("imageCarousel", imageCarousel);
+  console.log("imageCarousel", imageCarousel);
 
   if (!imageCarousel) {
     return <h1>Loading…</h1>;
@@ -28,7 +28,7 @@ const ImageCarousel = () => {
         {imageCarousel.map(({ title, slug, image }) => (
           <li key={slug.current}>
             <img alt={title} src={imageUrlBuilder.image(image).url()} />
-            {/* <div>{title}</div> */}
+            <div>{title}</div>
           </li>
         ))}
         {/* </Carousel> */}

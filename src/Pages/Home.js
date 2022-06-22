@@ -305,7 +305,6 @@ const Home = () => {
           </Hide>
           <IntroTextHome />
         </IntroDesktop>
-        {/* <ImageCarousel /> */}
       </HeaderImageSection>
 
       <HomePageWrapper>
@@ -344,6 +343,7 @@ const Home = () => {
           <SocialMediaHome />
         </CardOther>
         <LeafPalmRight />
+        <ImageCarousel />
       </HomePageWrapper>
       <GoToTop />
       <PopUp />

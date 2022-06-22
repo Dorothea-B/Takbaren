@@ -48,10 +48,8 @@ const OpenHours = () => {
         <img src={openHours.image.url} alt='sunset' />
       </ImageDiv>
 
-
-
-      <OpenWrapper>
-        
+      <PagesWrapper>
+        <OpenWrapper>
           <CardLight>
             {openHours.story && (
               <div>
@@ -62,16 +60,15 @@ const OpenHours = () => {
               </div>
             )}
           </CardLight>
-          
 
-            <CardLight>
+          <CardLight>
             <MediumHeadingDark>{openHours.weatherTitle}</MediumHeadingDark>
-              <WeatherPageWrap>
+            <WeatherPageWrap>
               <WeatherPage />
-              </WeatherPageWrap>
-            </CardLight>
-        
-      </OpenWrapper>
+            </WeatherPageWrap>
+          </CardLight>
+        </OpenWrapper>
+      </PagesWrapper>
     </>
   );
 };
@@ -82,11 +79,11 @@ export default OpenHours;
 //   max-width: 600px;
 // `;
 const WeatherPageWrap = styled.div`
-width: 100%;
-padding-bottom: 2rem;
-`
+  width: 100%;
+  padding-bottom: 2rem;
+`;
 
 const OpenWrapper = styled.div`
-display: flex;
-flex-direction: column;
-`
+  display: flex;
+  flex-direction: column;
+`;

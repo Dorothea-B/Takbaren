@@ -74,7 +74,7 @@ a {
 
 @media (min-width: 768px) {
   .shrink-logo {
-    max-width: 30%;
+    max-width: 18%;
   }
 }
 
@@ -304,3 +304,12 @@ a {
   position: absolute;
   right: -24px;
 } */
+
+.even {
+  position: absolute;
+}
+
+.odd {
+  position: absolute;
+  right: -24px;
+}

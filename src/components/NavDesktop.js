@@ -32,8 +32,8 @@ const NavList = styled.ul`
   text-transform: uppercase;
   color: var(--clr-light);
   z-index: 1;
-  /* font-size: clamp(1rem, 2.5vw, 2rem); */
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  /* font-size: clamp(1rem, 2vw, 1.5rem); */
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
 
   @media (max-width: 768px) {
     font-size: 24px;
