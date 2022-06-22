@@ -96,6 +96,7 @@ const TabDiv = styled.div`
 `;
 
 const Content = styled.div`
+  width: 500px;
   button {
     font-size: 15px;
   }

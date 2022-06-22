@@ -41,7 +41,7 @@ const MenuDrink = () => {
   };
 
   return (
-    <>
+    <DrinkWrapper>
       <ul>
         {/* <Carousel infiniteLoop useKeyboardArrows> */}
         {menuDrinks.map(
@@ -67,11 +67,16 @@ const MenuDrink = () => {
         )}
         {/* </Carousel> */}
       </ul>
-    </>
+    </DrinkWrapper>
   );
 };
 
 export default MenuDrink;
+
+const DrinkWrapper = styled.section`
+  overflow: hidden;
+  position: relative;
+`;
 
 const DrinkList = styled.section`
   margin-bottom: 32rem;
@@ -79,7 +84,7 @@ const DrinkList = styled.section`
 `;
 
 const Img = styled.img`
-  max-with: 600px;
+  width: 300px;
 `;
 
 const TextWrapper = styled.div`
@@ -91,7 +96,7 @@ const TextWrapper = styled.div`
   text-align: center;
   padding: 1.5rem;
   line-height: 1.4;
-  width: 600px;
+  width: 300px;
   padding: 3rem;
   max-width: 100%;
   position: absolute;

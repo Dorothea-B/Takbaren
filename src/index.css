@@ -75,10 +75,13 @@ a {
 @media (min-width: 768px) {
   .logo {
     max-width: 55%;
+    margin: 1rem;
   }
 
   .shrink-logo {
-    max-width: 18%;
+    max-width: 0%;
+    display: none;
+    margin: 0;
   }
 }
 
@@ -112,7 +115,9 @@ a {
   transition-property: box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
-  /* background-image: url("./assets/Backgrounds/BG_top.svg"); */
+  background-image: url("./assets/Backgrounds/BG_top_long.svg");
+  top: -10px;
+
   background-color: var(--clr-light);
   position: absolute;
   background-repeat: repeat-x;

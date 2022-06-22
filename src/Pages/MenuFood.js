@@ -39,5 +39,5 @@ const MenuFood = () => {
 export default MenuFood;
 
 const MenuWrapper = styled.div`
-  height: 1000px;
+  /* height: 1000px; */
 `;
