@@ -46,28 +46,9 @@ const HeaderHome = () => {
 export default HeaderHome;
 
 const HeaderSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   /* position: fixed;
   z-index: 999; */
-`;
-
-const Img = styled.img`
-  /* max-width: 50%;
-  display: flex;
-  justify-content: center;
-  margin: 1rem; */
-
-  //   @media (min-width: 768px) {
-  //     max-width: 30%;
-  //   }
-  /* .shrink-logo {
-    display: flex;
-    justify-content: center;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    max-width: 20%;
-  } */
-  /* @media (min-width: 768px) {
-    max-width: 50%;
-  } */
 `;

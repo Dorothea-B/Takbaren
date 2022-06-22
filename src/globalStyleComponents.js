@@ -88,7 +88,7 @@ export const RoundBtn = styled.button`
   border-radius: 25px;
   width: 50px;
   height: 50px;
-  margin: 1rem;
+  margin-top: 3rem;
 `;
 
 export const SquareBtn = styled.button`
@@ -151,7 +151,6 @@ export const MediumHeading = styled.h2`
   text-transform: uppercase;
   font-size: 1.3em;
   white-space: break-spaces;
-
 `;
 
 export const MediumHeadingDark = styled(MediumHeading)`
