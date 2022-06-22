@@ -1,4 +1,6 @@
 import React from "react";
+import styled from "styled-components/macro";
+import { device } from "../toolcomponents/Devices";
 
 import "../index.css";
 
@@ -11,7 +13,6 @@ import ScrollUpBtn from '../components/ScrollUpBtn';
 
 import {
   PagesHeading,
-  ImageDiv,
   ImageText,
   PagesImageOverlay,
 } from "../globalStyleComponents";
@@ -20,6 +21,36 @@ const query = `
   *[ _type == 'menuHeader' ] { title,
     "image": image.asset->{url}
   }
+`;
+
+
+const ImageDiv = styled.div`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(${(props) => props.bgimg});
+  background-size: cover;
+
+
+  @media ${device.mobileS} {
+    height: 300px;
+
+  }
+  @media ${device.mobileL} {
+    height: 300px;
+
+  }
+  @media ${device.tablet} {
+    height: 500px;
+  }
+  @media ${device.laptop} {
+    height: 680px;
+  }
+  @media ${device.desktop} {
+    height: 800px;
+
+  }
+
 `;
 
 const Menu = () => {
@@ -32,7 +63,7 @@ const Menu = () => {
 
   return (
     <>
-      <ImageDiv>
+      <ImageDiv bgimg={menuHeader.image.url}>
         <PagesImageOverlay></PagesImageOverlay>
         <ImageText>
           <PagesHeading>{menuHeader.title}</PagesHeading>

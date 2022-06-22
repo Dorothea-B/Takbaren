@@ -34,7 +34,7 @@ const NavList = styled.ul`
   z-index: 1;
   position: fixed;
   /* font-size: clamp(1rem, 2vw, 1.5rem); */
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  /* font-size: clamp(1rem, 1.5vw, 1.5rem); */
   transition: transform 0.3s ease-in-out;
 
   @media (max-width: 768px) {

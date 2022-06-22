@@ -11,12 +11,6 @@ import BlockRenderer from "../BlockRenderer";
 import {
   HeadingDark,
   PagesHeading,
-  SubHeadingDark,
-  SubHeading,
-  SubHeadingLight,
-  LightText,
-  DarkText,
-  ImageDiv,
   ImageText,
   PagesImageOverlay,
   PagesWrapper,
@@ -29,15 +23,38 @@ import Loader from "../components/Loader";
 import MapHome from "../components/MapHome";
 import { device } from "../toolcomponents/Devices";
 
-import leaf1 from "../assets/Leaves/leaf_green_palm.svg";
-import leaf2 from "../assets/Leaves/leaf_green_star.svg";
-import leaf3 from "../assets/Leaves/leaf_green_montsera.svg";
-import leaf4 from "../assets/Leaves/leaf_green_palm_inverted.svg";
-
 const query = `
   *[ _type == 'contact' ] { title, 
     "image": image.asset->{url},
     story }
+`;
+
+const ImageDiv = styled.div`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(${(props) => props.bgimg});
+  background-size: cover;
+
+
+  @media ${device.mobileS} {
+    height: 300px;
+
+  }
+  @media ${device.mobileL} {
+    height: 300px;
+
+  }
+  @media ${device.tablet} {
+    height: 500px;
+  }
+  @media ${device.laptop} {
+    height: 680px;
+  }
+  @media ${device.desktop} {
+    height: 800px;
+
+  }
 `;
 
 const Contact = () => {
@@ -51,12 +68,12 @@ const Contact = () => {
 
   return (
     <>
-      <ImageDiv>
+      <ImageDiv bgimg={contact.image.url}>
         <PagesImageOverlay></PagesImageOverlay>
         <ImageText>
           <PagesHeading>{contact.title}</PagesHeading>
         </ImageText>
-        <img src={contact.image.url} alt='contact page header image'/>
+        <img className="sub-page-heading" src={contact.image.url} alt='contact page header image'/>
       </ImageDiv>
 
       <PagesWrapper>

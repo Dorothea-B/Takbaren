@@ -103,6 +103,11 @@ a {
   font-size: 30px;
 }
 
+.sub-page-heading {
+  width: 100%;
+  overflow: hidden;
+}
+
 .title {
   font-size: 50px;
   font-weight: bold;

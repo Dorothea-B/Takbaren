@@ -24,16 +24,23 @@ export const PagesWrapper = styled.div`
 
 export const ImageDiv = styled.div`
   position: relative;
+  width: 100%;
+  overflow: hidden;
 `;
 
 export const PagesImageOverlay = styled.div`
   width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   background-color: rgba(52, 59, 63, 0.4);
   background-blend-mode: multiply;
+  overflow: hidden;
+
+
 `;
 
 export const ImageText = styled.div`
@@ -42,7 +49,7 @@ export const ImageText = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
