@@ -8,7 +8,7 @@ const Feed = (props) => {
     switch (media_type) {
         case "VIDEO":
             post = (
-                <a href={media_url}>
+                <a href="https://www.instagram.com/takbarenvisby">
                 <video
                     width='100%'
                     height='auto' 
@@ -21,7 +21,7 @@ const Feed = (props) => {
             break;
         case "CAROUSEL_ALBUM":
             post = (
-                <a href={media_url}>
+                <a href="https://www.instagram.com/takbarenvisby">
 
                 <img 
                     width='100%'
@@ -36,7 +36,7 @@ const Feed = (props) => {
             break;
         default:
             post = (
-                <a href={media_url}>
+                <a href="https://www.instagram.com/takbarenvisby">
                     <img 
                     width='100%'
                     height='auto'

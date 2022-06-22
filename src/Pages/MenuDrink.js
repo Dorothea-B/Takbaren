@@ -32,15 +32,21 @@ const MenuDrink = () => {
     }
   };
 
+  const getLength = () => {
+    console.log(`LENGTH: ${menuDrinks.length}`);
+
+  }
+  getLength(menuDrinks)
+
   return (
     <>
       <ul>
         {/* <Carousel infiniteLoop useKeyboardArrows> */}
         {menuDrinks.map(
-          ({ title, ingredients, description, prize, slug, image, index }) => (
-            <DrinkList key={slug.current} className={drinkItem(index)}>
+          ({ title, ingredients, description, prize, slug, image }, index) => (
+            <DrinkList key={slug.current}>
               <Img alt={title} src={imageUrlBuilder.image(image).url()} />
-              <TextWrapper>
+              <TextWrapper className={drinkItem(index)}>
                 <PagesHeadingDark>{title}</PagesHeadingDark>
                 <DescriptionText>
                   {ingredients}
@@ -80,11 +86,14 @@ const DrinkList = styled.section`
 
   .even {
     text-align: left;
+    background-color: red;
   }
 
   .odd {
     /* right: -24px; */
     text-align: right;
+    background-color: blue;
+
   }
 `;
 
