@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
-import BlockContent from '@sanity/block-content-to-react';
+import BlockContent from "@sanity/block-content-to-react";
 import BlockRenderer from "../BlockRenderer";
-import '../index.css'
-
+import "../index.css";
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
@@ -22,11 +21,9 @@ const query = `
 `;
 
 const ContactWrapper = styled.div`
-  
   & > * {
     flex: 1;
   }
-
 `;
 
 const ContactHome = () => {
@@ -41,27 +38,22 @@ const ContactHome = () => {
   return (
     <CardSpacing>
       <HeadingDark>{contactHome.title}</HeadingDark>
-      
-      <ContactWrapper>
-        {/* <SubHeadingRed>{contactHome.number}</SubHeadingRed>
-        <SubHeadingRed>{contactHome.mail}</SubHeadingRed> */}
 
+      <ContactWrapper>
         {contactHome.story && (
-        <div><BlockContent 
-        blocks={contactHome.story}
-        serializers={{types: {block: BlockRenderer}}} 
-        />
-        </div>
+          <div>
+            <BlockContent
+              blocks={contactHome.story}
+              serializers={{ types: { block: BlockRenderer } }}
+            />
+          </div>
         )}
 
-        <Link to="/contact">
+        <Link to='/contact'>
           <SquareBtn>More</SquareBtn>
         </Link>
       </ContactWrapper>
-
     </CardSpacing>
-
-
   );
 };
 export default ContactHome;

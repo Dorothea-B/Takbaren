@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components/macro";
 import "../index.css";
 
 import { useQuery } from "react-query";
@@ -9,13 +8,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import BlockRenderer from "../BlockRenderer";
 
 import {
-  HeadingDark,
   PagesHeading,
-  SubHeadingDark,
-  SubHeading,
-  SubHeadingLight,
-  LightText,
-  DarkText,
   ImageDiv,
   ImageText,
   PagesImageOverlay,
@@ -56,13 +49,12 @@ const Contact = () => {
         <ImageText>
           <PagesHeading>{contact.title}</PagesHeading>
         </ImageText>
-        <img src={contact.image.url} alt='contact page header image'/>
+        <img src={contact.image.url} alt='contact page header image' />
       </ImageDiv>
 
       <PagesWrapper>
         <HomePageWrapper>
           <CardLight>
-          
             {contact.story && (
               <div>
                 <BlockContent

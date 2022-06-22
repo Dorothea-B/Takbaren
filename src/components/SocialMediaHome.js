@@ -1,25 +1,21 @@
 import React from "react";
-import InstaFeed from './InstaFeed'
+import InstaFeed from "./InstaFeed";
 import styled from "styled-components/macro";
 
+import { CardSpacing, MediumHeadingDark } from "../globalStyleComponents";
 
-import {
-  HeadingDark,
-  CardSpacing,
-  MediumHeadingDark,
-  SubHeadingDark,
-} from "../globalStyleComponents";
-  
 const MediumHeadingDarkSOME = styled(MediumHeadingDark)`
-margin-top: 1.3rem;
-/* transform: scale(1.2); */
-`
+  margin-top: 1.3rem;
+`;
 
 const SocialMediaHome = () => {
   return (
     <CardSpacing>
-      <MediumHeadingDarkSOME> » Follow us @takbarenvisby « </MediumHeadingDarkSOME>
-      <InstaFeed  limit={8} />
+      <MediumHeadingDarkSOME>
+        {" "}
+        » Follow us @takbarenvisby «{" "}
+      </MediumHeadingDarkSOME>
+      <InstaFeed limit={8} />
     </CardSpacing>
   );
 };

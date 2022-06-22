@@ -9,7 +9,7 @@ import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-load
 
 import ContactHome from "../components/ContactHome";
 import IntroTextHome from "../components/IntroTextHome";
-import ImageCarousel from "../components/ImageCarousel";
+// import ImageCarousel from "../components/ImageCarousel";
 import MenuHome from "../components/MenuHome";
 import OpenHoursHome from "../components/OpenHoursHome";
 import SocialMediaHome from "../components/SocialMediaHome";
@@ -17,7 +17,7 @@ import WeatherHome from "../components/WeatherHome";
 import HeaderImg from "../assets/Header-img.jpg";
 import MapHome from "../components/MapHome";
 import GoToTop from "../toolcomponents/GoToTop";
-import ScrollUpBtn from '../components/ScrollUpBtn';
+import ScrollUpBtn from "../components/ScrollUpBtn";
 
 import PopUp from "../components/PopUp";
 
@@ -170,7 +170,6 @@ const CardOther = styled.div`
     max-width: 600px; */
   }
 
-  
   @media ${device.laptop} {
     width: 100%;
     height: calc(var(--home-dsktp-h) * 1.3);
@@ -345,16 +344,14 @@ const Home = () => {
         <MontseraLeft />
 
         <CardOther>
-          
           <SocialMediaHome />
         </CardOther>
         <LeafPalmRight />
-        <ImageCarousel />
+        {/* <ImageCarousel /> */}
       </HomePageWrapper>
       <GoToTop />
       <ScrollUpBtn />
       <PopUp />
-
     </section>
   );
 };

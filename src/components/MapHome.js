@@ -8,31 +8,25 @@ import { device } from "../toolcomponents/Devices";
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZG9yb3RoZWEtYiIsImEiOiJjbDRlOXBqeWIwMWZxM21ubjBpaWlzZWJ2In0.o6bx6CePhOG6gdhijLBQQQ";
 
-
-  const MapContainer = styled.div `
-  
+const MapContainer = styled.div`
   display: flex;
-      @media ${device.mobileS} {
-      height: var(--home-mobile-h);
-      width: 100%;
-      margin: auto;
-      }
-      @media ${device.tablet} {
-      height: var(--home-dsktp-h);
-      width: 100%;
-      margin: auto;
-      }
-      @media ${device.laptop} {
-      height: var(--home-dsktp-h);
-      }
-      @media ${device.desktop} {
-      height: var(--home-large-dsktp-h);
-      }
-      
-  `
-  
- 
-
+  @media ${device.mobileS} {
+    height: var(--home-mobile-h);
+    width: 100%;
+    margin: auto;
+  }
+  @media ${device.tablet} {
+    height: var(--home-dsktp-h);
+    width: 100%;
+    margin: auto;
+  }
+  @media ${device.laptop} {
+    height: var(--home-dsktp-h);
+  }
+  @media ${device.desktop} {
+    height: var(--home-large-dsktp-h);
+  }
+`;
 
 const MapHome = () => {
   const mapContainer = useRef(null);

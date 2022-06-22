@@ -2,8 +2,6 @@ import React from "react";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { sanity, imageUrlBuilder } from "../sanity";
-// import { Carousel } from "react-responsive-carousel";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import styled from "styled-components/macro";
 import "../index.css";
@@ -43,7 +41,6 @@ const MenuDrink = () => {
   return (
     <DrinkWrapper>
       <ul>
-        {/* <Carousel infiniteLoop useKeyboardArrows> */}
         {menuDrinks.map(
           ({ title, ingredients, description, prize, slug, image }, index) => (
             <DrinkList key={slug.current}>
@@ -65,7 +62,6 @@ const MenuDrink = () => {
             </DrinkList>
           )
         )}
-        {/* </Carousel> */}
       </ul>
     </DrinkWrapper>
   );

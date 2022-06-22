@@ -86,7 +86,6 @@ const openHoursHome = {
       title: "Title",
       name: "title",
       type: "string",
-      // validation: (Rule) => Rule.required(),
     },
 
     {
@@ -222,7 +221,6 @@ const openHoursHome = {
       title: "Link",
       name: "link",
       type: "string",
-      // inputComponent: Link,
     },
   ],
 };

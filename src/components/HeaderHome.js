@@ -31,7 +31,7 @@ const HeaderHome = () => {
     <>
       <HeaderSection className={navbar ? "scroll-nav" : "static-nav"}>
         <Link to='/' className='logo'>
-          <img
+          <Img
             src={Logo}
             alt='logo'
             className={logo ? "shrink-logo" : "logo"}
@@ -49,6 +49,8 @@ const HeaderSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* position: fixed;
-  z-index: 999; */
+`;
+
+const Img = styled.img`
+  margin: 1rem;
 `;
