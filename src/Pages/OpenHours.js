@@ -14,6 +14,7 @@ import {
   ImageDiv,
   ImageText,
   PagesImageOverlay,
+  MediumHeadingDark,
   PagesWrapper,
   PagesCardLIght,
 } from "../globalStyleComponents";
@@ -47,8 +48,10 @@ const OpenHours = () => {
         <img src={openHours.image.url} alt='sunset' />
       </ImageDiv>
 
-      <PagesWrapper>
-        <HomePageWrapper>
+
+
+      <OpenWrapper>
+        
           <CardLight>
             {openHours.story && (
               <div>
@@ -59,15 +62,16 @@ const OpenHours = () => {
               </div>
             )}
           </CardLight>
-          <div>
-            <SubHeadingDark>{openHours.weatherTitle}</SubHeadingDark>
+          
 
-            <Weather>
+            <CardLight>
+            <MediumHeadingDark>{openHours.weatherTitle}</MediumHeadingDark>
+              <WeatherPageWrap>
               <WeatherPage />
-            </Weather>
-          </div>
-        </HomePageWrapper>
-      </PagesWrapper>
+              </WeatherPageWrap>
+            </CardLight>
+        
+      </OpenWrapper>
     </>
   );
 };
@@ -77,3 +81,12 @@ export default OpenHours;
 // const WeatherPages = styled.div`
 //   max-width: 600px;
 // `;
+const WeatherPageWrap = styled.div`
+width: 100%;
+padding-bottom: 2rem;
+`
+
+const OpenWrapper = styled.div`
+display: flex;
+flex-direction: column;
+`

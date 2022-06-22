@@ -8,6 +8,7 @@ const Feed = (props) => {
     switch (media_type) {
         case "VIDEO":
             post = (
+                <a href={media_url}>
                 <video
                     width='100%'
                     height='auto' 
@@ -15,10 +16,13 @@ const Feed = (props) => {
                     type="video/mp4" 
                     controls playsinline>
                 </video>
+                </a>
             )
             break;
         case "CAROUSEL_ALBUM":
             post = (
+                <a href={media_url}>
+
                 <img 
                     width='100%'
                     height='auto'
@@ -26,17 +30,21 @@ const Feed = (props) => {
                     src={media_url} 
                     alt={caption} 
                 />
+                </a>
+
             );
             break;
         default:
             post = (
-                <img 
+                <a href={media_url}>
+                    <img 
                     width='100%'
                     height='auto'
                     id={id} 
                     src={media_url} 
                     alt={caption} 
-                />
+                    />
+                </a>
             );
     }       
 

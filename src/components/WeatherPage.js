@@ -13,6 +13,7 @@ import thunderstorm from '../assets/thunderstorm.svg';
 import tornado from '../assets/tornado.svg';
 
 import axios from 'axios';
+import { device } from '../toolcomponents/Devices';
 
 const WeatherApp = () => {
 	const [weather, setWeather] = useState('');
@@ -45,30 +46,41 @@ const WeatherApp = () => {
 	return (
 		<WeatherCard>
 			<WeatherTextDiv>
-				<WeatherHeading>Takbaren just now:</WeatherHeading>
-				<TemperatureText>{round(temperature)} C</TemperatureText>
-				{weather}
+				{/* <WeatherHeading>Takbaren just now:</WeatherHeading> */}
+				<TemperatureText>{round(temperature)} {'\u00b0'}C</TemperatureText>
+				<TemperatureDescription>{weather}</TemperatureDescription>
 				{weather === 'Clear' && (
-					<WeatherDescription>It's sunny on the roof top! </WeatherDescription>
+					<WeatherDescription> Remember to bring your sunscreen to the rooftop! <span role="img" aria-label="sunglasses">😎</span></WeatherDescription>
 				)}
 				{weather === 'Rain' && (
 					<WeatherDescription>
-						It's raining, check our instagram to see if we're open
+						It's raining, good thing we have covering! <span role="img" aria-label="umbrella">☔️</span>
+
 					</WeatherDescription>
 				)}
 				{weather === 'Snow' && (
 					<WeatherDescription>
-						Brr! It's snowing, check our instagram to see if we're open
+						Brr! It's snowing and we're probably closed for the season. <span role="img" aria-label="snowman">⛄️</span>
 					</WeatherDescription>
 				)}
 				{weather === 'Extreme' && (
 					<WeatherDescription>
-						Wow it's wild out there, check our instagram to see if we're open
+						It's quite windy, perhaps a warm Irish Coffee would be nice and warm? <span role="img" aria-label="drink emoji">🍹</span>
 					</WeatherDescription>
 				)}
 				{weather === 'Clouds' && (
 					<WeatherDescription>
-						Cloudy day, perfect for a roof top drink
+						Some clouds won't stop us from having a great time at the roofbar! <span role="img" aria-label="dancing emoji">🕺</span>
+					</WeatherDescription>
+				)}
+				{weather === 'Fog' && (
+					<WeatherDescription>
+						We promise the view looks even cooler when it's foggy! <span role="img" aria-label="fog emoji">😶‍🌫️</span>
+					</WeatherDescription>
+				)}
+				{weather === 'Squall' && (
+					<WeatherDescription>
+						Some unpredictable weather but we have blankets and heat lamps! <span role="img" aria-label="fire">🔥</span>
 					</WeatherDescription>
 				)}
 			</WeatherTextDiv>
@@ -90,26 +102,76 @@ export default WeatherApp;
 
 export const WeatherCard = styled.section`
 	display: flex;
-	flex-direction: row;
 	align-items: space-between;
 	height: 100%;
+	position: relative;
+	margin-top: 2rem;
+
+	@media ${device.mobileS} {
+		flex-direction: column;
+	}
+	@media ${device.tablet} {
+		flex-direction: row;
+	}
 `;
 
 const WeatherTextDiv = styled.div`
 	display: flex;
 	flex-direction: column;
-	align-items: space-between;
-	background-color: var(--clr-medium);
+	align-items: space-around;
+	justify-content: center;
+	/* background-color: var(--clr-medium); */
 	padding: 3rem;
 	width: 100%;
-	max-width: 600px;
+	
+
+	@media ${device.mobileS} {
+		padding: 0 3rem;
+		/* margin-top: 2rem; */
+	}
+	@media ${device.tablet} {
+		padding: 1rem;
+
+		width: 50%;
+		margin-top: 0;
+
+	}
+
+
 `;
 
 const WeatherImageDiv = styled.div`
 	width: 100%;
-	border: solid 2px #fff;
-	max-width: 600px;
 	gap: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media ${device.mobileS} {
+height: 8rem;	
+}
+	@media ${device.mobileS} {
+height: 10rem;	
+}
+	@media ${device.tablet} {
+		width: 50%;
+		height: 100%;
+	}
+
+	& > * {
+
+		
+	@media ${device.mobileS} {
+		width: 30%;
+	}
+	@media ${device.mobileL} {
+	width: 30%;
+	}
+	@media ${device.tablet} {
+	height: 90%;
+	width: 70%;	
+	}
+	}
 `;
 
 export const WeatherHeading = styled.h1`
@@ -126,12 +188,50 @@ export const TemperatureText = styled.h2`
 	font-size: 4em;
 	font-weight: 500;
 	color: var(--clr-grey);
+
+	@media ${device.mobileS} {
+		font-size: 2em;
+	}
+	@media ${device.mobileL} {
+		font-size: 4em;
+
+	}
+	@media ${device.tablet} {
+		font-size: 4em;
+	}
+`;
+
+export const TemperatureDescription = styled.h3`
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+	font-size: 1.8em;
+	font-weight: 500;
+	color: var(--clr-grey);
+
+	@media ${device.mobileS} {
+		font-size: 1em;
+	}
+	@media ${device.mobileL} {
+		font-size: 1.3em;
+	}
+	@media ${device.tablet} {
+		font-size: 1.8em;
+	}
 `;
 
 export const WeatherDescription = styled.h3`
 	font-family: 'Poppins', sans-serif;
-	letter-spacing: 0.25em;
-	text-transform: lowercase;
-	text-align: right;
 	color: var(--clr-grey);
+	font-weight: 500;;
+	margin-top: 2rem;
+
+	@media ${device.mobileS} {
+		font-size: 1em;
+	}
+	@media ${device.mobileL} {
+		font-size: 1.2em;
+	}
+	@media ${device.tablet} {
+		font-size: 1.2em;
+	}
 `;

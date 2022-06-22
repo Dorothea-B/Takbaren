@@ -119,6 +119,17 @@ export const CrossBtn = styled.button`
   box-shadow: (rgba(0, 0, 0, 0.25));
 `;
 
+export const LoadingScreen = styled.div`
+position:fixed;
+padding:0;
+margin:0;
+top:0;
+left:0;
+width: 100%;
+height: 100%;
+z-index: 600;
+`
+
 /*Alla text-stilkomponenter. */
 
 export const Heading = styled.h1`

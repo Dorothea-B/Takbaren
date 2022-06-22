@@ -134,18 +134,25 @@ justify-content: center;
 
 export const WeatherHeading = styled.h1`
 	font-family: 'Playfair Display', serif;
-	font-size: 1.7em;
 	font-style: italic;
 	font-weight: 700;
 	text-align: end;
 	color: var(--clr-grey);
+	margin-bottom: 1rem;
+
 	@media ${device.mobileS} {
 		font-size: 1em;
 	}
 	@media ${device.mobileL} {
-		font-size: 2em;
+		font-size: 1.4em;
 	}
 	@media ${device.tablet} {
+	font-size: 1.5em;
+	}
+	@media ${device.laptop} {
+	font-size: 1.6em;
+	}
+	@media ${device.desktop} {
 	font-size: 2em;
 	}
 `;

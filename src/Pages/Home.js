@@ -21,9 +21,11 @@ import PopUp from '../components/PopUp';
 
 // import HomepageDecor from '../assets/HomepageDecor';
 
-import leaf1 from '../assets/Leaves/leaf_1.svg';
-import leaf2 from '../assets/Leaves/leaf_2.svg';
-import leaf3 from '../assets/Leaves/leaf_3.svg';
+import leaf1 from '../assets/Leaves/leaf_green_palm.svg';
+import leaf2 from '../assets/Leaves/leaf_green_star.svg';
+import leaf3 from '../assets/Leaves/leaf_green_montsera.svg';
+import leaf4 from '../assets/Leaves/leaf_green_palm_inverted.svg';
+
 
 // import "../App.css";
 
@@ -293,6 +295,8 @@ const Home = () => {
 
 	return (
 		<section>
+			<LeafPalmLeft />
+
 			<HeaderImageSection>
 				{/* <img src={HeaderImg} alt='header' /> */}
 
@@ -303,6 +307,7 @@ const Home = () => {
 					<IntroTextHome />
 				</IntroDesktop>
 				{/* <ImageCarousel /> */}
+
 			</HeaderImageSection>
 
 			<HomePageWrapper>
@@ -310,7 +315,6 @@ const Home = () => {
 					<IntroTextHome />
 				</IntroMobile>
 
-				<Leaf1 />
 
 				<Weather>
 					<WeatherHome />
@@ -320,7 +324,7 @@ const Home = () => {
 					<OpenHoursHome />
 				</CardLight>
 
-				<Leaf2 />
+				<LeafStarRight />
 
 				<CardOther>
 					<MenuHome />
@@ -334,7 +338,7 @@ const Home = () => {
 					<MapHome />
 				</Map>
 
-				<Leaf3 />
+				<MontseraLeft />
 
 				<CardOther>
 					<InstaGradient1> </InstaGradient1>
@@ -342,6 +346,8 @@ const Home = () => {
 
 					<SocialMediaHome />
 				</CardOther>
+				<LeafPalmRight />
+
 			</HomePageWrapper>
 			<GoToTop />
 			<PopUp />
@@ -381,40 +387,73 @@ const InstaGradient2 = styled.div`
 	right: 0;
 `;
 
-const LeafWrapper = styled.div`
-	position: fixed;
-	top: 0;
-	margin: 0;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-`;
 
-const Leaf1 = styled.div`
+const LeafPalmLeft = styled.div`
 	width: 13rem;
 	height: 15rem;
 	background-image: url(${leaf1});
 	background-size: contain;
 	background-repeat: no-repeat;
 	position: absolute;
-	top: 350px;
-	left: -70px;
+	top: 270px;
+	left: -120px;
+	z-index: 800;
 	filter: drop-shadow(40px -5px 3px #343b3f20);
+
+	@media ${device.mobileS} {
+	width: 15rem;
+	height: 18rem;
+	top: 250px;
+	left: -120px;
+	}
+	@media ${device.tablet} {
+	width: 19rem;
+	top: 700px;
+
+	}
+	@media ${device.laptop} {
+		top: 800px;
+		left: -160px;
+
+	}
+	@media ${device.desktop} {
+		
+	}
 `;
-const Leaf2 = styled.div`
-	width: 17rem;
+
+const LeafStarRight = styled.div`
+	width: 14rem;
 	height: 20rem;
 	background-image: url(${leaf2});
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
 	position: absolute;
-	bottom: -650px;
+	bottom: -630px;
 	right: -150px;
-	z-index: 300;
-	filter: drop-shadow(10px 17px 4px #343b3f59);
+	z-index: 0;
+	filter: drop-shadow(-20px 17px 4px #343b3f30);
+
+	@media ${device.mobileS} {
+	width: 9rem;
+	height: 14rem;	
+	bottom: -630px;
+	right: 0px;
+	}
+	@media ${device.tablet} {
+	z-index: 200;
+	width: 11rem;
+	bottom: -800px;
+	}
+	@media ${device.laptop} {
+		bottom: -330px;
+
+	}
+	@media ${device.desktop} {
+		
+	}
 `;
-const Leaf3 = styled.div`
+
+const MontseraLeft = styled.div`
 	width: 15rem;
 	height: 20rem;
 	background-image: url(${leaf3});
@@ -424,4 +463,57 @@ const Leaf3 = styled.div`
 	bottom: -1220px;
 	left: -200px;
 	transform: rotate(130deg);
+	filter: drop-shadow(10px -40px 3px #343b3f20);
+
+
+	@media ${device.mobileS} {
+	width: 19rem;
+	height: 20rem;
+	bottom: -1240px;
+	left: -240px;
+	}
+	@media ${device.tablet} {
+	bottom: -1240px;
+	left: -180px;
+	}
+	@media ${device.laptop} {
+		bottom: -1000px;
+		left: -220px;
+
+	}
+	@media ${device.desktop} {
+		
+	}
+`;
+const LeafPalmRight = styled.div`
+	width: 9rem;
+	height: 15rem;
+	background-image: url(${leaf4});
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 2540px;
+	right: 0px;
+	z-index: 300;
+	filter: drop-shadow(-30px -5px 3px #343b3f30);
+
+	@media ${device.mobileS} {
+	width: 9rem;
+	height: 15rem;
+	top: 2540px;
+	right: 0px;
+	}
+	@media ${device.tablet} {
+	width: 12rem;
+	height: 18rem;
+	top: 2200px;
+	right: 0px;
+	}
+	@media ${device.laptop} {
+		top: 2000px;
+
+	}
+	@media ${device.desktop} {
+		
+	}
 `;
