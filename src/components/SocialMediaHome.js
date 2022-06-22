@@ -19,7 +19,7 @@ const SocialMediaHome = () => {
   return (
     <CardSpacing>
       <MediumHeadingDarkSOME> » Follow us @takbarenvisby « </MediumHeadingDarkSOME>
-      <InstaFeed  limit={12} />
+      <InstaFeed  limit={8} />
     </CardSpacing>
   );
 };

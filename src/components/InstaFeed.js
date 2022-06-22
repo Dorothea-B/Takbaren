@@ -17,20 +17,36 @@ const SomeWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
 `;
 
 const InstaContainer = styled.div`
-  width: 100%;
+  width: 95%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin: auto;
-  overflow: scroll;
+  /* margin: auto; */
+  overflow-x: scroll;
   gap: 1rem;
-  position: absolute;
-  height: 13rem;
+  margin: auto;
+  
 
-  & > img {
+  &::-webkit-scrollbar {
+  border-radius: 100vw;
+  background-color: rgba(246, 189, 172, 0.4);
+  opacity: 0.3;
+  height: 10px;
+  margin: 30px;
+}
+
+&::-webkit-scrollbar-thumb{
+  background: var(--clr-light);
+  border-radius: 100vw;
+}
+&::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+  & > * {
     /* width: calc(100% * 0.333333); */
     height: 13rem;
 

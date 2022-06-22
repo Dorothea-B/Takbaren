@@ -337,8 +337,8 @@ const Home = () => {
         <MontseraLeft />
 
         <CardOther>
-          <InstaGradient1> </InstaGradient1>
-          <InstaGradient2> </InstaGradient2>
+          {/* <InstaGradient1> </InstaGradient1>
+          <InstaGradient2> </InstaGradient2> */}
 
           <SocialMediaHome />
         </CardOther>
