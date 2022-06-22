@@ -17,6 +17,8 @@ import WeatherHome from "../components/WeatherHome";
 import HeaderImg from "../assets/Header-img.jpg";
 import MapHome from "../components/MapHome";
 import GoToTop from "../toolcomponents/GoToTop";
+import ScrollUpBtn from '../components/ScrollUpBtn';
+
 import PopUp from "../components/PopUp";
 
 // import HomepageDecor from '../assets/HomepageDecor';
@@ -167,9 +169,15 @@ const CardOther = styled.div`
     /* width: 100%;
     max-width: 600px; */
   }
+
+  
   @media ${device.laptop} {
     width: 100%;
     height: calc(var(--home-dsktp-h) * 1.3);
+  }
+  @media ${device.laptopL} {
+    width: 100%;
+    height: calc(var(--home-large-dsktp-h) * 1.3);
   }
   @media ${device.desktop} {
     height: calc(var(--home-large-dsktp-h) * 1.3);
@@ -337,51 +345,21 @@ const Home = () => {
         <MontseraLeft />
 
         <CardOther>
-          {/* <InstaGradient1> </InstaGradient1>
-          <InstaGradient2> </InstaGradient2> */}
-
+          
           <SocialMediaHome />
         </CardOther>
         <LeafPalmRight />
         <ImageCarousel />
       </HomePageWrapper>
       <GoToTop />
+      <ScrollUpBtn />
       <PopUp />
+
     </section>
   );
 };
 
 export default Home;
-
-const InstaGradient1 = styled.div`
-  background: linear-gradient(
-    0.25turn,
-    var(--clr-white),
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0)
-  );
-  /* linear-gradient(.25turn, rgb(255, 255, 255), rgb(255, 255, 255), 120px, rgba(0, 0, 255, 0), 90%, rgb(255, 255, 255), rgb(255, 255, 255) ); */
-  position: absolute;
-  width: 160px;
-  height: 100%;
-  z-index: 300;
-`;
-const InstaGradient2 = styled.div`
-  background: linear-gradient(
-    0.25turn,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.7),
-    var(--clr-white)
-  );
-  /* linear-gradient(.25turn, rgb(255, 255, 255), rgb(255, 255, 255), 120px, rgba(0, 0, 255, 0), 90%, rgb(255, 255, 255), rgb(255, 255, 255) ); */
-  position: absolute;
-  width: 160px;
-  height: 100%;
-  z-index: 300;
-  right: 0;
-`;
 
 const LeafPalmLeft = styled.div`
   width: 13rem;

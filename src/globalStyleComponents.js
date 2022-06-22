@@ -135,8 +135,26 @@ z-index: 600;
 export const Heading = styled.h1`
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 1.5em;
   white-space: break-spaces;
+
+
+  @media ${device.mobileS} {
+    font-size: 1.5em;
+  }
+  @media ${device.mobileL} {
+    font-size: 2em;
+  }
+  @media ${device.tablet} {
+    font-size: 2em;
+  }
+  @media ${device.laptop} {
+    font-size: 2.2em;
+  }
+  @media ${device.desktop} {
+    font-size: 2.8em;
+  }
+
 `;
 export const HeadingDark = styled(Heading)`
   color: var(--clr-grey);
@@ -151,6 +169,25 @@ export const MediumHeading = styled.h2`
   text-transform: uppercase;
   font-size: 1.3em;
   white-space: break-spaces;
+
+
+  @media ${device.mobileS} {
+    font-size: 1.3em;
+  }
+  @media ${device.mobileL} {
+    font-size: 1.3em;
+  }
+  @media ${device.tablet} {
+    font-size: 1.7em;
+  }
+  @media ${device.laptop} {
+    font-size: 1.9em;
+  }
+  @media ${device.desktop} {
+    font-size: 2em;
+  }
+
+
 `;
 
 export const MediumHeadingDark = styled(MediumHeading)`
@@ -177,13 +214,13 @@ export const SubHeading = styled.h3`
   vertical-align: bottom;
 
   @media ${device.mobileS} {
-    font-size: 0.8em;
+    font-size: 1.1em;
   }
   @media ${device.mobileL} {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
   @media ${device.tablet} {
-    font-size: 1.3em;
+    font-size: 1.6em;
   }
   @media ${device.laptop} {
     font-size: 1.5em;
@@ -208,10 +245,26 @@ export const SubHeadingPink = styled(SubHeading)`
 
 export const MainText = styled.div`
   font-family: "Playfair Display", serif;
-  font-size: 1em;
   font-style: italic;
   font-weight: 300;
   white-space: break-spaces;
+
+  @media ${device.mobileS} {
+    font-size: 1.1em;
+  }
+  @media ${device.mobileL} {
+    font-size: 1.3em;
+  }
+  @media ${device.tablet} {
+    font-size: 1.5em;
+  }
+  @media ${device.laptop} {
+    font-size: 1.5em;
+  }
+  @media ${device.desktop} {
+    font-size: 2em;
+  }
+
 `;
 
 export const MainTextDark = styled(MainText)`
@@ -235,6 +288,8 @@ export const MainLinkDark = styled.a`
   color: var(--clr-grey);
   text-decoration: underline;
   cursor: pointer;
+  white-space: break-spaces;
+
   & :hover {
   }
 `;
@@ -246,14 +301,37 @@ export const MainLinkLight = styled.a`
   color: var(--clr-light);
   text-decoration: underline;
   cursor: pointer;
+  white-space: break-spaces;
+
   & :hover {
   }
 `;
 
 export const RegularText = styled.p`
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
+  /* font-size: 12px; */
   white-space: break-spaces;
+  line-height: 1.3;
+
+
+  @media ${device.mobileS} {
+    font-size: 0.7em;
+  }
+  @media ${device.mobileL} {
+    font-size: 0.8em;
+  }
+  @media ${device.tablet} {
+    font-size: 0.9em;
+  }
+  @media ${device.laptop} {
+    font-size: 0.9em;
+  }
+  @media ${device.desktop} {
+    font-size: 0.9em;
+  }
+
+
+
 `;
 export const RegularTextDark = styled(RegularText)`
   color: var(--clr-grey);
@@ -267,32 +345,51 @@ export const RegularTextRed = styled(RegularText)`
 export const RegularTextPink = styled(RegularText)`
   color: var(--clr-medium);
 `;
-export const RegularLinkDark = styled.a`
+
+
+export const RegularLink = styled.a`
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-style: italic;
   text-decoration: underline;
+  white-space: break-spaces;
+
   cursor: pointer;
-  color: var(--clr-grey);
+
+
+
+  @media ${device.mobileS} {
+    font-size: 0.7em;
+  }
+  @media ${device.mobileL} {
+    font-size: 0.8em;
+  }
+  @media ${device.tablet} {
+    font-size: 0.9em;
+  }
+  @media ${device.laptop} {
+    font-size: 0.9em;
+  }
+  @media ${device.desktop} {
+    font-size: 0.9em;
+  }
+
   & :hover {
   }
 `;
-export const RegularLinkLight = styled.a`
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-style: italic;
-  text-decoration: underline;
-  cursor: pointer;
+
+export const RegularLinkDark = styled(RegularLink)`
+  color: var(--clr-grey);
+
+  & :hover {
+  }
+`;
+export const RegularLinkLight = styled(RegularLink)`
   color: var(--clr-white);
   & :hover {
   }
 `;
-export const RegularLinkRed = styled.a`
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-style: italic;
-  text-decoration: underline;
-  cursor: pointer;
+export const RegularLinkRed = styled(RegularLink)`
   color: var(--clr-dark);
   & :hover {
   }

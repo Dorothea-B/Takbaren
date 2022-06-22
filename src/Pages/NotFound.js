@@ -1,28 +1,33 @@
 import React from 'react';
+import styled from 'styled-components';
 import '../index.css';
 import {
 	PagesWrapper,
 	HeadingDark,
-	Heading,
+	SubHeadingDark,
 	SquareBtn,
 } from '../globalStyleComponents';
 import { Link } from 'react-router-dom';
+
+const Height = styled.div`
+height: 60vh;
+`
 
 const NotFound = () => {
 	return (
 		<section>
 			<PagesWrapper>
-				<div>
-					<HeadingDark style={{ marginTop: '2rem' }}>404</HeadingDark>
-				</div>
-				<div>
-					<Heading style={{ marginTop: '2rem' }}>Page not found</Heading>
-				</div>
-				<div>
+			<Height>
+					<HeadingDark>404</HeadingDark>
+			
+					<SubHeadingDark>Page not found</SubHeadingDark>
+				
+				
 					<Link to='/'>
-						<SquareBtn style={{ margin: '2rem' }}>Go back to start</SquareBtn>
+						<SquareBtn>Go back</SquareBtn>
 					</Link>
-				</div>
+				
+			</Height>
 			</PagesWrapper>
 		</section>
 	);

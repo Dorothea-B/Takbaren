@@ -36,29 +36,6 @@ const BlockRenderer = (props) => {
       const level = style.replace(/[^\d]/g, '')
       return React.createElement(style, {className: `heading-${level}`}, props.children)
     }
-/////Attempt at automization
-    // style.map((styleinput) => {
-    //     if (styleinput) {
-    //     return <div className={styleinput}>- {props.children}</div>
-    //     } else {
-    //     return BlockContent.defaultSerializers.types.block(props)
-    //     }
-    // })
-  //////
-    if (style === 'blockquote') {
-      return <blockquote>- {props.children}</blockquote>
-    }
-    // if (style === 'title') {
-    //   return <div className="title">- {props.children}</div>
-    // }
-
-    // else if (style === 'orange') {
-    //     return <div className="orange">- {props.children}</div>
-    //   }
-
-    // else if (style === 'redtext') {
-    //     return <div className="redtext">- {props.children}</div>
-    //   }
 
     else if (style === 'heading-dark') {
         return <HeadingDark> {props.children} </HeadingDark>

@@ -6,6 +6,8 @@ import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
 import MenuTabs from "../components/MenuTabs";
+import ScrollUpBtn from '../components/ScrollUpBtn';
+
 
 import {
   PagesHeading,
@@ -38,6 +40,7 @@ const Menu = () => {
         <img src={menuHeader.image.url} />
       </ImageDiv>
       <MenuTabs />
+      <ScrollUpBtn />
     </>
   );
 };

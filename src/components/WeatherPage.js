@@ -157,6 +157,9 @@ height: 10rem;
 		width: 50%;
 		height: 100%;
 	}
+	@media ${device.laptop} {
+		padding: 2rem;
+	}
 
 	& > * {
 
@@ -171,6 +174,7 @@ height: 10rem;
 	height: 90%;
 	width: 70%;	
 	}
+	
 	}
 `;
 

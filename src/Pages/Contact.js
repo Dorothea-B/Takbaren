@@ -29,6 +29,11 @@ import Loader from "../components/Loader";
 import MapHome from "../components/MapHome";
 import { device } from "../toolcomponents/Devices";
 
+import leaf1 from "../assets/Leaves/leaf_green_palm.svg";
+import leaf2 from "../assets/Leaves/leaf_green_star.svg";
+import leaf3 from "../assets/Leaves/leaf_green_montsera.svg";
+import leaf4 from "../assets/Leaves/leaf_green_palm_inverted.svg";
+
 const query = `
   *[ _type == 'contact' ] { title, 
     "image": image.asset->{url},

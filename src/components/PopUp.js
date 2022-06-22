@@ -10,12 +10,12 @@ const PopUp = () => {
 				location='bottom'
 				buttonText='Accept'
 				cookieName='myAwesomeCookieName2'
-				style={{ background: '#DAA79D', color: '#343B3F' }}
+				style={{ background: '#F6BDAC', color: '#343B3F' }}
 				buttonStyle={{
 					background: '#E5E55E5',
 					color: '#6F1132',
 					fontSize: '13px',
-					font: 'Poppins',
+					fontFamily: 'Poppins',
 				}}
 				expires={150}>
 				{' '}

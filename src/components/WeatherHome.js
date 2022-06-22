@@ -182,6 +182,19 @@ export const TemperatureDescription = styled.h3`
 	font-weight: 500;
 	color: var(--clr-grey);
 	text-align: end;
+
+	@media ${device.mobileS} {
+		font-size: 1em;
+	}
+	@media ${device.mobileL} {
+		font-size: 1.3em;
+	}
+	@media ${device.tablet} {
+		font-size: 1.8em;
+	}
+	@media ${device.desktop} {
+		font-size: 1.5em;
+	}
 `;
 
 export const WeatherDescription = styled.h3`

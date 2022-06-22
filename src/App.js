@@ -40,7 +40,6 @@ const App = () => {
 				<Route path='/openinghours' element={<OpenHours />} />
 				<Route path='*' element={<NotFound />} />
 			</Routes>
-			<ScrollUpBtn />
 			<GoToTop />
 			<Footer />
 		</div>
