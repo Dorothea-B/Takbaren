@@ -4,18 +4,13 @@ import styled from "styled-components/macro";
 import "../index.css";
 import { device } from "../toolcomponents/Devices";
 
-
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
-
-import { ImageDiv } from "../globalStyleComponents";
 
 const query = `
   *[ _type == 'menuHome' ] { descriptionOne, descriptionTwo, 
     "image": image.asset->{url} }
 `;
-
-
 
 const MenuHome = () => {
   const { data = [] } = useQuery("menuHome", () => sanity.fetch(query));
@@ -29,17 +24,16 @@ const MenuHome = () => {
   return (
     <section>
       <MenuImageDiv bgimg={menuHome.image.url}>
-
-        <Link to="/menu">
+        <Link to='/menu'>
           <OverlayFood>
             <Dark></Dark>
             <P>{menuHome.descriptionOne}</P>
           </OverlayFood>
         </Link>
-        <Link to="/menu">
+        <Link to='/menu'>
           <OverlayDrinks>
-          <Dark></Dark>
-          <DarkMobile></DarkMobile>
+            <Dark></Dark>
+            <DarkMobile></DarkMobile>
             <P>{menuHome.descriptionTwo}</P>
           </OverlayDrinks>
         </Link>
@@ -50,46 +44,31 @@ const MenuHome = () => {
 
 export default MenuHome;
 
-const Img = styled.img`
-  /* width: 100%; */
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-
-`;
-
-
 const MenuImageDiv = styled.div`
   position: relative;
   background: url(${(props) => props.bgimg});
   background-size: cover;
 
   @media ${device.mobileS} {
-    height: calc(var(--home-mobile-h)*0.8);
+    height: calc(var(--home-mobile-h) * 0.8);
     background-position: center bottom;
-
-    } 
+  }
   @media ${device.mobileL} {
-      height: var(--home-mobile-h);
-    }
-    @media ${device.tablet} {
-      background-position: 90% 50%;
-      height: var(--home-dsktp-h);
-
-    }
-    @media ${device.laptop} {
-      height: calc(var(--home-dsktp-h) * 1.3);
-      background-position: center bottom;
-    }
-    @media ${device.laptopL} {
-      height: calc(var(--home-large-dsktp-h) * 1.3);
-      background-position: center bottom;
-    }
-
-`
-
-
+    height: var(--home-mobile-h);
+  }
+  @media ${device.tablet} {
+    background-position: 90% 50%;
+    height: var(--home-dsktp-h);
+  }
+  @media ${device.laptop} {
+    height: calc(var(--home-dsktp-h) * 1.3);
+    background-position: center bottom;
+  }
+  @media ${device.laptopL} {
+    height: calc(var(--home-large-dsktp-h) * 1.3);
+    background-position: center bottom;
+  }
+`;
 
 const OverlayFood = styled.div`
   position: absolute;
@@ -101,7 +80,6 @@ const OverlayFood = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
 `;
 
 const Dark = styled.div`
@@ -126,7 +104,7 @@ const Dark = styled.div`
       opacity: 1;
     }
   }
-`
+`;
 const DarkMobile = styled.div`
   position: absolute;
   top: 0;
@@ -145,15 +123,13 @@ const DarkMobile = styled.div`
   @media ${device.laptop} {
     opacity: 0;
   }
-`
-
+`;
 
 const OverlayDrinks = styled.div`
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  /* left: 194px; */
   width: 50%;
   display: flex;
   justify-content: center;

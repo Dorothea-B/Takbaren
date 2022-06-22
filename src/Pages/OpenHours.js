@@ -108,9 +108,6 @@ const OpenHours = () => {
 
 export default OpenHours;
 
-// const WeatherPages = styled.div`
-//   max-width: 600px;
-// `;
 const WeatherPageWrap = styled.div`
   width: 100%;
   padding-bottom: 2rem;

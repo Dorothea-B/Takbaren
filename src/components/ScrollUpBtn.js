@@ -8,7 +8,6 @@ const ScrollUpBtn = () => {
   const handleScrollUp = () => {
     window.scrollTo({
       top: 0,
-      //   left: 0,
       behavior: "smooth",
     });
   };
@@ -16,7 +15,7 @@ const ScrollUpBtn = () => {
   return (
     <div>
       <RoundBtn onClick={handleScrollUp}>
-        <img src={Arrow} alt="arrow-up" />
+        <img src={Arrow} alt='arrow-up' />
       </RoundBtn>
     </div>
   );

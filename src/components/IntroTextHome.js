@@ -1,6 +1,5 @@
 import React from "react";
 import BlockContent from "@sanity/block-content-to-react";
-import styled from "styled-components/macro";
 
 import BlockRenderer from "../BlockRenderer";
 
@@ -9,14 +8,7 @@ import { sanity } from "../sanity";
 
 import "../index.css";
 
-import {
-  HeadingDark,
-  SubHeadingRed,
-  RegularText,
-  VerySmallText,
-  SquareBtn,
-  CardSpacing,
-} from "../globalStyleComponents";
+import { HeadingDark, SquareBtn, CardSpacing } from "../globalStyleComponents";
 
 const query = `
   *[ _type == 'introHome' ] { title, story, link }
@@ -45,8 +37,7 @@ const IntroTextHome = () => {
       )}
 
       {introText.link && (
-        <a href={introText.link} target='_blank'>
-          {/* fixa med target blank  */}
+        <a href={introText.link} target='_blank' rel='noopener'>
           <SquareBtn>Read more</SquareBtn>
         </a>
       )}

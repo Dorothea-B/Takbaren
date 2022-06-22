@@ -39,5 +39,6 @@ const MenuFood = () => {
 export default MenuFood;
 
 const MenuWrapper = styled.div`
-  /* height: 1000px; */
+  background-color: var(--clr-white);
+  padding: 3rem 3rem 10rem;
 `;

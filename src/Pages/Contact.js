@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components/macro";
 import "../index.css";
 
 import { useQuery } from "react-query";
@@ -9,7 +8,6 @@ import BlockContent from "@sanity/block-content-to-react";
 import BlockRenderer from "../BlockRenderer";
 
 import {
-  HeadingDark,
   PagesHeading,
   ImageText,
   PagesImageOverlay,
@@ -36,14 +34,11 @@ const ImageDiv = styled.div`
   background-image: url(${(props) => props.bgimg});
   background-size: cover;
 
-
   @media ${device.mobileS} {
     height: 300px;
-
   }
   @media ${device.mobileL} {
     height: 300px;
-
   }
   @media ${device.tablet} {
     height: 500px;
@@ -53,7 +48,6 @@ const ImageDiv = styled.div`
   }
   @media ${device.desktop} {
     height: 800px;
-
   }
 `;
 
@@ -73,13 +67,16 @@ const Contact = () => {
         <ImageText>
           <PagesHeading>{contact.title}</PagesHeading>
         </ImageText>
-        <img className="sub-page-heading" src={contact.image.url} alt='contact page header image'/>
+        <img
+          className='sub-page-heading'
+          src={contact.image.url}
+          alt='contact page header image'
+        />
       </ImageDiv>
 
       <PagesWrapper>
         <HomePageWrapper>
           <CardLight>
-          
             {contact.story && (
               <div>
                 <BlockContent

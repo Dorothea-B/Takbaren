@@ -75,13 +75,11 @@ a {
 @media (min-width: 768px) {
   .logo {
     max-width: 55%;
-    margin: 1rem;
+    margin: 0;
   }
 
   .shrink-logo {
-    max-width: 0%;
     display: none;
-    margin: 0;
   }
 }
 
@@ -114,12 +112,14 @@ a {
 }
 .static-nav {
   background-color: transparent;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
 }
 
 .scroll-nav {
   transition-property: box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.15s;
   background-image: url("./assets/Backgrounds/BG_top_long.svg");
   top: -10px;
 
@@ -128,9 +128,6 @@ a {
   background-repeat: repeat-x;
   width: 100%;
   box-shadow: 7px 7px 15px 1px rgba(52, 59, 63, 0.72);
-  /* transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out; */
   z-index: 9999;
   position: fixed;
 }
@@ -319,11 +316,24 @@ a {
   right: -24px;
 } */
 
-.even {
-  position: absolute;
-}
+@media (min-width: 768px) {
+  .even {
+    position: absolute;
+    right: 150px;
+  }
 
-.odd {
-  position: absolute;
-  right: -24px;
+  .odd {
+    position: absolute;
+    left: 210px;
+  }
+
+  .evenImg {
+    position: absolute;
+    right: 150px;
+  }
+
+  .oddImg {
+    position: absolute;
+    left: 210px;
+  }
 }
