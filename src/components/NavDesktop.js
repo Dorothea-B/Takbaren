@@ -32,7 +32,6 @@ const NavList = styled.ul`
   text-transform: uppercase;
   color: var(--clr-light);
   z-index: 1;
-  position: fixed;
   font-size: clamp(1rem, 2vw, 1.5rem);
   transition: transform 0.3s ease-in-out;
 

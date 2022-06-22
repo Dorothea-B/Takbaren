@@ -5,7 +5,7 @@ import styled from "styled-components/macro";
 
 const PopUp = () => {
   return (
-    <Wrapper>
+    <div>
       <CookieConsent
         location='bottom'
         buttonText='Accept'
@@ -23,18 +23,11 @@ const PopUp = () => {
           This website uses cookies to enhance the user experience.
         </ErrorText>
       </CookieConsent>
-    </Wrapper>
+    </div>
   );
 };
 
 export default PopUp;
-
-const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 7px 7px 15px 1px rgb(52 59 63 / 72%);
-`;
 
 export const ErrorText = styled.p`
   font-family: "Poppins", sans-serif;
