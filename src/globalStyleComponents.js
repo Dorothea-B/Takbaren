@@ -39,8 +39,6 @@ export const PagesImageOverlay = styled.div`
   background-color: rgba(52, 59, 63, 0.4);
   background-blend-mode: multiply;
   overflow: hidden;
-
-
 `;
 
 export const ImageText = styled.div`
@@ -49,7 +47,6 @@ export const ImageText = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  /* height: 100%; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,14 +60,6 @@ export const PagesCardLIght = styled.div`
   max-width: 600px;
 `;
 
-export const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid grey;
-  color: var(--clr-grey);
-  margin: 0 1em;
-  padding: 0.25em 1em;
-`;
 // export const heading_dark = styled.h1`
 //   font-family: "Playfair Display", serif;
 //   color: red;
@@ -110,20 +99,6 @@ export const SquareBtn = styled.button`
   margin-top: 1.5rem;
   padding: 0.5rem;
   width: 250px;
-`;
-
-export const CrossBtn = styled.button`
-  background-color: transparent;
-  display: flex;
-  align-self: flex-end;
-  color: black;
-  cursor: pointer;
-  border: none;
-  padding: 0.8rem;
-  width: 50px;
-  height: 50px;
-  margin: 1rem;
-  box-shadow: (rgba(0, 0, 0, 0.25));
 `;
 
 export const LoadingScreen = styled.div`

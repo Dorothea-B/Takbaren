@@ -37,17 +37,6 @@ section {
 li {
   list-style: none;
 }
-/*This styling is for the weather*/
-/* .rw-container-main {
-	background-color: transparent;
-}
-
-.right-0-2-5 {
-	background-color: #f6bdac00;
-} */
-/*This styling is for the weather ends here*/
-
-/*This styling is for the map*/
 
 a {
   color: inherit;
@@ -83,6 +72,28 @@ a {
   }
 }
 
+.static-nav {
+  background-color: transparent;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+}
+
+.scroll-nav {
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  background-image: url("./assets/Backgrounds/BG_top_long.svg");
+  top: -10px;
+
+  background-color: var(--clr-light);
+  position: absolute;
+  background-repeat: repeat-x;
+  width: 100%;
+  box-shadow: 7px 7px 15px 1px rgba(52, 59, 63, 0.72);
+  z-index: 9999;
+  position: fixed;
+}
+
 .orange {
   color: orange;
   font-weight: bold;
@@ -109,27 +120,6 @@ a {
 .title {
   font-size: 50px;
   font-weight: bold;
-}
-.static-nav {
-  background-color: transparent;
-  transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-}
-
-.scroll-nav {
-  transition-property: box-shadow;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  background-image: url("./assets/Backgrounds/BG_top_long.svg");
-  top: -10px;
-
-  background-color: var(--clr-light);
-  position: absolute;
-  background-repeat: repeat-x;
-  width: 100%;
-  box-shadow: 7px 7px 15px 1px rgba(52, 59, 63, 0.72);
-  z-index: 9999;
-  position: fixed;
 }
 
 /* Används inte i nuläget */
@@ -303,18 +293,6 @@ a {
   cursor: pointer;
   color: var(--clr-dark);
 }
-
-/* .image-card {
-  width: 400px;
-}
-
-.image-card:nth-child(even) {
-  position: absolute;
-}
-.image-card:nth-child(odd) {
-  position: absolute;
-  right: -24px;
-} */
 
 @media (min-width: 768px) {
   .even {

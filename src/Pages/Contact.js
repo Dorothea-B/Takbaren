@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components/macro";
 import "../index.css";
 
 import { useQuery } from "react-query";
