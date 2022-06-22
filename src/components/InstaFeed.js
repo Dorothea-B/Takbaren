@@ -4,8 +4,13 @@ import axios from 'axios'
 import styled from 'styled-components/macro'
 import Feed from './Feed'
 import { device } from '../toolcomponents/Devices'
-
 import '../index.css'
+import ClipLoader from 'react-spinners/ClipLoader';
+import { LoadingScreen } from '../globalStyleComponents';
+import LoadingSpinner from "../toolcomponents/LoadingSpinner";
+
+
+import Loader from './Loader'
 
 
 const SomeWrapper = styled.div`
@@ -36,21 +41,13 @@ const InstaContainer = styled.div `
         @media ${device.laptop} {
             height: 17rem;
         }
-
-        /* @media (min-width: 1024px) {
-        
-        } */
     }
-    
-    
 ` 
-	
-  
-  
-
 
 const InstaFeed = ({token, ...props}) => {
     const [feeds, setFeedsData] = useState([])
+    // const [loading, setLoading] = useState(false);
+
     //use useRef to store the latest value of the prop without firing the effect
     const tokenProp = process.env.REACT_APP_INS_TOKEN;
 
@@ -59,7 +56,9 @@ const InstaFeed = ({token, ...props}) => {
         const abortController = new AbortController();
 
         async function fetchInstagramPost () {
-          try{
+            // setLoading(true)
+
+            try{
             axios
                 // .get(`https://graph.instagram.com/me/media?fields=id,username,media_type,media_url,caption&limit=${props.limit}&access_token=${tokenProp}`)
                 .get(`https://graph.instagram.com/me/media?fields=id,username,media_url,media_type&access_token=${tokenProp}`)
@@ -68,6 +67,8 @@ const InstaFeed = ({token, ...props}) => {
                 })
           } catch (err) {
               console.log('error', err)
+          } finally {
+            // setLoading(true)
           }
         }
         
@@ -81,12 +82,21 @@ const InstaFeed = ({token, ...props}) => {
     }, [props.limit])
 
     return (
+        
+
         <SomeWrapper>
-        <InstaContainer>
-            {feeds.map((feed) => (
-                <Feed key={feed.id} feed={feed} />
-            ))}
-        </InstaContainer>
+
+            {/* {loading && <LoadingSpinner />} */}
+{/* 
+            <div className='sweet-loading'>
+                <ClipLoader loading={loading} size={150} />
+            </div> */}
+
+            <InstaContainer>
+                {feeds.map((feed) => (
+                    <Feed key={feed.id} feed={feed} />
+                ))}
+            </InstaContainer>
         </SomeWrapper>
 
     );
