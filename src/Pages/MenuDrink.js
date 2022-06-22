@@ -1,6 +1,5 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
 import { sanity, imageUrlBuilder } from "../sanity";
 
 import styled from "styled-components/macro";
@@ -72,7 +71,11 @@ export default MenuDrink;
 const DrinkWrapper = styled.section`
   overflow: hidden;
   position: relative;
-  width: 1000px;
+  width: 400px;
+
+  @media (min-width: 768px) {
+    width: 1000px;
+  }
 `;
 
 const DrinkList = styled.section`
