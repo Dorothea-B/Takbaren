@@ -22,7 +22,7 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 1rem;
 
   @media (max-width: 768px) {
     padding: 0;

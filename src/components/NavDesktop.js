@@ -35,6 +35,7 @@ const NavList = styled.ul`
   position: fixed;
   /* font-size: clamp(1rem, 2vw, 1.5rem); */
   font-size: clamp(1rem, 1.5vw, 1.5rem);
+  transition: transform 0.3s ease-in-out;
 
   @media (max-width: 768px) {
     font-size: 24px;
@@ -63,7 +64,6 @@ const NavList = styled.ul`
     flex-flow: column nowrap;
     align-items: center;
     background-color: var(--clr-grey);
-    position: fixed;
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
     right: 0;

@@ -1,58 +1,41 @@
-
-import React from 'react'
+import React from "react";
 
 const Feed = (props) => {
-    const { id, caption, media_type, media_url} = props.feed
-    let post;
+  const { id, caption, media_type, media_url } = props.feed;
+  let post;
 
-    switch (media_type) {
-        case "VIDEO":
-            post = (
-                <a href="https://www.instagram.com/takbarenvisby">
-                <video
-                    width='100%'
-                    height='auto' 
-                    src={media_url} 
-                    type="video/mp4" 
-                    controls playsinline>
-                </video>
-                </a>
-            )
-            break;
-        case "CAROUSEL_ALBUM":
-            post = (
-                <a href="https://www.instagram.com/takbarenvisby">
+  switch (media_type) {
+    case "VIDEO":
+      post = (
+        <video
+          width='100%'
+          height='auto'
+          src={media_url}
+          type='video/mp4'
+          controls
+          playsinline
+        ></video>
+      );
+      break;
+    case "CAROUSEL_ALBUM":
+      post = (
+        <img
+          classname='instagram'
+          width='100%'
+          height='auto'
+          id={id}
+          src={media_url}
+          alt={caption}
+        />
+      );
+      break;
+    default:
+      post = (
+        <img width='100%' height='auto' id={id} src={media_url} alt={caption} />
+      );
+  }
 
-                <img 
-                    width='100%'
-                    height='auto'
-                    id={id} 
-                    src={media_url} 
-                    alt={caption} 
-                />
-                </a>
-
-            );
-            break;
-        default:
-            post = (
-                <a href="https://www.instagram.com/takbarenvisby">
-                    <img 
-                    width='100%'
-                    height='auto'
-                    id={id} 
-                    src={media_url} 
-                    alt={caption} 
-                    />
-                </a>
-            );
-    }       
-
-    return (
-        <React.Fragment>
-            {post}
-        </React.Fragment>
-    );
-}
+  return <React.Fragment>{post}</React.Fragment>;
+};
 
 export default Feed;
