@@ -461,14 +461,20 @@ const LeafPalmRight = styled.div`
 
   @media ${device.mobileS} {
     width: 9rem;
-    height: 15rem;
-    top: 2540px;
+    height: 12rem;
+    top: 2250px;
+    right: 0px;
+  }
+  @media ${device.mobileL} {
+    width: 9rem;
+    height: 14rem;
+    top: 2500px;
     right: 0px;
   }
   @media ${device.tablet} {
     width: 12rem;
     height: 18rem;
-    top: 2200px;
+    top: 2300px;
     right: 0px;
   }
   @media ${device.laptop} {

@@ -29,6 +29,7 @@ const InstaContainer = styled.div`
   overflow-x: scroll;
   gap: 1rem;
   margin: auto;
+
   
 
   &::-webkit-scrollbar {
@@ -48,8 +49,15 @@ const InstaContainer = styled.div`
 }
   & > * {
     /* width: calc(100% * 0.333333); */
-    height: 13rem;
+    /* height: 13rem; */
 
+    @media ${device.mobileS} {
+      height: 10rem;
+      background-color: black;
+    }
+    @media ${device.mobileL} {
+      height: 10rem;
+    }
     @media ${device.laptop} {
       height: 17rem;
     }
