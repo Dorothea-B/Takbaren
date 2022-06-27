@@ -11,6 +11,7 @@ import imageCarousel from "./schemas-components/imageCarousel";
 import contact from "./schemas-pages/contact";
 import menu from "./schemas-pages/menu";
 import menuDrink from "./schemas-pages/menuDrink";
+import menuDrinkList from "./schemas-pages/menuDrinkList";
 import menuFood from "./schemas-pages/menuFood";
 import openHours from "./schemas-pages/openHours";
 
@@ -26,6 +27,7 @@ export default createSchema({
     contact,
     menu,
     menuDrink,
+    menuDrinkList,
     menuFood,
     openHours,
   ]),

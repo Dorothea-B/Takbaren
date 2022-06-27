@@ -5,6 +5,7 @@ import "../index.css";
 
 import MenuFood from "../Pages/MenuFood";
 import MenuDrink from "../Pages/MenuDrink";
+import MenuDrinkList from "../Pages/MenuDrinkList";
 
 const MenuTabs = () => {
   const [currentTab, setCurrentTab] = useState("1");
@@ -45,7 +46,10 @@ const MenuTabs = () => {
           <div key={i}>
             {currentTab === `${tab.id}` && (
               <div>
-                <div>{tab.content}</div>
+                <div>
+                  {tab.content}
+                  <MenuDrinkList />
+                </div>
               </div>
             )}
           </div>

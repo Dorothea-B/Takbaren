@@ -288,6 +288,7 @@ export const RegularText = styled.p`
   /* font-size: 12px; */
   white-space: break-spaces;
   line-height: 1.3;
+  margin-bottom: 1rem;
 
   @media ${device.mobileS} {
     font-size: 0.7em;
