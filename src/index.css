@@ -43,11 +43,11 @@ a {
   text-decoration: none;
 }
 
-.logo {
+.logo,
+.static-logo {
   max-width: 70%;
   display: flex;
   justify-content: center;
-  margin: 1rem;
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -62,13 +62,20 @@ a {
 }
 
 @media (min-width: 768px) {
-  .logo {
+  .logo,
+  .static-logo {
     max-width: 55%;
-    margin: 0;
   }
 
   .shrink-logo {
-    display: none;
+    transition: all 0s ease-in-out;
+    -webkit-transition: all 0s ease-in-out;
+    -moz-transition: all 0s ease-in-out;
+    max-width: 0%;
+  }
+
+  .scroll-nav {
+    top: -40px;
   }
 }
 
@@ -83,7 +90,6 @@ a {
   transition-property: box-shadow;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background-image: url("./assets/Backgrounds/BG_top_long.svg");
-  top: -10px;
 
   background-color: var(--clr-light);
   position: absolute;

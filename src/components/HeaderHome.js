@@ -10,7 +10,7 @@ const HeaderHome = () => {
   const [logo, setLogo] = useState(false);
 
   const fixedNavbar = () => {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 60) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -19,7 +19,7 @@ const HeaderHome = () => {
   window.addEventListener("scroll", fixedNavbar);
 
   const shrinkLogo = () => {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 60) {
       setLogo(true);
     } else {
       setLogo(false);
@@ -34,7 +34,7 @@ const HeaderHome = () => {
           <Img
             src={Logo}
             alt='logo'
-            className={logo ? "shrink-logo" : "logo"}
+            className={logo ? "shrink-logo" : "static-logo"}
           />
         </Link>
         <NavBarHome />
@@ -53,4 +53,10 @@ const HeaderSection = styled.section`
 
 const Img = styled.img`
   margin: 1rem;
+
+  @media (min-width: 768px) {
+    .shrink-logo {
+      margin: 0;
+    }
+  }
 `;
