@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import "../index.css";
 import { device } from "../toolcomponents/Devices";
+import { Routes, Route } from 'react-router-dom';
+import MenuDrink from "../Pages/MenuDrink";
+import MenuFood from "../Pages/MenuFood";
+
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
@@ -23,14 +27,21 @@ const MenuHome = () => {
 
   return (
     <section>
+
+      {/* <Routes>
+				<Route path='/menu/food' element={ <MenuDrink /> } />
+				<Route path='/menu/drinks' element={ <MenuFood /> } />	
+			</Routes> */}
+
+
       <MenuImageDiv bgimg={menuHome.image.url}>
-        <Link to='/menu'>
+        <Link to='/menu/mtab/1'>
           <OverlayFood>
             <Dark id="dark"></Dark>
             <P>{menuHome.descriptionOne}</P>
           </OverlayFood>
         </Link>
-        <Link to='/menu'>
+        <Link to='/menu/mtab/2'>
           <OverlayDrinks>
             <Dark id="dark"></Dark>
             <DarkMobile></DarkMobile>

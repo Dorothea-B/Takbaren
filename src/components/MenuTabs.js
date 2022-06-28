@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Routes, Route } from 'react-router-dom';
 
 import styled from "styled-components/macro";
 import "../index.css";
@@ -26,7 +27,16 @@ const MenuTabs = () => {
   };
 
   return (
+    
     <MenuWrapper>
+
+      {/* <Routes>
+        <Route path=":id" element={<Chat />} />
+      </Routes> */}
+
+
+
+		
       <TabDiv>
         {tabs.map((tab, i) => (
           <button

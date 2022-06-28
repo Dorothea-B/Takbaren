@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { device } from "../toolcomponents/Devices";
+import { Routes, Route } from 'react-router-dom';
 
 import "../index.css";
 
@@ -10,6 +11,8 @@ import { sanity } from "../sanity";
 import MenuTabs from "../components/MenuTabs";
 import ScrollUpBtn from '../components/ScrollUpBtn';
 
+import MenuFood from "../Pages/MenuFood";
+import MenuDrink from "../Pages/MenuDrink";
 
 import {
   PagesHeading,
@@ -63,12 +66,23 @@ const Menu = () => {
 
   return (
     <>
+
+      <Routes>
+
+        <Route path='/mtab/*' element={<MenuTabs />}>
+          <Route path=":1" element={<MenuFood />} />
+          <Route path=":2" element={<MenuFood />} />
+				</Route>
+      </Routes>
+
+
+
       <ImageDiv bgimg={menuHeader.image.url}>
         <PagesImageOverlay></PagesImageOverlay>
         <ImageText>
           <PagesHeading>{menuHeader.title}</PagesHeading>
         </ImageText>
-        <img src={menuHeader.image.url} />
+        <img src={menuHeader.image.url} alt="header menu"/>
       </ImageDiv>
       <MenuTabs />
       <ScrollUpBtn />

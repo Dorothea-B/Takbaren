@@ -23,6 +23,9 @@ import Background from './toolcomponents/Background';
 // import styles from "./App.module.css";
 
 import './App.css';
+import MenuTabs from './components/MenuTabs';
+import MenuDrink from './Pages/MenuDrink';
+import MenuFood from './Pages/MenuDrink';
 
 const App = () => {
 	return (
@@ -36,7 +39,12 @@ const App = () => {
 			<Routes>
 				<Route path='/' element={<Home />} />
 				<Route path='/contact' element={<Contact />} />
-				<Route path='/menu' element={<Menu />} />
+
+				<Route path='/menu/*' element={<Menu />}>
+				<Route path=":1" element={<MenuFood />} />
+				<Route path=":2" element={<MenuFood />} />
+				</Route>
+
 				<Route path='/openinghours' element={<OpenHours />} />
 				<Route path='*' element={<NotFound />} />
 			</Routes>
