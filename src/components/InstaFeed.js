@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import styled from "styled-components/macro";
 import Feed from "./Feed";
@@ -8,10 +8,10 @@ import "../index.css";
 const InstaFeed = ({ token, ...props }) => {
   const [feeds, setFeedsData] = useState([]);
 
+  //use useRef to store the latest value of the prop without firing the effect
   const tokenProp = process.env.REACT_APP_INS_TOKEN;
 
   useEffect(() => {
-    // this is to avoid memory leaks
     const abortController = new AbortController();
 
     async function fetchInstagramPost() {
@@ -27,10 +27,10 @@ const InstaFeed = ({ token, ...props }) => {
         console.log("error", err);
       }
     }
+
     fetchInstagramPost();
 
     return () => {
-      // cancel pending fetch request on component unmount
       abortController.abort();
     };
   }, [props.limit]);
@@ -75,7 +75,6 @@ const InstaContainer = styled.div`
     height: 10px;
     margin: 30px;
   }
-
   &::-webkit-scrollbar-thumb {
     background: var(--clr-light);
     border-radius: 100vw;
@@ -83,15 +82,16 @@ const InstaContainer = styled.div`
   &::-webkit-scrollbar-thumb:hover {
     cursor: pointer;
   }
-
-  @media ${device.mobileS} {
-    height: 10rem;
-    background-color: black;
-  }
-  @media ${device.mobileL} {
-    height: 10rem;
-  }
-  @media ${device.laptop} {
-    height: 17rem;
+  & > * {
+    @media ${device.mobileS} {
+      height: 10rem;
+      background-color: black;
+    }
+    @media ${device.mobileL} {
+      height: 10rem;
+    }
+    @media ${device.laptop} {
+      height: 17rem;
+    }
   }
 `;
