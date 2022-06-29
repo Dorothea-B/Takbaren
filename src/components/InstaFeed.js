@@ -1,20 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components/macro";
 import Feed from "./Feed";
 import { device } from "../toolcomponents/Devices";
 import "../index.css";
-import ClipLoader from "react-spinners/ClipLoader";
-import { LoadingScreen } from "../globalStyleComponents";
-import LoadingSpinner from "../toolcomponents/LoadingSpinner";
-
-import Loader from "./Loader";
 
 const InstaFeed = ({ token, ...props }) => {
   const [feeds, setFeedsData] = useState([]);
-  // const [loading, setLoading] = useState(false);
 
-  //use useRef to store the latest value of the prop without firing the effect
   const tokenProp = process.env.REACT_APP_INS_TOKEN;
 
   useEffect(() => {
@@ -22,11 +15,8 @@ const InstaFeed = ({ token, ...props }) => {
     const abortController = new AbortController();
 
     async function fetchInstagramPost() {
-      // setLoading(true)
-
       try {
         axios
-          // .get(`https://graph.instagram.com/me/media?fields=id,username,media_type,media_url,caption&limit=${props.limit}&access_token=${tokenProp}`)
           .get(
             `https://graph.instagram.com/me/media?fields=id,username,media_url,media_type&access_token=${tokenProp}`
           )
@@ -37,8 +27,6 @@ const InstaFeed = ({ token, ...props }) => {
         console.log("error", err);
       }
     }
-
-    // manually call the fecth function
     fetchInstagramPost();
 
     return () => {
@@ -49,12 +37,6 @@ const InstaFeed = ({ token, ...props }) => {
 
   return (
     <SomeWrapper>
-      {/* {loading && <LoadingSpinner />} */}
-      {/* 
-            <div className='sweet-loading'>
-                <ClipLoader loading={loading} size={150} />
-            </div> */}
-
       <a href='https://www.instagram.com/takbarenvisby'>
         <InstaContainer>
           {feeds.map((feed) => (
@@ -82,7 +64,6 @@ const InstaContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  /* margin: auto; */
   overflow-x: scroll;
   gap: 1rem;
   margin: auto;
@@ -102,19 +83,15 @@ const InstaContainer = styled.div`
   &::-webkit-scrollbar-thumb:hover {
     cursor: pointer;
   }
-  & > * {
-    /* width: calc(100% * 0.333333); */
-    /* height: 13rem; */
 
-    @media ${device.mobileS} {
-      height: 10rem;
-      background-color: black;
-    }
-    @media ${device.mobileL} {
-      height: 10rem;
-    }
-    @media ${device.laptop} {
-      height: 17rem;
-    }
+  @media ${device.mobileS} {
+    height: 10rem;
+    background-color: black;
+  }
+  @media ${device.mobileL} {
+    height: 10rem;
+  }
+  @media ${device.laptop} {
+    height: 17rem;
   }
 `;

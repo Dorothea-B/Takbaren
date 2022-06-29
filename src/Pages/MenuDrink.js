@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import { Autoplay, Keyboard, Pagination, Navigation } from "swiper";
+import { Autoplay, Keyboard, Pagination } from "swiper";
 
 import styled from "styled-components/macro";
 import "../index.css";
@@ -17,7 +17,7 @@ import { DrinkImgHeading } from "../globalStyleComponents";
 import MenuDrinkList from "../Pages/MenuDrinkList";
 
 const query = `
-  *[ _type == 'menuDrink' ] { title, ingredients, description, prize, slug, image, index }
+  *[ _type == 'menuDrink' ] { title, ingredients, description, prize, slug, image }
 `;
 
 const MenuDrink = () => {
@@ -45,9 +45,9 @@ const MenuDrink = () => {
               enabled: true,
             }}
             loop={true}
-            navigation
+            grabCursor={true}
             pagination={{ clickable: true }}
-            modules={[Autoplay, Keyboard, Pagination, Navigation]}
+            modules={[Autoplay, Keyboard, Pagination]}
             className='mySwiper'
           >
             {menuDrinks.map(
