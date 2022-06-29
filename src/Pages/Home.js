@@ -1,15 +1,11 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import React from "react";
 
 import styled from "styled-components/macro";
 import { device } from "../toolcomponents/Devices";
 import "../index.css";
 
-import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-
 import ContactHome from "../components/ContactHome";
 import IntroTextHome from "../components/IntroTextHome";
-// import ImageCarousel from "../components/ImageCarousel";
 import MenuHome from "../components/MenuHome";
 import OpenHoursHome from "../components/OpenHoursHome";
 import SocialMediaHome from "../components/SocialMediaHome";
@@ -17,21 +13,72 @@ import WeatherHome from "../components/WeatherHome";
 import HeaderImg from "../assets/Header-img.jpg";
 import MapHome from "../components/MapHome";
 import GoToTop from "../toolcomponents/GoToTop";
-import ScrollUpBtn from "../components/ScrollUpBtn";
-
-import PopUp from "../components/PopUp";
-
-// import HomepageDecor from '../assets/HomepageDecor';
+import ScrollUpBtn from "../toolcomponents/ScrollUpBtn";
 
 import leaf1 from "../assets/Leaves/leaf_green_palm.svg";
 import leaf2 from "../assets/Leaves/leaf_green_star.svg";
 import leaf3 from "../assets/Leaves/leaf_green_montsera.svg";
 import leaf4 from "../assets/Leaves/leaf_green_palm_inverted.svg";
 
-// import "../App.css";
+const Home = () => {
+  const hideDiv = () => {
+    document.getElementById("desktopIntro").style.display = "none";
+  };
 
-// mapboxgl.accessToken =
-//   "pk.eyJ1IjoibWFyaWFubmVhcmRpbiIsImEiOiJjbDQ3Mmc3ZTkwM3drM2tsOXh5NmtqOWhjIn0.yZxjb02HmWVm6P7rG8i8fA";
+  return (
+    <section>
+      <LeafPalmLeft />
+
+      <HeaderImageSection>
+        <IntroDesktop id='desktopIntro'>
+          <Hide id='hide' onClick={() => hideDiv()}>
+            &#215;
+          </Hide>
+          <IntroTextHome />
+        </IntroDesktop>
+      </HeaderImageSection>
+
+      <HomePageWrapper>
+        <IntroMobile>
+          <IntroTextHome />
+        </IntroMobile>
+
+        <Weather>
+          <WeatherHome />
+        </Weather>
+
+        <CardLight>
+          <OpenHoursHome />
+        </CardLight>
+
+        <LeafStarRight />
+
+        <CardOther>
+          <MenuHome />
+        </CardOther>
+
+        <CardLight>
+          <ContactHome />
+        </CardLight>
+
+        <Map>
+          <MapHome />
+        </Map>
+
+        <MontseraLeft />
+
+        <CardOther>
+          <SocialMediaHome />
+        </CardOther>
+        <LeafPalmRight />
+      </HomePageWrapper>
+      <GoToTop />
+      <ScrollUpBtn />
+    </section>
+  );
+};
+
+export default Home;
 
 export const HomePageWrapper = styled.div`
   margin: auto;
@@ -85,13 +132,11 @@ export const HomePageWrapper = styled.div`
       margin-top: 0;
       width: var(--home-tablet-w);
       height: var(--home-dsktp-h);
-      /* overflow: hidden; */
     }
     @media ${device.desktop} {
       margin-top: 0;
       width: var(--home-tablet-w);
       height: var(--home-large-dsktp-h);
-      /* overflow: hidden; */
     }
   }
 `;
@@ -126,19 +171,12 @@ export const HeaderImageSection = styled.div`
     height: 70vh;
     width: 100%;
   }
-
-  /* & > img {
-	margin: auto;
-	object-fit: cover;
-} */
 `;
 
 export const CardLight = styled.div`
   background-color: var(--clr-white);
   flex: 1;
-
   padding: 2rem;
-  /* overflow: hidden; */
 
   @media ${device.mobileS} {
     width: 100%;
@@ -147,11 +185,6 @@ export const CardLight = styled.div`
   @media ${device.tablet} {
     width: var(--home-tablet-w);
     margin: auto;
-    /* width: 100%;
-    max-width: 600px; */
-  }
-  @media ${device.laptop} {
-    /* width: var(--home-dsktp-w); */
   }
 `;
 
@@ -162,12 +195,8 @@ const CardOther = styled.div`
 
   @media ${device.tablet} {
     width: var(--home-tablet-w);
-    /* height: calc(var(--home-dsktp-h) * 1.3); */
     height: var(--home-dsktp-h);
-
     margin: auto;
-    /* width: 100%;
-    max-width: 600px; */
   }
 
   @media ${device.laptop} {
@@ -186,18 +215,12 @@ const CardOther = styled.div`
 export const Map = styled.div`
   width: 100%;
   flex: 1;
-  /* height: var(--home-mobile-h); */
   @media ${device.tablet} {
     width: var(--home-tablet-w);
     margin: auto;
-    /* width: 100%;
-    max-width: 600px; */
   }
   @media ${device.laptop} {
     width: var(--home-dsktp-w);
-    /* max-width: 500px; */
-
-    /* height: var(--home-dsktp-h); */
   }
 `;
 
@@ -208,8 +231,6 @@ export const Weather = styled.div`
   @media ${device.tablet} {
     width: var(--home-tablet-w);
     margin: auto;
-    /* width: 100%;
-    max-width: 600px; */
   }
   @media (min-width: 1024px) {
     width: var(--home-dsktp-w);
@@ -240,10 +261,8 @@ const IntroDesktop = styled.div`
     top: 20vh;
     left: 50%;
     margin-left: calc(var(--home-dsktp-w) - (var(--home-dsktp-w) * 1.5));
-    /* This calculation dynamcally centers the div even though it's absolutely positioned 
-    (read more: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/) 
-    100 - (100 x 1.5) = calculate half the value and use it as a negative number*/
   }
+
   @media ${device.desktop} {
     width: var(--home-dsktp-w);
     height: calc(var(--home-dsktp-h) * 1.25);
@@ -253,9 +272,6 @@ const IntroDesktop = styled.div`
     top: 30vh;
     left: 50%;
     margin-left: calc(var(--home-dsktp-w) - (var(--home-dsktp-w) * 1.5));
-    /* This calculation dynamcally centers the div even though it's absolutely positioned 
-    (read more: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/) 
-    100 - (100 x 1.5) = calculate half the value and use it as a negative number*/
   }
 `;
 const IntroMobile = styled.div`
@@ -266,10 +282,6 @@ const IntroMobile = styled.div`
   @media ${device.tablet} {
     display: none;
   }
-
-  /* @media (min-width: 1024px) {
-		display: none;
-	} */
 `;
 
 const Hide = styled.button`
@@ -293,70 +305,6 @@ const Hide = styled.button`
     padding: 2rem;
   }
 `;
-
-const Home = () => {
-  const hideDiv = () => {
-    document.getElementById("desktopIntro").style.display = "none";
-  };
-
-  return (
-    <section>
-      <LeafPalmLeft />
-
-      <HeaderImageSection>
-        {/* <img src={HeaderImg} alt='header' /> */}
-
-        <IntroDesktop id='desktopIntro'>
-          <Hide id='hide' onClick={() => hideDiv()}>
-            &#215;
-          </Hide>
-          <IntroTextHome />
-        </IntroDesktop>
-      </HeaderImageSection>
-
-      <HomePageWrapper>
-        <IntroMobile>
-          <IntroTextHome />
-        </IntroMobile>
-
-        <Weather>
-          <WeatherHome />
-        </Weather>
-
-        <CardLight>
-          <OpenHoursHome />
-        </CardLight>
-
-        <LeafStarRight />
-
-        <CardOther>
-          <MenuHome />
-        </CardOther>
-
-        <CardLight>
-          <ContactHome />
-        </CardLight>
-
-        <Map>
-          <MapHome />
-        </Map>
-
-        <MontseraLeft />
-
-        <CardOther>
-          <SocialMediaHome />
-        </CardOther>
-        <LeafPalmRight />
-        {/* <ImageCarousel /> */}
-      </HomePageWrapper>
-      <GoToTop />
-      <ScrollUpBtn />
-      <PopUp />
-    </section>
-  );
-};
-
-export default Home;
 
 const LeafPalmLeft = styled.div`
   width: 13rem;

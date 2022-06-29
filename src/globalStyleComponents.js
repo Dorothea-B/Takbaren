@@ -62,7 +62,7 @@ export const PagesCardLIght = styled.div`
 
 export const MenuWrapper = styled.div`
   background-color: var(--clr-white);
-  padding: 3rem 3rem 10rem;
+  padding: 6rem;
   margin: 1rem;
 
   // export const heading_dark = styled.h1
@@ -408,17 +408,17 @@ export const PagesHeading = styled(Heading)`
 
 export const DrinkImgHeading = styled(Heading)`
   color: var(--clr-white);
-  font-size: 1em;
+  font-size: 1.5em;
   height: 100%;
   display: flex;
   align-items: flex-end;
   padding-bottom: 1.5rem;
 
   @media (min-width: 768px) {
-    font-size: 1.3em;
+    font-size: 1.7em;
   }
-
+  /* 
   @media (min-width: 1024px) {
-    font-size: 1.5em;
-  }
+    font-size: 2em;
+  } */
 `;

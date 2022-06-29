@@ -26,13 +26,13 @@ const MenuHome = () => {
       <MenuImageDiv bgimg={menuHome.image.url}>
         <Link to='/menu'>
           <OverlayFood>
-            <Dark id="dark"></Dark>
+            <Dark id='dark'></Dark>
             <P>{menuHome.descriptionOne}</P>
           </OverlayFood>
         </Link>
         <Link to='/menu'>
           <OverlayDrinks>
-            <Dark id="dark"></Dark>
+            <Dark id='dark'></Dark>
             <DarkMobile></DarkMobile>
             <P>{menuHome.descriptionTwo}</P>
           </OverlayDrinks>
@@ -84,15 +84,6 @@ const Dark = styled.div`
   transition-duration: 0.2s;
   opacity: 0;
   z-index: 100;
-
-  /* @media ${device.laptop} {
-    opacity: 0;
-
-    &:hover {
-      opacity: 1;
-    }
-
-  } */
 `;
 
 const OverlayFood = styled.div`
@@ -107,14 +98,11 @@ const OverlayFood = styled.div`
   align-items: center;
 
   @media ${device.laptop} {
-
-  &:hover ${Dark} {
-     opacity: 1;
+    &:hover ${Dark} {
+      opacity: 1;
     }
   }
-
 `;
-
 
 const DarkMobile = styled.div`
   position: absolute;
@@ -147,9 +135,9 @@ const OverlayDrinks = styled.div`
   align-items: center;
 
   @media ${device.laptop} {
-  &:hover ${Dark} {
-   opacity: 1;
-  }
+    &:hover ${Dark} {
+      opacity: 1;
+    }
   }
 `;
 
@@ -159,12 +147,6 @@ const P = styled.p`
   font-size: 28px;
   text-decoration: none;
   z-index: 500;
-
-/* 
-  &:hover ${Dark} { 
-    opacity: 1; 
-  } */
-
 
   @media (min-width: 1024px) {
     font-size: 2em;

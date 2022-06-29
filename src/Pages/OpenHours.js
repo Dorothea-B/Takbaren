@@ -23,43 +23,12 @@ import {
 import { CardLight, HomePageWrapper, Weather } from "./Home";
 import Loader from "../components/Loader";
 
-
 import WeatherPage from "../components/WeatherPage";
 
 const query = `
   *[ _type == 'openHours' ] { title, 
     "image": image.asset->{url},
     story, weatherTitle }
-`;
-
-
-const ImageDiv = styled.div`
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background-image: url(${(props) => props.bgimg});
-  background-size: cover;
-
-
-  @media ${device.mobileS} {
-    height: 300px;
-
-  }
-  @media ${device.mobileL} {
-    height: 300px;
-
-  }
-  @media ${device.tablet} {
-    height: 500px;
-  }
-  @media ${device.laptop} {
-    height: 680px;
-  }
-  @media ${device.desktop} {
-    height: 800px;
-
-  }
-
 `;
 
 const OpenHours = () => {
@@ -120,25 +89,46 @@ const OpenWrapper = styled.div`
 
   @media ${device.mobileS} {
     width: calc(100% - 30px);
-   
   }
 
   @media ${device.tablet} {
     width: 90%;
-   
   }
 
   @media ${device.laptop} {
     width: calc(100% - 100px);
-  
+
     min-width: 1000px;
     max-width: 1500px;
   }
   @media ${device.desktop} {
     width: calc(100% - 100px);
-    
+
     min-width: 1000px;
     max-width: 1900px;
   }
+`;
 
+const ImageDiv = styled.div`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(${(props) => props.bgimg});
+  background-size: cover;
+
+  @media ${device.mobileS} {
+    height: 300px;
+  }
+  @media ${device.mobileL} {
+    height: 300px;
+  }
+  @media ${device.tablet} {
+    height: 500px;
+  }
+  @media ${device.laptop} {
+    height: 680px;
+  }
+  @media ${device.desktop} {
+    height: 800px;
+  }
 `;

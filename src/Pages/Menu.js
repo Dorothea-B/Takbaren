@@ -9,7 +9,7 @@ import { sanity } from "../sanity";
 
 import MenuFood from "./MenuFood";
 import MenuDrink from "./MenuDrink";
-import ScrollUpBtn from "../components/ScrollUpBtn";
+import ScrollUpBtn from "../toolcomponents/ScrollUpBtn";
 
 import {
   PagesHeading,

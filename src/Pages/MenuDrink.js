@@ -3,13 +3,11 @@ import { useQuery } from "react-query";
 import { sanity, imageUrlBuilder } from "../sanity";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-// import required modules
 import { Autoplay, Keyboard, Pagination, Navigation } from "swiper";
 
 import styled from "styled-components/macro";
@@ -95,7 +93,7 @@ const DrinkList = styled.section`
 `;
 
 const Img = styled.img`
-  max-width: 300px;
+  max-width: 350px;
   /* max-width: 250px;
 
   @media (min-width: 768px) {

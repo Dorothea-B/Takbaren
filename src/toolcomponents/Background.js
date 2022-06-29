@@ -1,5 +1,3 @@
-/* background-image: url("./assets/Background.png"); */
-
 import React from "react";
 import styled from "styled-components/macro";
 import { device } from "./Devices";
@@ -8,6 +6,21 @@ import top from "../assets/Backgrounds/BG_top.svg";
 import right from "../assets/Backgrounds/BG_right.svg";
 import bottom from "../assets/Backgrounds/BG_bottom.svg";
 import left from "../assets/Backgrounds/BG_left.svg";
+
+const Background = () => {
+  return (
+    <BGWrapper>
+      <Relative>
+        <Top />
+        <Bottom />
+        <Left />
+        <Right />
+      </Relative>
+    </BGWrapper>
+  );
+};
+
+export default Background;
 
 const BGWrapper = styled.div`
   position: fixed;
@@ -28,29 +41,22 @@ const Top = styled.div`
 
   @media ${device.mobileS} {
     top: -50px;
-
-    /* background-color: green; */
   }
   @media ${device.mobileL} {
     top: -60px;
-    /* background-color: yellow; */
   }
   @media ${device.tablet} {
     top: -80px;
-    /* background-color: blue; */
   }
   @media ${device.laptop} {
     top: -80px;
-    /* background-color: red; */
   }
   @media ${device.laptopL} {
     top: -90px;
-    /* background-color: purple; */
   }
   @media ${device.desktop} {
     top: -120px;
     height: 15rem;
-    /* background-color: white; */
   }
 `;
 const Left = styled.div`
@@ -99,25 +105,9 @@ const Right = styled.div`
   right: -50px;
   z-index: 300;
 
-  @media ${device.mobileS} {
-    /* right: 50px; */
-  }
-  @media ${device.mobileL} {
-    /* right: 50px; */
-  }
   @media ${device.tablet} {
-    /* right: 50px; */
     top: 6rem;
     width: 12rem;
-  }
-  @media ${device.laptop} {
-    /* right: 50px; */
-  }
-  @media ${device.laptopL} {
-    /* right: -50px; */
-  }
-  @media ${device.desktop} {
-    /* right: -50px; */
   }
 `;
 const Bottom = styled.div`
@@ -142,18 +132,3 @@ const Bottom = styled.div`
   @media ${device.desktop} {
   }
 `;
-
-const Background = () => {
-  return (
-    <BGWrapper>
-      <Relative>
-        <Top />
-        <Bottom />
-        <Left />
-        <Right />
-      </Relative>
-    </BGWrapper>
-  );
-};
-
-export default Background;

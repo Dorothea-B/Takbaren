@@ -8,22 +8,10 @@ import "../index.css";
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
-import {
-  HeadingDark,
-  SubHeadingDark,
-  SubHeadingRed,
-  SquareBtn,
-  CardSpacing,
-} from "../globalStyleComponents";
+import { HeadingDark, SquareBtn, CardSpacing } from "../globalStyleComponents";
 
 const query = `
   *[ _type == 'contactHome' ] { title, story, link }
-`;
-
-const ContactWrapper = styled.div`
-  & > * {
-    flex: 1;
-  }
 `;
 
 const ContactHome = () => {
@@ -57,3 +45,9 @@ const ContactHome = () => {
   );
 };
 export default ContactHome;
+
+const ContactWrapper = styled.div`
+  & > * {
+    flex: 1;
+  }
+`;

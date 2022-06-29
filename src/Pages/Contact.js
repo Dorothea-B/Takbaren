@@ -17,8 +17,6 @@ import {
 
 import { CardLight, HomePageWrapper, Map } from "./Home";
 
-import Loader from "../components/Loader";
-
 import MapHome from "../components/MapHome";
 import { device } from "../toolcomponents/Devices";
 
@@ -28,37 +26,13 @@ const query = `
     story }
 `;
 
-const ImageDiv = styled.div`
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background-image: url(${(props) => props.bgimg});
-  background-size: cover;
-
-  @media ${device.mobileS} {
-    height: 300px;
-  }
-  @media ${device.mobileL} {
-    height: 300px;
-  }
-  @media ${device.tablet} {
-    height: 500px;
-  }
-  @media ${device.laptop} {
-    height: 680px;
-  }
-  @media ${device.desktop} {
-    height: 800px;
-  }
-`;
-
 const Contact = () => {
   const { data = [] } = useQuery("contact", () => sanity.fetch(query));
 
   const [contact] = data;
 
   if (!contact) {
-    return <Loader />;
+    return <h1>Loading…</h1>;
   }
 
   return (
@@ -97,3 +71,27 @@ const Contact = () => {
   );
 };
 export default Contact;
+
+const ImageDiv = styled.div`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(${(props) => props.bgimg});
+  background-size: cover;
+
+  @media ${device.mobileS} {
+    height: 300px;
+  }
+  @media ${device.mobileL} {
+    height: 300px;
+  }
+  @media ${device.tablet} {
+    height: 500px;
+  }
+  @media ${device.laptop} {
+    height: 680px;
+  }
+  @media ${device.desktop} {
+    height: 800px;
+  }
+`;

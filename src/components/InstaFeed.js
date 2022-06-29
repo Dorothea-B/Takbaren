@@ -10,60 +10,6 @@ import LoadingSpinner from "../toolcomponents/LoadingSpinner";
 
 import Loader from "./Loader";
 
-const SomeWrapper = styled.div`
-  height: var(--home-dsktp-h);
-  position: relative;
-  z-index: 20;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-`;
-
-const InstaContainer = styled.div`
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  /* margin: auto; */
-  overflow-x: scroll;
-  gap: 1rem;
-  margin: auto;
-
-  
-
-  &::-webkit-scrollbar {
-  border-radius: 100vw;
-  background-color: rgba(246, 189, 172, 0.4);
-  opacity: 0.3;
-  height: 10px;
-  margin: 30px;
-}
-
-&::-webkit-scrollbar-thumb{
-  background: var(--clr-light);
-  border-radius: 100vw;
-}
-&::-webkit-scrollbar-thumb:hover {
-  cursor: pointer;
-}
-  & > * {
-    /* width: calc(100% * 0.333333); */
-    /* height: 13rem; */
-
-    @media ${device.mobileS} {
-      height: 10rem;
-      background-color: black;
-    }
-    @media ${device.mobileL} {
-      height: 10rem;
-    }
-    @media ${device.laptop} {
-      height: 17rem;
-    }
-  }
-`;
-
 const InstaFeed = ({ token, ...props }) => {
   const [feeds, setFeedsData] = useState([]);
   // const [loading, setLoading] = useState(false);
@@ -121,3 +67,54 @@ const InstaFeed = ({ token, ...props }) => {
 };
 
 export default InstaFeed;
+
+const SomeWrapper = styled.div`
+  height: var(--home-dsktp-h);
+  position: relative;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const InstaContainer = styled.div`
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* margin: auto; */
+  overflow-x: scroll;
+  gap: 1rem;
+  margin: auto;
+
+  &::-webkit-scrollbar {
+    border-radius: 100vw;
+    background-color: rgba(246, 189, 172, 0.4);
+    opacity: 0.3;
+    height: 10px;
+    margin: 30px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--clr-light);
+    border-radius: 100vw;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+  }
+  & > * {
+    /* width: calc(100% * 0.333333); */
+    /* height: 13rem; */
+
+    @media ${device.mobileS} {
+      height: 10rem;
+      background-color: black;
+    }
+    @media ${device.mobileL} {
+      height: 10rem;
+    }
+    @media ${device.laptop} {
+      height: 17rem;
+    }
+  }
+`;

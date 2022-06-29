@@ -4,20 +4,6 @@ import styled from "styled-components/macro";
 import { device } from "../toolcomponents/Devices";
 import { CardSpacing, MediumHeadingDark } from "../globalStyleComponents";
 
-const MediumHeadingDarkSOME = styled(MediumHeadingDark)`
-  margin-top: 1.3rem;
-
-  @media ${device.mobileS} {
-  font-size: 0.8em;
-  }
-  @media ${device.mobileL} {
-    font-size: 1.3em;
-  }
-  @media ${device.tablet} {
-    font-size: 1.5em;
-  }
-`;
-
 const SocialMediaHome = () => {
   return (
     <CardSpacing>
@@ -31,3 +17,17 @@ const SocialMediaHome = () => {
 };
 
 export default SocialMediaHome;
+
+const MediumHeadingDarkSOME = styled(MediumHeadingDark)`
+  margin-top: 1.3rem;
+
+  @media ${device.mobileS} {
+    font-size: 0.8em;
+  }
+  @media ${device.mobileL} {
+    font-size: 1.3em;
+  }
+  @media ${device.tablet} {
+    font-size: 1.5em;
+  }
+`;

@@ -10,7 +10,7 @@ const HeaderHome = () => {
   const [logo, setLogo] = useState(false);
 
   const fixedNavbar = () => {
-    if (window.scrollY >= 90) {
+    if (window.scrollY >= 60) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -19,7 +19,7 @@ const HeaderHome = () => {
   window.addEventListener("scroll", fixedNavbar);
 
   const shrinkLogo = () => {
-    if (window.scrollY >= 90) {
+    if (window.scrollY >= 60) {
       setLogo(true);
     } else {
       setLogo(false);
