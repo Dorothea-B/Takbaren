@@ -6,24 +6,10 @@ import NavDesktop from "./NavDesktop";
 
 const NavMobile = () => {
   const [open, setOpen] = useState(false);
-  const [burgerBar, setBurgerBar] = useState(false);
-
-  const hamburgerBar = () => {
-    if (window.scrollY >= 60) {
-      setBurgerBar(true);
-    } else {
-      setBurgerBar(false);
-    }
-  };
-  window.addEventListener("scroll", hamburgerBar);
 
   return (
     <>
-      <StyledMobileNav
-        open={open}
-        onClick={() => setOpen(!open)}
-        className={burgerBar ? "scroll-burger" : "static-burger"}
-      >
+      <StyledMobileNav open={open} onClick={() => setOpen(!open)}>
         <div />
         <div />
         <div />

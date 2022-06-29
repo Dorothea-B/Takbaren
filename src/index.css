@@ -139,11 +139,6 @@ a {
   }
 }
 
-.scroll-burger,
-.static-burger {
-  position: fixed;
-}
-
 .orange {
   color: orange;
   font-weight: bold;
