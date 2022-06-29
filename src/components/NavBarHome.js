@@ -22,9 +22,11 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
 
   @media (max-width: 768px) {
     padding: 0;
+    margin: 0;
   }
 `;

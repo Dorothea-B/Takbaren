@@ -7,7 +7,7 @@ import BlockRenderer from "../BlockRenderer";
 
 import styled from "styled-components/macro";
 import "../index.css";
-import { SubHeadingDark } from "../globalStyleComponents";
+import { MenuWrapper } from "../globalStyleComponents";
 
 const query = `
   *[ _type == 'menuFood' ] { story }
@@ -37,8 +37,3 @@ const MenuFood = () => {
 };
 
 export default MenuFood;
-
-const MenuWrapper = styled.div`
-  background-color: var(--clr-white);
-  padding: 3rem 3rem 10rem;
-`;
