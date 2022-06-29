@@ -7,7 +7,7 @@ import BlockRenderer from "../BlockRenderer";
 
 import styled from "styled-components/macro";
 import "../index.css";
-import { SubHeadingDark } from "../globalStyleComponents";
+import { MenuWrapper } from "../globalStyleComponents";
 
 const query = `
   *[ _type == 'menuDrinkList' ] { story }
@@ -25,12 +25,12 @@ const MenuDrinkList = () => {
   return (
     <>
       {menuDrinkList.story && (
-        <div>
+        <MenuWrapper>
           <BlockContent
             blocks={menuDrinkList.story}
             serializers={{ types: { block: BlockRenderer } }}
           />
-        </div>
+        </MenuWrapper>
       )}
     </>
   );

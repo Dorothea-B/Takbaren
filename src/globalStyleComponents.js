@@ -60,7 +60,13 @@ export const PagesCardLIght = styled.div`
   max-width: 600px;
 `;
 
-// export const heading_dark = styled.h1`
+export const MenuWrapper = styled.div`
+  background-color: var(--clr-white);
+  padding: 3rem 3rem 10rem;
+  margin: 1rem;
+
+  // export const heading_dark = styled.h1
+`;
 //   font-family: "Playfair Display", serif;
 //   color: red;
 //   text-transform: uppercase;
@@ -400,12 +406,13 @@ export const PagesHeading = styled(Heading)`
   border-block-end: 2px solid var(--clr-white);
 `;
 
-export const PagesHeadingDark = styled(Heading)`
-  color: var(--clr-grey);
-  border-block-end: 2px solid var(--clr-grey);
-  padding: 1rem;
-  width: min-content;
+export const DrinkImgHeading = styled(Heading)`
+  color: var(--clr-white);
   font-size: 1em;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 1.5rem;
 
   @media (min-width: 768px) {
     font-size: 1.3em;
