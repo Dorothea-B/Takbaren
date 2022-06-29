@@ -1,3 +1,5 @@
+
+
 :root {
   --clr-white: #f7f6f0;
   --clr-black: #000;
@@ -15,7 +17,17 @@
   --home-dsktp-w: 49%;
   --home-dsktp-h: 320px;
   --home-large-dsktp-h: 400px;
+
 }
+/*
+mobileS: '300px',
+mobileM: '375px',
+mobileL: '425px',
+tablet: '768px',
+laptop: '1024px',
+laptopL: '1440px',
+desktop: '2000px',
+*/
 
 * {
   box-sizing: border-box;
@@ -93,6 +105,34 @@ a {
   z-index: 9999;
   position: fixed;
 }
+
+
+@media (min-width: 300px) {
+  .scroll-nav {
+    background-size: 650px;
+    background-position: 0 -30px;
+  }
+}
+
+@media (min-width: 375px) {
+  .scroll-nav {
+    background-size: 750px;
+    background-position: 0 -40px;
+  }
+}
+@media (min-width: 425px) {
+  .scroll-nav {
+    background-size: 850px;
+    background-position: 0 -50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-nav {
+    background-size: 1200px;
+    background-position: 0 -60px;
+  }
+} 
 
 .orange {
   color: orange;

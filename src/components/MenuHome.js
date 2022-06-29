@@ -26,13 +26,13 @@ const MenuHome = () => {
       <MenuImageDiv bgimg={menuHome.image.url}>
         <Link to='/menu'>
           <OverlayFood>
-            <Dark></Dark>
+            <Dark id="dark"></Dark>
             <P>{menuHome.descriptionOne}</P>
           </OverlayFood>
         </Link>
         <Link to='/menu'>
           <OverlayDrinks>
-            <Dark></Dark>
+            <Dark id="dark"></Dark>
             <DarkMobile></DarkMobile>
             <P>{menuHome.descriptionTwo}</P>
           </OverlayDrinks>
@@ -70,18 +70,6 @@ const MenuImageDiv = styled.div`
   }
 `;
 
-const OverlayFood = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const Dark = styled.div`
   position: absolute;
   top: 0;
@@ -97,14 +85,37 @@ const Dark = styled.div`
   opacity: 0;
   z-index: 100;
 
-  @media ${device.laptop} {
+  /* @media ${device.laptop} {
     opacity: 0;
 
     &:hover {
       opacity: 1;
     }
-  }
+
+  } */
 `;
+
+const OverlayFood = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media ${device.laptop} {
+
+  &:hover ${Dark} {
+     opacity: 1;
+    }
+  }
+
+`;
+
+
 const DarkMobile = styled.div`
   position: absolute;
   top: 0;
@@ -134,6 +145,12 @@ const OverlayDrinks = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media ${device.laptop} {
+  &:hover ${Dark} {
+   opacity: 1;
+  }
+  }
 `;
 
 const P = styled.p`
@@ -142,6 +159,12 @@ const P = styled.p`
   font-size: 28px;
   text-decoration: none;
   z-index: 500;
+
+/* 
+  &:hover ${Dark} { 
+    opacity: 1; 
+  } */
+
 
   @media (min-width: 1024px) {
     font-size: 2em;
