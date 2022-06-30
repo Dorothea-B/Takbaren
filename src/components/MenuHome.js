@@ -24,13 +24,13 @@ const MenuHome = () => {
   return (
     <section>
       <MenuImageDiv bgimg={menuHome.image.url}>
-        <Link to='/menu'>
+        <Link to='/menu/food'>
           <OverlayFood>
             <Dark id='dark'></Dark>
             <P>{menuHome.descriptionOne}</P>
           </OverlayFood>
         </Link>
-        <Link to='/menu'>
+        <Link to='/menu/drinks'>
           <OverlayDrinks>
             <Dark id='dark'></Dark>
             <DarkMobile></DarkMobile>

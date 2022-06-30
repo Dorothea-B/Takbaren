@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { device } from "../toolcomponents/Devices";
+import {Link, NavLink, Outlet} from "react-router-dom"
 
 import "../index.css";
 import styled from "styled-components/macro";
@@ -10,6 +11,7 @@ import { sanity } from "../sanity";
 import MenuFood from "./MenuFood";
 import MenuDrink from "./MenuDrink";
 import ScrollUpBtn from "../toolcomponents/ScrollUpBtn";
+import GoToTop from "../toolcomponents/GoToTop";
 
 import {
   PagesHeading,
@@ -27,22 +29,27 @@ const Menu = () => {
   const { data = [] } = useQuery("menuHeader", () => sanity.fetch(query));
   const [menuHeader] = data;
   const [currentTab, setCurrentTab] = useState("1");
-  const tabs = [
-    {
-      id: 1,
-      tabTitle: "Drinks",
-      content: <MenuDrink />,
-    },
-    {
-      id: 2,
-      tabTitle: "Food",
-      content: <MenuFood />,
-    },
-  ];
+  // const tabs = [
+  //   {
+  //     id: 1,
+  //     tabTitle: "Drinks",
+  //     content: <MenuDrink />,
+  //   },
+  //   {
+  //     id: 2,
+  //     tabTitle: "Food",
+  //     content: <MenuFood />,
+  //   },
+  // ];
 
   const handleTabClick = (e) => {
     setCurrentTab(e.target.id);
   };
+
+  const checkActive = () => {
+   
+    return currentTab === true ;
+  }
 
   if (!menuHeader) {
     return <h1>Loading…</h1>;
@@ -55,33 +62,24 @@ const Menu = () => {
         <ImageText>
           <PagesHeading>{menuHeader.title}</PagesHeading>
         </ImageText>
-        <img src={menuHeader.image.url} />
       </ImageDiv>
+
+
+
+
       <MenuWrapper>
+       
         <TabDiv>
-          {tabs.map((tab, i) => (
-            <button
-              className='__tab'
-              key={i}
-              id={tab.id}
-              disabled={currentTab === `${tab.id}`}
-              onClick={handleTabClick}
-            >
-              {tab.tabTitle}
-            </button>
-          ))}
+         
+         <Tab to={"/menu/drinks"} activeClassName='active' isActive={checkActive} > Drinks </Tab>
+         <Tab to="/menu/food" activeClassName='active'> Food </Tab>
+
         </TabDiv>
-        <Content>
-          {tabs.map((tab, i) => (
-            <div key={i}>
-              {currentTab === `${tab.id}` && (
-                <div>
-                  <div>{tab.content}</div>
-                </div>
-              )}
-            </div>
-          ))}
-        </Content>
+        
+        {/* This is mounting sub-components based on routes defined in app.js */}
+        <Outlet />
+        <GoToTop />
+
       </MenuWrapper>
       <ScrollUpBtn />
     </>
@@ -96,6 +94,8 @@ const ImageDiv = styled.div`
   overflow: hidden;
   background-image: url(${(props) => props.bgimg});
   background-size: cover;
+  background-repeat: no-repeat;
+
 
   @media ${device.mobileS} {
     height: 300px;
@@ -152,3 +152,25 @@ const TabDiv = styled.div`
 `;
 
 const Content = styled.div``;
+
+const Tab = styled(NavLink)`
+    border: none;
+    color: rgba(52, 59, 63, 0.7);
+    font-family: "Playfair Display", serif;
+    font-size: 1.3em;
+    font-style: italic;
+    cursor: pointer;
+    padding: 25px;
+    width: 100%;
+    background-color: transparent;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+    color: var(--clr-grey);
+  }
+
+    &.active {
+    border-block-end: 4px solid var(--clr-grey);
+    color: var(--clr-grey);
+    }
+`;
