@@ -32,7 +32,6 @@ export const ErrorText = styled.p`
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
 	font-size: 16px;
-	font-weight: 500;
 	color: #f7f6f0;
 	text-align: center;
 `;
