@@ -36,7 +36,7 @@ const OpenHoursHome = () => {
       )}
 
       <Link to='/openinghours'>
-        <SquareBtn>More</SquareBtn>
+        <SquareBtn>More Info</SquareBtn>
       </Link>
     </CardSpacing>
   );

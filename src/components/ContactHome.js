@@ -38,7 +38,7 @@ const ContactHome = () => {
         )}
 
         <Link to='/contact'>
-          <SquareBtn>More</SquareBtn>
+          <SquareBtn>More Info</SquareBtn>
         </Link>
       </ContactWrapper>
     </CardSpacing>

@@ -37,9 +37,12 @@ const IntroTextHome = () => {
       )}
 
       {introText.link && (
-        <a href={introText.link} target='_blank' rel='noopener'>
-          <SquareBtn>Read more</SquareBtn>
-        </a>
+        <a
+          href={introText.link}
+          target='_blank'
+          rel='noreferrer'
+          aira-label='link-going-to-another-page'
+        ></a>
       )}
     </CardSpacing>
   );

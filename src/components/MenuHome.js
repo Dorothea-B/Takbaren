@@ -23,7 +23,7 @@ const MenuHome = () => {
 
   return (
     <section>
-      <MenuImageDiv bgimg={menuHome.image.url}>
+      <MenuImageDiv bgimg={menuHome.image.url} alt='food-and-drinks-menu'>
         <Link to='/menu'>
           <OverlayFood>
             <Dark id='dark'></Dark>
