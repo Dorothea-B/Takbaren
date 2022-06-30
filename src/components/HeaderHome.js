@@ -10,7 +10,7 @@ const HeaderHome = () => {
   const [logo, setLogo] = useState(false);
 
   const fixedNavbar = () => {
-    if (window.scrollY >= 60) {
+    if (window.scrollY >= 60 ) {
       setNavbar(true);
     } else {
       setNavbar(false);

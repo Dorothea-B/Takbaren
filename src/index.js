@@ -2,13 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-//import { queryCache } from 'react-query'
 
 import { persistQueryClient } from "react-query/persistQueryClient-experimental";
 import { createWebStoragePersistor } from "react-query/createWebStoragePersistor-experimental";
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-//import { persistWithLocalStorage } from 'react-query/persist-localstorage-experimental';
 
 import "modern-css-reset";
 import "./index.css";
@@ -16,7 +14,6 @@ import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 
-import setupNotifications from "./setupNotifications";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -59,4 +56,3 @@ serviceWorkerRegistration.register();
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-setupNotifications();

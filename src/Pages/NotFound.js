@@ -8,6 +8,7 @@ import {
   SquareBtn,
 } from "../globalStyleComponents";
 import { Link } from "react-router-dom";
+import GoToTop from "../toolcomponents/GoToTop";
 
 const Height = styled.div`
   height: 60vh;
@@ -27,6 +28,8 @@ const NotFound = () => {
           </Link>
         </Height>
       </PagesWrapper>
+      <GoToTop />
+
     </section>
   );
 };

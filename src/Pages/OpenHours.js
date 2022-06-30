@@ -8,7 +8,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import BlockRenderer from "../BlockRenderer";
 
 import { device } from "../toolcomponents/Devices";
-
+import GoToTop from "../toolcomponents/GoToTop";
 import {
   PagesHeading,
   ImageText,
@@ -66,6 +66,8 @@ const OpenHours = () => {
           </CardLight>
         </OpenWrapper>
       </PagesWrapper>
+      <GoToTop />
+
     </>
   );
 };

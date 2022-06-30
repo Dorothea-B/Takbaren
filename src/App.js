@@ -36,22 +36,20 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         
         <Route path='/menu' element={<Menu />}> 
-        <Route path='' 
-          element={ <MenuDrink /> }
-           />
-        <Route path='food' 
-          element={ <MenuFood /> }
-           />
-        <Route path='drinks' 
-          element={ <MenuDrink /> }
-           />
-
+            <Route path='' 
+              element={ <MenuDrink /> }
+              />
+            <Route path='food' 
+              element={ <MenuFood /> }
+              />
+            <Route path='drinks' 
+              element={ <MenuDrink /> }
+              />
         </Route>
 
         <Route path='/openinghours' element={<OpenHours />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-      <GoToTop />
       <Footer />
       <PopUp />
     </div>

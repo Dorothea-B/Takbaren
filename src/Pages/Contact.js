@@ -57,6 +57,8 @@ const Contact = () => {
                   blocks={contact.story}
                   serializers={{ types: { block: BlockRenderer } }}
                 />
+                
+
               </div>
             )}
 

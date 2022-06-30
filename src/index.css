@@ -7,24 +7,14 @@
   --clr-light: #f6bdac;
   --clr-accent: ##f4dba9;
 
-  /* These variables are used in homepage and homepage components,
-  be careful if altering!!
-   */
+
   --home-mobile-h: 300px;
   --home-tablet-w: 80%;
   --home-dsktp-w: 49%;
   --home-dsktp-h: 320px;
   --home-large-dsktp-h: 400px;
 }
-/*
-mobileS: '300px',
-mobileM: '375px',
-mobileL: '425px',
-tablet: '768px',
-laptop: '1024px',
-laptopL: '1440px',
-desktop: '2000px',
-*/
+
 
 * {
   box-sizing: border-box;
@@ -167,159 +157,6 @@ a {
   font-weight: bold;
 }
 
-/* Används inte i nuläget */
-
-.heading-dark {
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
-  font-size: 2em;
-  color: var(--clr-grey);
-}
-.heading-light {
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
-  font-size: 2em;
-  color: var(--clr-white);
-}
-
-.m-heading-dark {
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
-  text-decoration: underline;
-  font-size: 1.3em;
-  color: var(--clr-grey);
-}
-.m-heading-light {
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
-  text-decoration: underline;
-  font-size: 1.3em;
-  color: var(--clr-white);
-}
-.m-heading-red {
-  font-family: "Playfair Display", serif;
-  text-transform: uppercase;
-  text-decoration: underline;
-  font-size: 1.5em;
-  color: var(--clr-dark);
-}
-
-.sh-dark {
-  font-family: "Playfair Display", serif;
-  font-size: 1.3em;
-  font-style: italic;
-  font-weight: 500;
-  color: var(--clr-grey);
-}
-.sh-light {
-  font-family: "Playfair Display", serif;
-  font-size: 1.3em;
-  font-style: italic;
-  font-weight: 500;
-  color: var(--clr-white);
-}
-.sh-red {
-  font-family: "Playfair Display", serif;
-  font-size: 1.3em;
-  font-style: italic;
-  font-weight: 500;
-  color: var(--clr-dark);
-}
-.sh-pink {
-  font-family: "Playfair Display", serif;
-  font-size: 1.3em;
-  font-style: italic;
-  font-weight: 500;
-  color: var(--clr-medium);
-}
-
-.main-dark {
-  font-family: "Playfair Display", serif;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--clr-grey);
-}
-.main-light {
-  font-family: "Playfair Display", serif;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--clr-white);
-}
-.main-red {
-  font-family: "Playfair Display", serif;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--clr-dark);
-}
-.main-pink {
-  font-family: "Playfair Display", serif;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--clr-medium);
-}
-
-.main-link-dark {
-  font-family: "Playfair Display", serif;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--clr-grey);
-  text-decoration: underline;
-  cursor: pointer;
-}
-.main-link-dark::hover {
-  color: var(--clr-red);
-}
-
-.main-link-light {
-  font-family: "Playfair Display", serif;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--clr-light);
-  text-decoration: underline;
-  cursor: pointer;
-}
-.main-link-light::hover {
-  color: var(--clr-dark);
-}
-
-.reg-dark {
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  color: var(--clr-grey);
-}
-
-.reg-light {
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  color: var(--clr-white);
-}
-.reg-red {
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  color: var(--clr-dark);
-}
-.reg-pink {
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  color: var(--clr-medium);
-}
-
-.link-dark {
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-style: italic;
-  text-decoration: underline;
-  cursor: pointer;
-  color: var(--clr-grey);
-}
-
-/*LÄgg in hover och active på alla länk-klasser*/
 
 .link-light {
   font-family: "Poppins", sans-serif;
@@ -339,7 +176,6 @@ a {
   color: var(--clr-dark);
 }
 
-/* drink carousel */
 .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;

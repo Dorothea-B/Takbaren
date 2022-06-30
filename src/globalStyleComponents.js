@@ -2,18 +2,12 @@ import styled from "styled-components/macro";
 import "./index.css";
 import { device } from "./toolcomponents/Devices";
 
-// export const SubHeading = styled.h3`
-//   font-family: "Playfair Display", serif;
-//   font-size: 1.3em;
-//   font-style: italic;
-// `;
 
 export const CardSpacing = styled.section`
   display: flex;
   flex-direction: column;
   align-items: space-between;
   justify-content: space-around;
-  /* gap: 1rem; */
   height: 100%;
 `;
 
@@ -82,22 +76,8 @@ export const MenuWrapper = styled.div`
     width: 700px;
   }
 
-  // export const heading_dark = styled.h1
 `;
-//   font-family: "Playfair Display", serif;
-//   color: red;
-//   text-transform: uppercase;
-// `;
-// export const sub_heading_dark = styled.h3`
-//   font-family: "Playfair Display", serif;
-//   color: var(--clr-grey);
-//   text-transform: uppercase;
-// `;
 
-// export const regular_text_dark = styled.p`
-//   font-family: "Poppins", sans-serif;
-//   color: var(--clr-grey);
-// `;
 
 export const RoundBtn = styled.button`
   background-color: var(--clr-grey);
@@ -387,35 +367,7 @@ export const RegularLinkRed = styled(RegularLink)`
   }
 `;
 
-// Gamla textstilar - uppdatera där de fortf. används!
 
-export const SubHeadingLight2 = styled(SubHeading)`
-  color: var(--clr-white);
-`;
-
-export const SubHeadingDark2 = styled(SubHeading)`
-  color: var(--clr-grey);
-`;
-
-export const SubHeadingRed2 = styled(SubHeading)`
-  color: var(--clr-dark);
-`;
-
-export const VerySmallText = styled(RegularText)`
-  font-size: 8px;
-`;
-
-export const HeadingDark2 = styled(Heading)`
-  color: var(--clr-grey);
-`;
-
-export const LightText = styled(RegularText)`
-  color: var(--clr-white);
-`;
-
-export const DarkText = styled(RegularText)`
-  color: var(--clr-grey);
-`;
 
 export const PagesHeading = styled(Heading)`
   color: var(--clr-white);
@@ -442,3 +394,4 @@ export const DrinkImgHeading = styled(Heading)`
     font-size: 2.2em;
   }
 `;
+

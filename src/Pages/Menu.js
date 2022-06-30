@@ -29,22 +29,8 @@ const Menu = () => {
   const { data = [] } = useQuery("menuHeader", () => sanity.fetch(query));
   const [menuHeader] = data;
   const [currentTab, setCurrentTab] = useState("1");
-  // const tabs = [
-  //   {
-  //     id: 1,
-  //     tabTitle: "Drinks",
-  //     content: <MenuDrink />,
-  //   },
-  //   {
-  //     id: 2,
-  //     tabTitle: "Food",
-  //     content: <MenuFood />,
-  //   },
-  // ];
-
-  const handleTabClick = (e) => {
-    setCurrentTab(e.target.id);
-  };
+ 
+ 
 
   const checkActive = () => {
    
@@ -78,7 +64,6 @@ const Menu = () => {
         
         {/* This is mounting sub-components based on routes defined in app.js */}
         <Outlet />
-        <GoToTop />
 
       </MenuWrapper>
       <ScrollUpBtn />
