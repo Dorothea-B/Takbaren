@@ -18,7 +18,6 @@ import {
 } from "../globalStyleComponents";
 
 import { CardLight } from "./Home";
-import Loader from "../components/Loader";
 
 import WeatherPage from "../components/WeatherPage";
 
