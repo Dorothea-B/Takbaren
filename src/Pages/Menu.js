@@ -29,20 +29,27 @@ const Menu = () => {
   const { data = [] } = useQuery("menuHeader", () => sanity.fetch(query));
   const [menuHeader] = data;
   const [currentTab, setCurrentTab] = useState("1");
+  const [active, setActive] = useState(false);
  
  
 
-  const checkActive = () => {
-   
-    return currentTab === true ;
-  }
+
 
   if (!menuHeader) {
     return <h1>Loading…</h1>;
   }
 
+  const stay = () => {
+    setActive(true)
+    window.scrollTo({
+      top: 500,
+      // behavior: 'smooth',
+    });
+  }
+
   return (
     <>
+
       <ImageDiv bgimg={menuHeader.image.url} alt='menu-page-header'>
         <PagesImageOverlay></PagesImageOverlay>
         <ImageText>
@@ -54,11 +61,11 @@ const Menu = () => {
 
 
       <MenuWrapper>
-       
+
         <TabDiv>
          
-         <Tab to={"/menu/drinks"} activeClassName='active' isActive={checkActive} > Drinks </Tab>
-         <Tab to="/menu/food" activeClassName='active'> Food </Tab>
+         <Tab to={"/menu/drinks"} activeClassName='active' onClick={() => stay()} > Drinks </Tab>
+         <Tab to="/menu/food" activeClassName='active' onClick={() => stay()} > Food </Tab>
 
         </TabDiv>
         
@@ -66,6 +73,9 @@ const Menu = () => {
         <Outlet />
 
       </MenuWrapper>
+
+      { active ? null : <GoToTop />    } 
+
       <ScrollUpBtn />
     </>
   );

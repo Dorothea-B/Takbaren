@@ -6,6 +6,7 @@ import { device } from "../toolcomponents/Devices";
 
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
+import GoToTop from "../toolcomponents/GoToTop";
 
 const query = `
   *[ _type == 'menuHome' ] { descriptionOne, descriptionTwo, 
@@ -24,7 +25,7 @@ const MenuHome = () => {
   return (
     <section>
       <MenuImageDiv bgimg={menuHome.image.url} alt='food-and-drinks-menu'>
-        <Link to='/menu'>
+        <Link to='/menu/food'>
           <OverlayFood>
             <Dark id='dark'></Dark>
             <P>{menuHome.descriptionOne}</P>
@@ -38,6 +39,7 @@ const MenuHome = () => {
           </OverlayDrinks>
         </Link>
       </MenuImageDiv>
+      <GoToTop />
     </section>
   );
 };

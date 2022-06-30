@@ -7,7 +7,7 @@ import { sanity } from "../sanity";
 
 import BlockContent from "@sanity/block-content-to-react";
 import BlockRenderer from "../BlockRenderer";
-
+import GoToTop from "../toolcomponents/GoToTop";
 import {
   PagesHeading,
   ImageText,
@@ -75,6 +75,8 @@ const Contact = () => {
 
         </ContactWrapper>
       </PagesWrapper>
+      <GoToTop />
+
     </>
   );
 };
