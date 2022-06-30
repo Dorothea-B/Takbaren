@@ -24,6 +24,7 @@ const Nav = styled.nav`
   justify-content: center;
   padding: 0.5rem;
   margin-top: 0.5rem;
+  z-index: 2;
 
   @media (max-width: 768px) {
     padding: 0;

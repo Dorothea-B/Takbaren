@@ -10,21 +10,6 @@ const menuDrink = {
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "Ingredients",
-      name: "ingredients",
-      type: "string",
-    },
-    {
-      title: "Description",
-      name: "description",
-      type: "string",
-    },
-    {
-      title: "Prize",
-      name: "prize",
-      type: "string",
-    },
-    {
       name: "slug",
       type: "slug",
       options: { source: "title" },

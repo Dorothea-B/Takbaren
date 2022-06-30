@@ -62,8 +62,23 @@ export const PagesCardLIght = styled.div`
 
 export const MenuWrapper = styled.div`
   background-color: var(--clr-white);
-  padding: 6rem;
+  padding: 4rem 2rem;
   margin: 1rem;
+  @media ${device.mobileS} {
+    width: 250px;
+  }
+  @media ${device.mobileM} {
+    width: 350px;
+  }
+  @media ${device.mobileL} {
+    width: 400px;
+  }
+  @media ${device.tablet} {
+    width: 600px;
+  }
+  @media ${device.laptop} {
+    width: 700px;
+  }
 
   // export const heading_dark = styled.h1
 `;
@@ -294,7 +309,6 @@ export const RegularText = styled.p`
   /* font-size: 12px; */
   white-space: break-spaces;
   line-height: 1.3;
-  margin-bottom: 1rem;
 
   @media ${device.mobileS} {
     font-size: 0.7em;
@@ -408,17 +422,21 @@ export const PagesHeading = styled(Heading)`
 
 export const DrinkImgHeading = styled(Heading)`
   color: var(--clr-white);
-  font-size: 1.5em;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  padding-bottom: 1.5rem;
+  padding-top: 1rem;
 
-  @media (min-width: 768px) {
-    font-size: 1.7em;
+  @media ${device.mobileS} {
+    font-size: 1em;
   }
-  /* 
-  @media (min-width: 1024px) {
+  @media ${device.mobileM} {
+    font-size: 1.3em;
+  }
+  @media ${device.mobileL} {
+    font-size: 1.5em;
+  }
+  @media ${device.tablet} {
     font-size: 2em;
-  } */
+  }
+  @media ${device.laptop} {
+    font-size: 2.2em;
+  }
 `;

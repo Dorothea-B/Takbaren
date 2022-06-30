@@ -50,12 +50,12 @@ const Menu = () => {
 
   return (
     <>
-      <ImageDiv bgimg={menuHeader.image.url}>
+      <ImageDiv bgimg={menuHeader.image.url} alt='menu-page-header'>
         <PagesImageOverlay></PagesImageOverlay>
         <ImageText>
           <PagesHeading>{menuHeader.title}</PagesHeading>
         </ImageText>
-        <img src={menuHeader.image.url} />
+        <img src={menuHeader.image.url} alt='menu-page-header' />
       </ImageDiv>
       <MenuWrapper>
         <TabDiv>
@@ -98,10 +98,10 @@ const ImageDiv = styled.div`
   background-size: cover;
 
   @media ${device.mobileS} {
-    height: 300px;
+    height: fit-content;
   }
   @media ${device.mobileL} {
-    height: 300px;
+    height: fit-content;
   }
   @media ${device.tablet} {
     height: 500px;

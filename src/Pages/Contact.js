@@ -37,7 +37,7 @@ const Contact = () => {
 
   return (
     <>
-      <ImageDiv bgimg={contact.image.url}>
+      <ImageDiv bgimg={contact.image.url} alt='contact-page-header'>
         <PagesImageOverlay></PagesImageOverlay>
         <ImageText>
           <PagesHeading>{contact.title}</PagesHeading>
@@ -45,7 +45,7 @@ const Contact = () => {
         <img
           className='sub-page-heading'
           src={contact.image.url}
-          alt='contact page header image'
+          alt='contact-page-header'
         />
       </ImageDiv>
 
@@ -80,10 +80,10 @@ const ImageDiv = styled.div`
   background-size: cover;
 
   @media ${device.mobileS} {
-    height: 300px;
+    height: fit-content;
   }
   @media ${device.mobileL} {
-    height: 300px;
+    height: fit-content;
   }
   @media ${device.tablet} {
     height: 500px;

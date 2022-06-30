@@ -11,16 +11,13 @@ import { device } from "../toolcomponents/Devices";
 
 import {
   PagesHeading,
-  SubHeadingDark,
-  DarkText,
   ImageText,
   PagesImageOverlay,
   MediumHeadingDark,
   PagesWrapper,
-  PagesCardLIght,
 } from "../globalStyleComponents";
 
-import { CardLight, HomePageWrapper, Weather } from "./Home";
+import { CardLight } from "./Home";
 import Loader from "../components/Loader";
 
 import WeatherPage from "../components/WeatherPage";
@@ -42,12 +39,11 @@ const OpenHours = () => {
 
   return (
     <>
-      <ImageDiv bgimg={openHours.image.url}>
+      <ImageDiv bgimg={openHours.image.url} alt='open-hours-page-header'>
         <PagesImageOverlay></PagesImageOverlay>
         <ImageText>
           <PagesHeading>{openHours.title}</PagesHeading>
         </ImageText>
-        {/* <img className="sub-page-heading" src={openHours.image.url} alt='sunset' /> */}
       </ImageDiv>
 
       <PagesWrapper>
