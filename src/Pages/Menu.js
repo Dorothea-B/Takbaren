@@ -65,7 +65,7 @@ const Menu = () => {
         <TabDiv>
          
          <Tab to={"/menu/drinks"} activeClassName='active' onClick={() => stay()} > Drinks </Tab>
-         <Tab to="/menu/food" activeClassName='active' onClick={() => stay()} > Food </Tab>
+         <Tab to={"/menu/food"} activeClassName='active' onClick={() => stay()} > Food </Tab>
 
         </TabDiv>
         
@@ -74,7 +74,7 @@ const Menu = () => {
 
       </MenuWrapper>
 
-      { active ? null : <GoToTop />    } 
+      { active ? null : <GoToTop />  } 
 
       <ScrollUpBtn />
     </>
