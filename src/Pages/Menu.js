@@ -98,10 +98,10 @@ const ImageDiv = styled.div`
   background-size: cover;
 
   @media ${device.mobileS} {
-    height: fit-content;
+    height: 300px;
   }
   @media ${device.mobileL} {
-    height: fit-content;
+    height: 300px;
   }
   @media ${device.tablet} {
     height: 500px;

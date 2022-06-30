@@ -42,9 +42,7 @@ const IntroTextHome = () => {
           target='_blank'
           rel='noreferrer'
           aira-label='link-going-to-another-page'
-        >
-          <SquareBtn>Read more</SquareBtn>
-        </a>
+        ></a>
       )}
     </CardSpacing>
   );

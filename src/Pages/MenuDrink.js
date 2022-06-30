@@ -125,17 +125,9 @@ const Img = styled.img`
 `;
 
 const TextWrapper = styled.div`
-  background: rgba(52, 59, 63, 0.3);
-  background: linear-gradient(#343b3f, transparent);
-  /* background: linear-gradient (rgba(52, 59, 63, 0.3) 100%),
-    (rgba(0, 0, 0, 0) 0%); */
-  color: var(--clr-grey);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0.8rem;
-  line-height: 1.4;
+  background: linear-gradient(rgb(52, 59, 63, 0.3), transparent);
+  background-blend-mode: multiply;
+  padding: 1rem;
   width: 100%;
   height: 100%;
   position: absolute;

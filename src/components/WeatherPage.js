@@ -52,24 +52,24 @@ const WeatherApp = () => {
         <TemperatureDescription>{weather}</TemperatureDescription>
         {weather === "Clear" && (
           <WeatherDescription>
-            {" "}
-            Remember to bring your sunscreen to the rooftop!{" "}
+            Remember to bring your sunscreen to the rooftop!
             <span role='img' aria-label='sunglasses'>
               😎
             </span>
           </WeatherDescription>
         )}
-        {weather === "Rain" && (
-          <WeatherDescription>
-            It's raining, good thing we have covering!{" "}
-            <span role='img' aria-label='umbrella'>
-              ☔️
-            </span>
-          </WeatherDescription>
-        )}
+        {weather === "Rain" ||
+          (weather === "Drizzle" && (
+            <WeatherDescription>
+              It's raining, good thing we have covering!
+              <span role='img' aria-label='umbrella'>
+                ☔️
+              </span>
+            </WeatherDescription>
+          ))}
         {weather === "Snow" && (
           <WeatherDescription>
-            Brr! It's snowing and we're probably closed for the season.{" "}
+            Brr! It's snowing and we're probably closed for the season.
             <span role='img' aria-label='snowman'>
               ⛄️
             </span>
@@ -78,7 +78,7 @@ const WeatherApp = () => {
         {weather === "Extreme" && (
           <WeatherDescription>
             It's quite windy, perhaps a warm Irish Coffee would be nice and
-            warm?{" "}
+            warm?
             <span role='img' aria-label='drink emoji'>
               🍹
             </span>
@@ -86,23 +86,24 @@ const WeatherApp = () => {
         )}
         {weather === "Clouds" && (
           <WeatherDescription>
-            Some clouds won't stop us from having a great time at the roofbar!{" "}
+            Some clouds won't stop us from having a great time at the roofbar!
             <span role='img' aria-label='dancing emoji'>
               🕺
             </span>
           </WeatherDescription>
         )}
-        {weather === "Fog" && (
-          <WeatherDescription>
-            We promise the view looks even cooler when it's foggy!{" "}
-            <span role='img' aria-label='fog emoji'>
-              😶‍🌫️
-            </span>
-          </WeatherDescription>
-        )}
+        {weather === "Fog" ||
+          (weather === "Mist" && (
+            <WeatherDescription>
+              We promise the view looks even cooler when it's foggy!
+              <span role='img' aria-label='fog emoji'>
+                😶‍🌫️
+              </span>
+            </WeatherDescription>
+          ))}
         {weather === "Squall" && (
           <WeatherDescription>
-            Some unpredictable weather but we have blankets and heat lamps!{" "}
+            Some unpredictable weather but we have blankets and heat lamps!
             <span role='img' aria-label='fire'>
               🔥
             </span>
@@ -114,15 +115,14 @@ const WeatherApp = () => {
         {weather === "Rain" ||
           (weather === "Drizzle" && <img src={rain} alt='rain icon' />)}
         {weather === "Snow" && <img src={snow} alt='snow icon' />}
-        {weather === "Thunderstorm" && (
-          <img src={thunderstorm} alt='thunder icon' />
-        )}
+        {weather === "Extreme" && <img src={thunderstorm} alt='thunder icon' />}
         {weather === "Clouds" && <img src={clouds} alt='cloud icon' />}
         {weather === "Squall" && <img src={squall} alt='squall icon' />}
         {weather === "Tornado" && <img src={tornado} alt='tornado icon' />}
         {weather === "Fog" ||
           (weather === "Mist" && <img src={fog} alt='fog icon' />)}
-        {weather === "Dust" && <img src={dust} alt='dust icon' />}
+        {weather === "Dust" ||
+          (weather === "Haze" && <img src={dust} alt='dust icon' />)}
       </WeatherImageDiv>
     </WeatherCard>
   );

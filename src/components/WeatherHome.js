@@ -63,7 +63,7 @@ const WeatherApp = () => {
           {weather === "Rain" ||
             (weather === "Drizzle" && <img src={rain} alt='rain icon' />)}
           {weather === "Snow" && <img src={snow} alt='snow icon' />}
-          {weather === "Thunderstorm" && (
+          {weather === "Extreme" && (
             <img src={thunderstorm} alt='thunder icon' />
           )}
           {weather === "Clouds" && <img src={clouds} alt='cloud icon' />}
@@ -71,7 +71,8 @@ const WeatherApp = () => {
           {weather === "Tornado" && <img src={tornado} alt='tornado icon' />}
           {weather === "Fog" ||
             (weather === "Mist" && <img src={fog} alt='fog icon' />)}
-          {weather === "Dust" && <img src={dust} alt='dust icon' />}
+          {weather === "Dust" ||
+            (weather === "Haze" && <img src={dust} alt='dust icon' />)}
         </Icon>
       </WeatherImageDiv>
     </WeatherCard>
