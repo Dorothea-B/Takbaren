@@ -10,9 +10,6 @@ const GoToTop = () => {
 
   useEffect(() => {
 
-    // if ( window.location.pathname === "/menu/food" || "/menu/drinks" ) {
-    //   window.scrollTo(0, 1000);
-    // }
   
       onTop();   
    
@@ -22,7 +19,3 @@ const GoToTop = () => {
 
 export default GoToTop
 
-
-// useEffect(() => {
-//   onTop();
-// }, [routePath]);
