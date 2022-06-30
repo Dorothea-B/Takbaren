@@ -30,7 +30,7 @@ const MenuHome = () => {
             <P>{menuHome.descriptionOne}</P>
           </OverlayFood>
         </Link>
-        <Link to='/menu'>
+        <Link to='/menu/drinks'>
           <OverlayDrinks>
             <Dark id='dark'></Dark>
             <DarkMobile></DarkMobile>

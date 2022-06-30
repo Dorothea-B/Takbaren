@@ -15,9 +15,16 @@ import PopUp from "./toolcomponents/PopUp";
 import GoToTop from "./toolcomponents/GoToTop";
 import Background from "./toolcomponents/Background";
 
+import MenuDrink from "./Pages/MenuDrink";
+import MenuFood from "./Pages/MenuFood";
+
 import "./App.css";
 
 const App = () => {
+
+  const [currentTab, setCurrentTab] = useState("1");
+
+
   return (
     <div className='App'>
       <Background />
@@ -27,7 +34,20 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/menu' element={<Menu />} />
+        
+        <Route path='/menu' element={<Menu />}> 
+        <Route path='' 
+          element={ <MenuDrink /> }
+           />
+        <Route path='food' 
+          element={ <MenuFood /> }
+           />
+        <Route path='drinks' 
+          element={ <MenuDrink /> }
+           />
+
+        </Route>
+
         <Route path='/openinghours' element={<OpenHours />} />
         <Route path='*' element={<NotFound />} />
       </Routes>

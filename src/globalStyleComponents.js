@@ -26,6 +26,8 @@ export const ImageDiv = styled.div`
   position: relative;
   width: 100%;
   overflow: hidden;
+  background-repeat: no-repeat;
+
 `;
 
 export const PagesImageOverlay = styled.div`

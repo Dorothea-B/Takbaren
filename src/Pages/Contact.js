@@ -15,10 +15,13 @@ import {
   PagesWrapper,
 } from "../globalStyleComponents";
 
-import { CardLight, HomePageWrapper, Map } from "./Home";
+import { CardLight } from "./Home";
 
 import MapHome from "../components/MapHome";
 import { device } from "../toolcomponents/Devices";
+
+import FBIcon from "../assets/fb_icon.svg"
+import IGIcon from "../assets/ig_icon.svg"
 
 const query = `
   *[ _type == 'contact' ] { title, 
@@ -42,15 +45,11 @@ const Contact = () => {
         <ImageText>
           <PagesHeading>{contact.title}</PagesHeading>
         </ImageText>
-        <img
-          className='sub-page-heading'
-          src={contact.image.url}
-          alt='contact-page-header'
-        />
+        
       </ImageDiv>
 
       <PagesWrapper>
-        <HomePageWrapper>
+        <ContactWrapper>
           <CardLight>
             {contact.story && (
               <div>
@@ -60,12 +59,19 @@ const Contact = () => {
                 />
               </div>
             )}
-          </CardLight>
+
+            <SoMe> 
+              <a href="https://www.facebook.com/takbarenvisby"><Icon src={FBIcon} alt="facebook icon" /></a>
+              <a href="https://www.instagram.com/takbarenvisby/"><Icon src={IGIcon} alt="instagram icon" /></a>
+            </SoMe>
 
           <Map>
             <MapHome />
           </Map>
-        </HomePageWrapper>
+
+          </CardLight>
+
+        </ContactWrapper>
       </PagesWrapper>
     </>
   );
@@ -78,6 +84,7 @@ const ImageDiv = styled.div`
   overflow: hidden;
   background-image: url(${(props) => props.bgimg});
   background-size: cover;
+  background-repeat: no-repeat;
 
   @media ${device.mobileS} {
     height: 300px;
@@ -95,3 +102,61 @@ const ImageDiv = styled.div`
     height: 800px;
   }
 `;
+
+const ContactWrapper = styled.div`
+
+display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  @media ${device.mobileS} {
+    width: calc(100% - 30px);
+  }
+
+  @media ${device.tablet} {
+    width: 90%;
+  }
+
+  @media ${device.laptop} {
+    width: calc(100% - 100px);
+
+    min-width: 1000px;
+    max-width: 1500px;
+  }
+  @media ${device.desktop} {
+    width: calc(100% - 100px);
+
+    min-width: 1000px;
+    max-width: 1900px;
+  }
+
+`
+const Map = styled.div`
+margin: auto;
+width: 80%;
+
+
+@media ${device.mobileS} {
+    width: calc(100% - 20px);
+  }
+  @media ${device.tablet} {
+    width: 90%;
+  }
+`
+
+const Icon = styled.img`
+width: 50px;
+
+
+`
+const SoMe = styled.div`
+display: flex;
+flex-wrap: wrap;
+margin: auto;
+width: 50%;
+gap: 3rem;
+justify-content: center;
+padding: 1rem 0 2rem 0;
+ 
+`
+
