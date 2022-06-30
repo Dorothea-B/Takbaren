@@ -1,10 +1,10 @@
 {
-  "name": "priv-takbaren",
+  "name": "takbaren",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Dorothea Barre <barre.dorothea@gmail.com>",
+  "author": "Dorothea Barre, Mimmi Fordal Uddin, Marianne Ardin",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
