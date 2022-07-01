@@ -2,12 +2,13 @@ import React from 'react';
 import CookieConsent from 'react-cookie-consent';
 import '../index.css';
 import styled from 'styled-components/macro';
+import { device } from './Devices';
 
 const PopUp = () => {
 	return (
 		<div>
 			<CookieConsent
-				location='bottom'
+				location='top'
 				buttonText='Accept'
 				cookieName='myAwesomeCookieName2'
 				style={{ background: '#6F1132', color: '#F7F6F0' }}
