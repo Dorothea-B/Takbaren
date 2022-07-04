@@ -32,11 +32,12 @@ const PopUp = () => {
         textTransform: "uppercase",
         padding: "0.5rem",
         position: "absolute",
-        bottom: "0",
+        bottom: "30px",
         left: "0",
         right: "0",
         height: "3rem",
-        marginBottom: "2rem",
+        marginLeft: "3rem",
+        marginRight: "3rem",
       }}
       expires={365}
     >
@@ -61,5 +62,5 @@ export const PopUpMessage = styled.p`
   bottom: 0;
   left: 0;
   right: 0;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 `;
