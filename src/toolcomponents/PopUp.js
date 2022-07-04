@@ -19,6 +19,7 @@ const PopUp = () => {
         alignItems: "center",
         height: "200px",
         width: "300px",
+        bottom: "30px",
       }}
       buttonStyle={{
         background: "#6F1132",
