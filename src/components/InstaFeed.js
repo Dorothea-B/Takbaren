@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components/macro";
 import Feed from "./Feed";
@@ -8,7 +8,6 @@ import "../index.css";
 const InstaFeed = ({ token, ...props }) => {
   const [feeds, setFeedsData] = useState([]);
 
-  //use useRef to store the latest value of the prop without firing the effect
   const tokenProp = process.env.REACT_APP_INS_TOKEN;
 
   useEffect(() => {

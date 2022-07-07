@@ -3,7 +3,6 @@ const urlsToCache = ["index.html"];
 
 const self = this;
 
-// Install SW
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -14,7 +13,6 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// Listen for requests
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then(async () => {
@@ -27,7 +25,6 @@ self.addEventListener("fetch", (event) => {
   );
 });
 
-// Activate the SW
 self.addEventListener("activate", (event) => {
   const cacheWhitelist = [];
   cacheWhitelist.push(CACHE_NAME);

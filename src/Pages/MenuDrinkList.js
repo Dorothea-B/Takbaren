@@ -5,8 +5,6 @@ import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 import BlockRenderer from "../BlockRenderer";
 
-import styled from "styled-components/macro";
-import "../index.css";
 import { MenuWrapper } from "../globalStyleComponents";
 
 const query = `

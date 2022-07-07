@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { device } from "../toolcomponents/Devices";
-import {Link, NavLink, Outlet} from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom";
 
 import "../index.css";
 import styled from "styled-components/macro";
@@ -8,8 +8,6 @@ import styled from "styled-components/macro";
 import { useQuery } from "react-query";
 import { sanity } from "../sanity";
 
-import MenuFood from "./MenuFood";
-import MenuDrink from "./MenuDrink";
 import ScrollUpBtn from "../toolcomponents/ScrollUpBtn";
 import GoToTop from "../toolcomponents/GoToTop";
 
@@ -28,28 +26,21 @@ const query = `
 const Menu = () => {
   const { data = [] } = useQuery("menuHeader", () => sanity.fetch(query));
   const [menuHeader] = data;
-  const [currentTab, setCurrentTab] = useState("1");
   const [active, setActive] = useState(false);
- 
- 
-
-
 
   if (!menuHeader) {
     return <h1>Loading…</h1>;
   }
 
   const stay = () => {
-    setActive(true)
+    setActive(true);
     window.scrollTo({
       top: 500,
-      // behavior: 'smooth',
     });
-  }
+  };
 
   return (
     <>
-
       <ImageDiv bgimg={menuHeader.image.url} alt='menu-page-header'>
         <PagesImageOverlay></PagesImageOverlay>
         <ImageText>
@@ -57,24 +48,30 @@ const Menu = () => {
         </ImageText>
       </ImageDiv>
 
-
-
-
       <MenuWrapper>
-
         <TabDiv>
-         
-         <Tab to={"/menu/drinks"} activeClassName='active' onClick={() => stay()} > Drinks </Tab>
-         <Tab to={"/menu/food"} activeClassName='active' onClick={() => stay()} > Food </Tab>
-
+          <Tab
+            to={"/menu/drinks"}
+            activeClassName='active'
+            onClick={() => stay()}
+          >
+            {" "}
+            Drinks{" "}
+          </Tab>
+          <Tab
+            to={"/menu/food"}
+            activeClassName='active'
+            onClick={() => stay()}
+          >
+            {" "}
+            Food{" "}
+          </Tab>
         </TabDiv>
-        
-        {/* This is mounting sub-components based on routes defined in app.js */}
-        <Outlet />
 
+        <Outlet />
       </MenuWrapper>
 
-      { active ? null : <GoToTop />  } 
+      {active ? null : <GoToTop />}
 
       <ScrollUpBtn />
     </>
@@ -90,7 +87,6 @@ const ImageDiv = styled.div`
   background-image: url(${(props) => props.bgimg});
   background-size: cover;
   background-repeat: no-repeat;
-
 
   @media ${device.mobileS} {
     height: 300px;
@@ -146,26 +142,24 @@ const TabDiv = styled.div`
   }
 `;
 
-const Content = styled.div``;
-
 const Tab = styled(NavLink)`
-    border: none;
-    color: rgba(52, 59, 63, 0.7);
-    font-family: "Playfair Display", serif;
-    font-size: 1.3em;
-    font-style: italic;
-    cursor: pointer;
-    padding: 25px;
-    width: 100%;
-    background-color: transparent;
-    transition: all 0.1s ease-in-out;
+  border: none;
+  color: rgba(52, 59, 63, 0.7);
+  font-family: "Playfair Display", serif;
+  font-size: 1.3em;
+  font-style: italic;
+  cursor: pointer;
+  padding: 25px;
+  width: 100%;
+  background-color: transparent;
+  transition: all 0.1s ease-in-out;
 
-    &:hover {
+  &:hover {
     color: var(--clr-grey);
   }
 
-    &.active {
+  &.active {
     border-block-end: 4px solid var(--clr-grey);
     color: var(--clr-grey);
-    }
+  }
 `;

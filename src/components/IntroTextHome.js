@@ -8,7 +8,7 @@ import { sanity } from "../sanity";
 
 import "../index.css";
 
-import { HeadingDark, SquareBtn, CardSpacing } from "../globalStyleComponents";
+import { HeadingDark, CardSpacing } from "../globalStyleComponents";
 
 const query = `
   *[ _type == 'introHome' ] { title, story, link }

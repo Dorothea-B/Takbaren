@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import Logo from "../assets/Takbar_logo.png";
@@ -10,7 +10,7 @@ const HeaderHome = () => {
   const [logo, setLogo] = useState(false);
 
   const fixedNavbar = () => {
-    if (window.scrollY >= 60 ) {
+    if (window.scrollY >= 60) {
       setNavbar(true);
     } else {
       setNavbar(false);

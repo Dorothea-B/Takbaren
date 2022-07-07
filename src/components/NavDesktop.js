@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components/macro";
 import "../index.css";
 
@@ -6,16 +7,16 @@ const NavDesktop = ({ open }) => {
   return (
     <NavList open={open}>
       <li>
-        <a href='/'>Home</a>
+        <NavLink to='/'>Home</NavLink>
       </li>
       <li>
-        <a href='/openinghours'>Open</a>
+        <NavLink to='/openinghours'>Open</NavLink>
       </li>
       <li>
-        <a href='/menu'>Menu</a>
+        <NavLink to='/menu/drinks'>Menu</NavLink>
       </li>
       <li>
-        <a href='/contact'>Contact</a>
+        <NavLink to='/contact'>Contact</NavLink>
       </li>
     </NavList>
   );
@@ -40,7 +41,7 @@ const NavList = styled.ul`
     position: fixed;
   }
 
-  li a:after {
+  li:after {
     content: "";
     display: block;
     height: 1.5px;
@@ -49,7 +50,7 @@ const NavList = styled.ul`
     transition: transform 0.3s;
   }
 
-  li a:hover:after {
+  li:hover:after {
     transform: scaleX(1);
     transition: transform 0.3s;
   }
