@@ -1,5 +1,5 @@
 import React from "react";
-
+import styled from "styled-components/macro";
 import { RoundBtn } from "../globalStyleComponents";
 
 import Arrow from "../assets/Arrow-up.png";
@@ -13,12 +13,18 @@ const ScrollUpBtn = () => {
   };
 
   return (
-    <div>
+    <BtnWrapper>
       <RoundBtn onClick={handleScrollUp}>
         <img src={Arrow} alt='arrow-up' />
       </RoundBtn>
-    </div>
+    </BtnWrapper>
   );
 };
 
 export default ScrollUpBtn;
+
+const BtnWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
