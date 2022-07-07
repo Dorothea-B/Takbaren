@@ -2,13 +2,13 @@ import styled from "styled-components/macro";
 import "./index.css";
 import { device } from "./toolcomponents/Devices";
 
-
 export const CardSpacing = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  align-items: center;
   justify-content: space-around;
   height: 100%;
+  text-align: center;
 `;
 
 // ---------------- PAGES SPECIFIC GLOBAL STYLING ----------------//
@@ -21,7 +21,6 @@ export const ImageDiv = styled.div`
   width: 100%;
   overflow: hidden;
   background-repeat: no-repeat;
-
 `;
 
 export const PagesImageOverlay = styled.div`
@@ -75,9 +74,7 @@ export const MenuWrapper = styled.div`
   @media ${device.laptop} {
     width: 700px;
   }
-
 `;
-
 
 export const RoundBtn = styled.button`
   background-color: var(--clr-grey);
@@ -367,8 +364,6 @@ export const RegularLinkRed = styled(RegularLink)`
   }
 `;
 
-
-
 export const PagesHeading = styled(Heading)`
   color: var(--clr-white);
   border-block-end: 2px solid var(--clr-white);
@@ -394,4 +389,3 @@ export const DrinkImgHeading = styled(Heading)`
     font-size: 2.2em;
   }
 `;
-

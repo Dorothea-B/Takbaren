@@ -7,14 +7,12 @@
   --clr-light: #f6bdac;
   --clr-accent: ##f4dba9;
 
-
   --home-mobile-h: 300px;
   --home-tablet-w: 80%;
   --home-dsktp-w: 49%;
   --home-dsktp-h: 320px;
   --home-large-dsktp-h: 400px;
 }
-
 
 * {
   box-sizing: border-box;
@@ -156,7 +154,6 @@ a {
   font-size: 50px;
   font-weight: bold;
 }
-
 
 .link-light {
   font-family: "Poppins", sans-serif;

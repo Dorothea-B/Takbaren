@@ -58,15 +58,14 @@ const WeatherApp = () => {
             </span>
           </WeatherDescription>
         )}
-        {weather === "Rain" ||
-          (weather === "Drizzle" && (
-            <WeatherDescription>
-              It's raining, good thing we have covering!
-              <span role='img' aria-label='umbrella'>
-                ☔️
-              </span>
-            </WeatherDescription>
-          ))}
+        {weather === "Rain" && (
+          <WeatherDescription>
+            It's raining, good thing we have covering!
+            <span role='img' aria-label='umbrella'>
+              ☔️
+            </span>
+          </WeatherDescription>
+        )}
         {weather === "Snow" && (
           <WeatherDescription>
             Brr! It's snowing and we're probably closed for the season.
@@ -112,8 +111,7 @@ const WeatherApp = () => {
       </WeatherTextDiv>
       <WeatherImageDiv>
         {weather === "Clear" && <img src={clear} alt='sun icon' />}
-        {weather === "Rain" ||
-          (weather === "Drizzle" && <img src={rain} alt='rain icon' />)}
+        {weather === "Rain" && <img src={rain} alt='rain icon' />}
         {weather === "Snow" && <img src={snow} alt='snow icon' />}
         {weather === "Extreme" && <img src={thunderstorm} alt='thunder icon' />}
         {weather === "Clouds" && <img src={clouds} alt='cloud icon' />}
@@ -172,6 +170,7 @@ const WeatherImageDiv = styled.div`
 
   @media ${device.mobileS} {
     height: 8rem;
+    margin-top: 1rem;
   }
   @media ${device.mobileS} {
     height: 10rem;

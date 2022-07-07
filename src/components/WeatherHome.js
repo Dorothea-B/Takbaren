@@ -59,9 +59,9 @@ const WeatherApp = () => {
       </WeatherTextDiv>
       <WeatherImageDiv>
         <Icon>
+          {/* || weather === "Drizzle" */}
           {weather === "Clear" && <img src={clear} alt='sun icon' />}
-          {weather === "Rain" ||
-            (weather === "Drizzle" && <img src={rain} alt='rain icon' />)}
+          {weather === "Rain" && <img src={rain} alt='rain icon' />}
           {weather === "Snow" && <img src={snow} alt='snow icon' />}
           {weather === "Extreme" && (
             <img src={thunderstorm} alt='thunder icon' />

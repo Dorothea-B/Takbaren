@@ -111,6 +111,8 @@ const MenuWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+
   & > * {
     margin-top: 2rem;
   }

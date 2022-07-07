@@ -177,6 +177,7 @@ export const CardLight = styled.div`
   background-color: var(--clr-white);
   flex: 1;
   padding: 2rem;
+  text-align: center;
 
   @media ${device.mobileS} {
     width: 100%;
