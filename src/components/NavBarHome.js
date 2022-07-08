@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components/macro";
 import "../index.css";
 
-import NavMobile from "./NavMobile";
+import NavResponsive from "./NavResponsive";
 
 const NavBarHome = () => {
   return (
     <Nav>
-      <NavMobile />
+      <NavResponsive />
     </Nav>
   );
 };
