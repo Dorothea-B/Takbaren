@@ -5,6 +5,7 @@ import styled from "styled-components/macro";
 
 const PopUp = () => {
   return (
+    /*
     <CookieConsent
       location='bottom'
       buttonText='I understand'
@@ -45,12 +46,13 @@ const PopUp = () => {
         This website uses cookies to enhance the user experience.
       </PopUpMessage>
     </CookieConsent>
+    */
   );
 };
 
 export default PopUp;
 
-export const PopUpMessage = styled.p`
+/* export const PopUpMessage = styled.p`
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
@@ -64,3 +66,4 @@ export const PopUpMessage = styled.p`
   right: 0;
   margin-top: 2.5rem;
 `;
+*/
