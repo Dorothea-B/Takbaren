@@ -36,7 +36,7 @@ const App = () => {
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
-      <PopUp />
+//      <PopUp />
     </div>
   );
 };
