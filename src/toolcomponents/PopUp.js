@@ -52,7 +52,7 @@ const PopUp = () => {
 
 export default PopUp;
 
-/* export const PopUpMessage = styled.p`
+ export const PopUpMessage = styled.p`
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
@@ -66,4 +66,4 @@ export default PopUp;
   right: 0;
   margin-top: 2.5rem;
 `;
-*/
+
