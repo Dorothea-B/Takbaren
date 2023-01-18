@@ -5,7 +5,7 @@ import styled from "styled-components/macro";
 
 const PopUp = () => {
   return (
-    /*
+    
     <CookieConsent
       location='bottom'
       buttonText='I understand'
@@ -46,7 +46,7 @@ const PopUp = () => {
         This website uses cookies to enhance the user experience.
       </PopUpMessage>
     </CookieConsent>
-    */
+    
   );
 };
 
