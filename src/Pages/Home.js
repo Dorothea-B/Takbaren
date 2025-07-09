@@ -67,9 +67,10 @@ const Home = () => {
 
         <MontseraLeft />
 
-        <CardOther>
+      {/* <CardOther>
           <SocialMediaHome />
-        </CardOther>
+        </CardOther> */}
+            
         <LeafPalmRight />
       </HomePageWrapper>
       <GoToTop />
